@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 
 export const NavbarContainer = styled.div`
-    max-width: 100vw;
+    position: fixed;
+    top: 0;
+    width: 100vw;
     height: 100px;
     box-shadow: ${colors.BOX_SHADOW};
     display: flex;

@@ -45,7 +45,7 @@ export const Contact = () => {
         form.current.reset();
     }
     return (
-        <S.ContactContainer>
+        <S.ContactContainer id="contact">
             <S.Title>Contact</S.Title>
             <S.ContainerForm>
                 <S.Form onSubmit={onSubmit} ref={form}>

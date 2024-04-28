@@ -6,7 +6,7 @@ import ProfileImage from "../../assets/img/perfil.png";
 export const AboutMe = () => {
 
     return (
-        <S.AboutMeContainer>
+        <S.AboutMeContainer id="about-me">
             <S.ContainerFlex>
                 <S.ContainerText>
                     <S.Title>

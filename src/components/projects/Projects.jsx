@@ -5,7 +5,7 @@ import NetlifyImage from "../../assets/svg/netlify.svg";
 
 export const Projects = () => {
     return (
-        <S.ProjectsContainer>
+        <S.ProjectsContainer id="projects">
             <S.ProjectsTitle>
                 Some of{" "}
                 <span>

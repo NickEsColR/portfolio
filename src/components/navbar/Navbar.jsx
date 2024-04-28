@@ -4,7 +4,11 @@ import * as S from "./Navbar.styles";
 export const Navbar = () => {
     const [showMenuBurger, setShowMenuBurger] = useState(false);
 
-    
+    const clickItemNavbar = (item) => {
+        const element = document.getElementById(item)
+        const y = element.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
     return (
         <S.NavbarContainer>
             <S.NavbarLogo>
@@ -20,9 +24,9 @@ export const Navbar = () => {
                 <S.BurgerMenu />
             </S.ContainerBurger>
             <S.ContainerItems $showMenuBurger={showMenuBurger}>
-                <p>About me</p>
-                <p>Projects</p>
-                <S.Button>Contact me</S.Button>
+                <p onClick={()=>clickItemNavbar("about-me")}>About me</p>
+                <p onClick={()=>clickItemNavbar("projects")}>Projects</p>
+                <S.Button onClick={()=>clickItemNavbar("contact")}>Contact me</S.Button>
             </S.ContainerItems>
         </S.NavbarContainer>
     );
