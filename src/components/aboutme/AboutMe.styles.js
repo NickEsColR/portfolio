@@ -79,7 +79,7 @@ export const ContainerImage = styled.div`
     
     img {
         wdith:250px;
-        border-radius: 50%;
+        border-radius: 50%;|
     }
 
     @media (max-width: 768px) {

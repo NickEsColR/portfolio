@@ -1,4 +1,4 @@
-import { socialNetworks } from "../../assets/socialnetworks/socialNetworks";
+import { socialNetworks } from "../../assets/data/socialNetworks";
 import * as S from "./AboutMe.styles";
 import ProfileImage from "../../assets/img/perfil.png";
 
