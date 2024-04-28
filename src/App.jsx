@@ -1,4 +1,5 @@
-import { Container, Navbar,AboutMe, Projects } from "./components";
+import { Container, Navbar,AboutMe, Projects, Contact } from "./components";
+import './styles/App.css'
 
 export const App = () => {
     return (
@@ -7,6 +8,7 @@ export const App = () => {
             <Container>
                 <AboutMe />
                 <Projects />
+                <Contact />
             </Container>
         </>
     );
