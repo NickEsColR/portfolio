@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import * as S from "./Contact.styles";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
     const [contactData, setContactData] = useState({
@@ -24,7 +25,17 @@ export const Contact = () => {
             return;
         }
 
-        console.log("Data sent", contactData);
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_EMAILJS_USER_ID
+        ).then(() => {
+            alert("Message sent successfully");
+        }).catch(() => {
+            alert("An error occurred, try again later");
+        });
+
         setContactData({
             name: "",
             email: "",
