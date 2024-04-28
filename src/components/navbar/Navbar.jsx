@@ -4,7 +4,7 @@ import * as S from "./Navbar.styles";
 export const Navbar = () => {
     const [showMenuBurger, setShowMenuBurger] = useState(false);
 
-    console.log(showMenuBurger);
+    
     return (
         <S.NavbarContainer>
             <S.NavbarLogo>
