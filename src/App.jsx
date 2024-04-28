@@ -1,11 +1,11 @@
-import { Container, Navbar } from "./components";
+import { Container, Navbar,AboutMe } from "./components";
 
 export const App = () => {
     return (
         <>
             <Navbar />
             <Container>
-                <h2>Hello</h2>
+                <AboutMe />
             </Container>
         </>
     );
