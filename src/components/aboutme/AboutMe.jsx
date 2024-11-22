@@ -12,13 +12,12 @@ export const AboutMe = () => {
                     <S.Title>
                         <p>Hi, I'm</p>
                         <p>Nicolas Colmenares</p>
-                        <p>Frontend Developer</p>
+                        <p>Fullstack Developer</p>
                     </S.Title>
                     <S.DescriptionText>
                         <p>
-                            I'm a Frontend Developer with experience in
-                            technologies like React, JavaScript, Bootstrap, SemanticUI,
-                            and styled-components. I'm passionate about learning new
+                            I'm a Fullstack Developer with experience in
+                            technologies like Next, React, Typescript, Tailwind, AWS and OpenAI. I'm passionate about learning new
                             technologies and improving my skills to become a better
                             developer.
                         </p>

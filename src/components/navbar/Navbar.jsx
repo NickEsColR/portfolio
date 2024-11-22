@@ -15,7 +15,7 @@ export const Navbar = () => {
                 <S.ImageLogo src="/favicon.ico" alt="Logo" />
                 <div>
                     <h1>Nicolas Colmenares</h1>
-                    <h2>Frontend Developer</h2>
+                    <h2>Fullstack Developer</h2>
                 </div>
             </S.NavbarLogo>
             <S.ContainerBurger onClick={()=>setShowMenuBurger(!showMenuBurger)}>
