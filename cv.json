@@ -1,159 +1,150 @@
 {
   "analyticsCode": "",
   "basics": {
-    "name": "MiraHikari",
-    "rol": "Senior Full Stack Developer",
+    "name": "Nicolas Colmenares",
+    "rol": "Software Engineer",
     "image": "/avatar.png",
-    "email": "mirahikari@gcxstudio.cn",
-    "url": "https://www.gcxstudio.cn",
-    "summary": "Born in 2010, I primarily work with TypeScript and JavaScript for full-stack development, and enjoy working with various technologies.",
-    "theme": "blue",
+    "email": "colmenares.ruiz.nicolas@gmail.com",
+    "url": "https://portfolio-nickescolr.netlify.app",
+    "summary": "Software Engineer with a passion for web development and machine learning. Experienced in building web applications using React, Next.js, and Node.js. Proficient in Python and TensorFlow, with additional expertise in cloud platforms such as AWS, GCP, and Azure.",
     "location": {
-      "address": "Nanchang",
-      "city": "Jiangxi Province",
-      "countryCode": "CN",
-      "region": "China"
+      "address": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
     },
     "profiles": [
       {
-        "network": "Bilibili",
-        "icon": "ri:bilibili-line",
-        "username": "MiraHikari",
-        "url": "https://space.bilibili.com/480025691"
-      },
-      {
-        "network": "QQ",
-        "icon": "ri:qq-fill",
-        "username": "Gong_cx",
-        "url": "https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=3175992523"
+        "network": "LinkedIn",
+        "icon": "mdi:linkedin",
+        "username": "nickescolr",
+        "url": "https://linkedin.com/in/nicolascolmenaressoftwareengineer/"
       },
       {
         "network": "GitHub",
         "icon": "mdi:github",
-        "username": "MiraHikari",
-        "url": "https://github.com/MiraHikari"
-      }
-    ],
-    "beian": {
-      "mint": "赣ICP备2021005460号-1",
-      "police": "赣公网安备 36010302000349号"
-    }
-  },
-  "images": {
-    "intro": "Photography is the art of light, and images are the contours of memory.",
-    "list": [
-      {
-        "image": "https://i0.hdslb.com/bfs/article/6720a7355fd11b9666e2716cadf04e45480025691.jpg@90q_1e_1c.webp",
-        "alt": "Sunset in Nanchang",
-        "desc": "Shot on a sunny day in Nanchang. 2024.10.05"
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/82f680f56532d942f74d86801abf49ea480025691.jpg@90q_1e_1c.webp",
-        "alt": "My Cat",
-        "desc": "A Ragdoll cat who stayed for a year. She's a girl."
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/14e6ae3c368b0eddeeb2b5c338239486480025691.jpg@90q_1e_1c.webp",
-        "alt": "Emoji",
-        "desc": "True, dude"
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/fe1737e9d7b6c2b21eedaf60b6dc9f86480025691.jpg@90q_1e_1c.webp",
-        "alt": "Cat Kernel Crashed",
-        "desc": "Cat Kernel Crashed"
+        "username": "NickEsColR",
+        "url": "https://github.com/NickEsColR"
       }
     ]
   },
   "education": [
     {
-      "institution": "Nanchang No.27 Middle School",
-      "url": "",
-      "area": "Regular Student",
-      "studyType": "Full-time student",
-      "startDate": "2021-9-01",
+      "institution":"ICESI University",
+      "url": "https://www.icesi.edu.co",
+      "area": "Applied Artificial Intelligence",
+      "studyType": "Master",
+      "startDate": "2025-01-01",
       "endDate": null
+    },
+    {
+      "institution": "ICESI University",
+      "url": "https://www.icesi.edu.co",
+      "area": "Software System Engineer",
+      "studyType": "Bachelor",
+      "startDate": "2019-1-01",
+      "endDate": "2023-12-01"
     }
   ],
   "certificates": [
     {
-      "name": "Success has lived a day in the world.",
-      "date": "2010-04-14",
-      "url": "",
-      "issuer": "Myself"
+      "name": "Azure Data Scientist Associate",
+      "date": "2023-01-30",
+      "url": "https://learn.microsoft.com/api/credentials/share/es-es/NickEsColR/EEF8426EA5F67CE4?sharingId=B3EC27C6F55DF3F4",
+      "issuer": "microsoft"
     },
     {
-      "name": "TCCP - Senior Cloud Architecture Engineer",
-      "date": "2023-05-01",
-      "url": "",
-      "issuer": "Tencent Cloud"
+      "name": "Neural Networks with TensorFlow",
+      "date": "2023-11-01",
+      "url": "https://platzi.com/p/NickEsColR/curso/2565-redes-neuronales-tensorflow/diploma/detalle/",
+      "issuer": "Platzi"
+    },
+    {
+      "name": "Web Development Specialization",
+      "date": "2024-01-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1706906452566/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
+      "issuer": "Netzun"
+    },
+    {
+      "name": "React zero to expert",
+      "date": "2024-06-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722088496785/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
+      "issuer": "DevTelles"
+    },
+    {
+      "name": "Next.js Zero to Expert",
+      "date": "2024-06-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722434366560/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BX7PFLi6xTeemAAiiUwlZ8w%3D%3D",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "Automatic Learning Certification",
+      "date": "2024-12-13",
+      "url":"https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1734883458483/single-media-viewer?type=DOCUMENT&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BWN4ONSXRSSWQQFenG6xDEA%3D%3D",
+      "issuer": "ICESI University"
     }
   ],
   "work": [
     {
-      "name": "Sgguo Development Team",
+      "companyName": "Citrux Digital",
       "position": "Full-stack Developer",
       "location_type": "Remote",
-      "location": "CN",
-      "url": "https://github.com/Sgguo-Development-Team",
-      "startDate": "2022-06-01",
-      "endDate": null,
+      "location": "COL",
+      "url": "https://www.citruxdigital.com",
+      "startDate": "2024-06-01",
+      "endDate": "2025-01-22",
       "summary": "Developing high-availability full-stack projects.",
       "highlights": [
-        "Enhanced internal workflow efficiency by 30%."
+        ""
       ],
       "responsibilities": [
-        "Developed and maintained backend services using Node.js and Golang."
+        "Developed frontend and backend services using Next.js and Node.js.",
+        "Implement backend infraestructure in AWS using Terraform",
+        "Configure AWS API gateway, lambda and Cognito.",
+        "Use OpenAI API to create chat for educational platform."
       ],
       "achievements": [
         "Implemented a cloud drive and verification code system."
       ],
       "skills": {
-        "PHP": "simple-icons:php",
-        "Node": "ri:nodejs-line",
-        "Golang": "simple-icons:go",
         "Next.js": "ri:nextjs-fill",
         "React": "mdi:react",
-        "SQL": "simple-icons:mysql",
+        "Tailwind": "mdi:tailwind",
+        "Node": "ri:nodejs-line",
+        "TypeORM": "simple-icons:typeorm",
+        "OpenAI": "ri:openai-fill",
+        "AWS": "mdi:aws",
+        "Terraform": "mdi:terraform",
         "Git": "mdi:git",
-        "GitHub": "mdi:github",
-        "NestJS": "simple-icons:nestjs",
-        "Vue": "mdi:vuejs"
+        "GitHub": "mdi:github"
       }
     },
     {
-      "name": "Riddle Town Team",
-      "position": "Full-stack Developer",
+      "companyName": "Accenture",
+      "position": "Data Scientist new Associate",
       "location_type": "Remote",
-      "location": "CN",
-      "url": "https://rth2.gcxstudio.cn",
-      "startDate": "2023-01-01",
-      "endDate": "2024-02-11",
-      "summary": "Led page design and account systems.",
+      "location": "COL",
+      "url": "https://www.linkedin.com/company/accenture-colombia/posts/?feedView=all",
+      "startDate": "2023-6-01",
+      "endDate": "2023-12-30",
+      "summary": "Implemet model to optimize client portfolio.",
       "highlights": [
-        "Completed 95% of project content."
+        "Completed 100% of project content."
       ],
       "responsibilities": [
-        "Developed complete pages.",
-        "Integrated user-facing elements with server-side logic."
+        "Implement genetic algorithm in Python.",
+        "Integrate code to databricks jobs.",
+        "Transform data to optimize model.",
+        "Adjust output with different scenarios to be used in PowerBI."
       ],
       "achievements": [
-        "Ensured smooth project execution."
+        "Ensured smooth project execution.",
+        "Optimized client portfolio options."
       ],
       "skills": {
-        "HTML": "simple-icons:html5",
-        "CSS": "ri:css3-fill",
-        "JavaScript": "simple-icons:javascript",
-        "TypeScript": "simple-icons:typescript",
-        "Vite": "simple-icons:vite",
-        "Node": "ri:nodejs-line",
-        "Docker": "mdi:docker",
-        "WordPress": "ri:wordpress-fill",
-        "Astro": "simple-icons:astro",
-        "SQL": "simple-icons:mysql",
-        "Tailwind": "mdi:tailwind",
-        "React": "mdi:react",
-        "GitHub": "mdi:github",
-        "Git": "mdi:git"
+        "Python": "simple-icons:python",
+        "Databricks": "simple-icons:databricks",
+        "Azure DevOps": "mdi:microsoft-azure-devops"
       }
     }
   ],
@@ -222,8 +213,40 @@
       ]
     },
     {
+      "name": "Python",
+      "icon": "simple-icons:python",
+      "level": "Intermediate",
+      "keywords": [
+        "Programming",
+        "Backend",
+        "Data Science",
+        "Machine Learning"
+      ]
+    },
+    {
+      "name": "TensorFlow",
+      "icon": "simple-icons:tensorflow",
+      "level": "Intermediate",
+      "keywords": [
+        "Machine Learning",
+        "Data Science",
+        "Python"
+      ]
+    },
+    {
       "name": "SQL",
       "icon": "simple-icons:mysql",
+      "level": "Intermediate",
+      "keywords": [
+        "Databases",
+        "SQL",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "simple-icons:postgresql",
       "level": "Intermediate",
       "keywords": [
         "Databases",
@@ -288,17 +311,6 @@
       ]
     },
     {
-      "name": "Vue",
-      "icon": "mdi:vuejs",
-      "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "JavaScript Library",
-        "UI"
-      ]
-    },
-    {
       "name": "Docker",
       "icon": "mdi:docker",
       "level": "Intermediate",
@@ -328,25 +340,6 @@
       ]
     },
     {
-      "name": "WordPress",
-      "icon": "ri:wordpress-fill",
-      "level": "Intermediate",
-      "keywords": [
-        "PHP",
-        "Fullstack",
-        "Frontend"
-      ]
-    },
-    {
-      "name": "Golang",
-      "icon": "simple-icons:go",
-      "level": "Beginner",
-      "keywords": [
-        "Backend",
-        "Cloud Service"
-      ]
-    },
-    {
       "name": "Astro",
       "icon": "simple-icons:astro",
       "level": "Intermediate",
@@ -355,63 +348,6 @@
         "Frontend",
         "SSR",
         "Static Generation"
-      ]
-    },
-    {
-      "name": "PHP",
-      "icon": "simple-icons:php",
-      "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "Fullstack"
-      ]
-    },
-    {
-      "name": "Nginx",
-      "icon": "simple-icons:nginx",
-      "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "Web Server"
-      ]
-    },
-    {
-      "name": "Tauri",
-      "icon": "simple-icons:tauri",
-      "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Rust",
-        "Webview"
-      ]
-    },
-    {
-      "name": "Rust",
-      "icon": "simple-icons:rust",
-      "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Webview"
-      ]
-    },
-    {
-      "name": "Socket.IO",
-      "icon": "simple-icons:socketdotio",
-      "level": "Beginner",
-      "keywords": [
-        "Realtime",
-        "Websocket"
-      ]
-    },
-    {
-      "name": "Electron",
-      "icon": "simple-icons:electron",
-      "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Webview"
       ]
     },
     {
@@ -452,31 +388,46 @@
       ]
     },
     {
-      "name": "Tencent Cloud",
-      "icon": "simple-icons:tencentqq",
+      "name": "AWS",
+      "icon": "simple-icons:amazonaws",
       "level": "Intermediate",
       "keywords": [
         "Cloud Service"
       ]
     },
     {
-      "name": "Cloudflare Edge Functions",
-      "icon": "simple-icons:cloudflare",
-      "level": "Expert",
+      "name": "Azure",
+      "icon": "simple-icons:microsoftazure",
+      "level": "Intermediate",
       "keywords": [
-        "Serverless",
-        "Edge Computing"
+        "Cloud Service"
+      ]
+    },
+    {
+      "name": "GCP",
+      "icon": "simple-icons:googlecloud",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud Services"      ]
+    },
+    {
+      "name": "Terraform",
+      "icon": "mdi:terraform",
+      "level": "Intermediate",
+      "keywords": [
+        "Infrastructure as Code",
+        "Cloud Services"
       ]
     }
   ],
   "languages": [
     {
-      "language": "Chinese",
+      "language": "Spanish",
       "fluency": "Native speaker"
     },
     {
       "language": "English",
-      "fluency": "Intermediate"
+      "fluency": "B2"
     }
   ],
   "interests": [
@@ -484,13 +435,42 @@
       "name": "Technology",
       "keywords": [
         "AI",
-        "Blockchain"
+        "DeepLearning",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Piano",
+        "Singing"
+      ]
+    },
+    {
+      "name": "Reading",
+      "keywords": [
+        "Science Fiction",
+        "Fantasy",
+        "Comcics"
+      ]
+    },
+    {
+      "name": "Drawing",
+      "keywords": [
+        "Traditional",
+        "Dry Media"
+      ]
+    },
+    {
+      "name":"sports",
+      "keywords": [
+        "Fencing"
       ]
     }
   ],
   "references": [
     {
-      "name": "MiraHikari",
+      "name": "NickEsColR",
       "reference": "Reference…"
     }
   ],

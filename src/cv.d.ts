@@ -41,13 +41,16 @@ interface Profiles {
 }
 
 interface Work {
-  name: string;
+  companyName: string;
   position: string;
   url: string;
   startDate: DateStr;
   endDate: DateStr | null;
   summary: string;
   highlights: Highlight;
+  responsabilities: Highlight;
+  achievements: Highlight;
+  skills: { [key: string]: string };
 }
 
 type DateStr = `${string}-${string}-${string}`;

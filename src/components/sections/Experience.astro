@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
     {
       work.map(
         ({
-          name,
+          companyName,
           startDate,
           endDate,
           position,
@@ -53,13 +53,13 @@ import { Icon } from "astro-icon/components";
                           <a
                             class="text-skin-hue"
                             href={url}
-                            title={`Ver ${name}`}
+                            title={`Ver ${companyName}`}
                             target="_blank"
                           >
-                            {name}
+                            {companyName}
                           </a>
                         ) : (
-                          <span>{name}</span>
+                          <span>{companyName}</span>
                         )}
                         {url && (
                           <span class="inline-block text-skin-hue print:[&>svg]:hidden">
