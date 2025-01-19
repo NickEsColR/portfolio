@@ -43,11 +43,12 @@ const profilesInfo = profiles.map(({ network, url }) => {
 });
 ---
 
-<footer id="normal-footer" class="flex flex-col gap-2 print:hidden">
-  <div>
-    Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command palette.
-  </div>
-</footer>
+<button
+  id="normal-footer"
+  class="flex h-8 items-center justify-between gap-8 rounded-lg bg-neutral-800 px-2 print:hidden"
+>
+  Search... <kbd>⌘K</kbd>
+</button>
 <div class="footer-button print:hidden">
   <Icon name="ri:command-fill" width={20} height={20} class="text-skin-hue" />
 </div>

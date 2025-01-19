@@ -4,19 +4,14 @@ import Section from "@/components/Section.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
-const { name, label, image, location, profiles, email } = basics;
-const { city, region, address } = location;
+const { name, rol, image, profiles, email } = basics;
 ---
 
 <Section>
   <div class="flex flex-col-reverse gap-8">
     <div class="info">
       <h1>{name}</h1>
-      <h2>{label}</h2>
-      <div class="flex items-center gap-2 pt-2 text-sm text-skin-muted">
-        <Icon class="print:hidden" name="mdi:world" width={20} height={20} />
-        {address}, {city}, {region}
-      </div>
+      <h2>{rol}</h2>
       <footer class="print">
         {email}
       </footer>
@@ -60,7 +55,7 @@ const { city, region, address } = location;
         </div>
       </footer>
     </div>
-    <figure class="relative w-fit print:hidden">
+    <figure class="mx-au relative w-fit print:hidden">
       <Image
         class="shadow-skin-hues shadow-lg"
         height={600}
