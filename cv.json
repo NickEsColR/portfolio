@@ -104,7 +104,10 @@
         "Use OpenAI API to create chat for educational platform."
       ],
       "achievements": [
-        "Implemented a cloud drive and verification code system."
+        "Implemented company landing page.",
+        "Implemented initial chat for courses to iterate from",
+        "Create some courses for the platform.",
+        "MVP 80% completed."
       ],
       "skills": {
         "Next.js": "ri:nextjs-fill",
@@ -476,38 +479,105 @@
   ],
   "projects": [
     {
-      "name": "Cloudflare Vmail",
+      "name": "Weather Searcher",
       "image": {
-        "url": "https://i0.hdslb.com/bfs/article/985e2caa8266dee4b9861ee6a341886d480025691.png@1e_1c.webp",
+        "url": "https://asset.cloudinary.com/dmuhagilf/3db38792ee381082428c998f691ef0bd",
         "position": "container",
-        "dark": "https://i0.hdslb.com/bfs/article/4d0bf8a784d22e54e3e61763c361c9ef480025691.png@100q_1e_1c.webp"
+        "dark": "https://asset.cloudinary.com/dmuhagilf/3db38792ee381082428c998f691ef0bd"
       },
       "isActive": true,
-      "description": "An open source temporary email tool, fully on Cloudflare. Inspired by oiov/vmail",
+      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
       "highlights": [
-        "🎯 Privacy-friendly, no registration required, out-of-the-box",
-        "✨ Support saving passwords and retrieving email addresses",
-        "😄 Support multiple domain name suffixes",
-        "🚀 100% open source, fully based on Cloudflare."
+        "🎯 Get weather reports from different cities of the world",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Fast found countries and cities"
       ],
-      "url": "https://what-the-fuck.sbs",
-      "github": "https://github.com/MiraHikari/cloudflare-vmail"
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill"
+        }
+      ]
     },
     {
-      "name": "Riddle Town Hunt 2",
+      "name": "Rick & Morty Wiki",
       "image": {
-        "url": "https://rth2-webstatic.gbclstudio.cn/wp-content/uploads/2024/02/1707656250-76b2b0d2c94824e89a2b8b2c7d1c6afe.png",
-        "position": "background"
+        "url": "https://asset.cloudinary.com/dmuhagilf/11e3c86c34490d1bfe57f814a6475f0c",
+        "position": "container",
+        "dark": "https://asset.cloudinary.com/dmuhagilf/11e3c86c34490d1bfe57f814a6475f0c"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
+      "highlights": [
+        "🎯 Get information about the characters, locations, and episodes of the series",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Filter information and link information"
+      ],
+      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/rick-morty",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "simple-icons:react"
+        },
+        {
+          "name": "React Router",
+          "icon": "simple-icons:reactrouter"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill"
+        }
+      ]
+    },
+    {
+      "name": "Article chat",
+      "image": {
+        "url": "https://asset.cloudinary.com/dmuhagilf/f6ba1e223e26105310c9c2f25a82e243",
+        "position": "background",
+        "dark": "https://asset.cloudinary.com/dmuhagilf/f6ba1e223e26105310c9c2f25a82e243"
       },
       "isActive": false,
-      "description": "Public decryption activity in the form of Puzzle Hunt.",
+      "description": "a web application designed for chatting with an AI about articles. This project was part of tecnical test of Citrux Digital.",
       "highlights": [
-        "👌 More than 1000 people participated, system runs normally",
-        "😮‍ Use headless CMS: WordPress to storage and manage contents, dynamically render page",
-        "😊 Windows-like interface",
-        "💕 Based on Astro"
+        "🎯 Chat with an AI about articles",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Use OpenAI API"
       ],
-      "url": "https://rth2.gcxstudio.cn/"
+      "url": "https://www.youtube.com/watch?v=AeZqhDCP-g0",
+      "github": "https://github.com/NickEsColR/article-chat-summary-frontend",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "simple-icons:bootstrap"
+        },
+        {
+          "name": "Redux",
+          "icon": "simple-icons:redux"
+        },
+        {
+          "name": "Node",
+          "icon": "ri:nodejs-line"
+        },
+        {
+          "name": "Express",
+          "icon": "simple-icons:express"
+        },
+        {
+          "name": "OpenAI",
+          "icon": "ri:openai-fill"
+        }
+      ]
     }
   ]
 }

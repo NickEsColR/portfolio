@@ -130,10 +130,16 @@ type Language =
 
 interface Projects {
   name: string;
+  image: {
+    url: string;
+    position: "container" | "background";
+    dark: string; // dark mode image
+  };
   isActive: boolean;
   description: string;
   highlights: Highlight;
   url: string;
+  technologies: Array<Technologies>;
   github?: string;
 }
 
@@ -148,3 +154,8 @@ interface References {
 }
 
 type Highlight = Array<String>;
+
+type Technologies = {
+  name: string;
+  icon: string;
+};
