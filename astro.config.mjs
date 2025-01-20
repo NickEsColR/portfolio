@@ -23,7 +23,4 @@ export default defineConfig({
       },
     }),
   ],
-  image: {
-    domains: ["asset.cloudinary.com", "app.razuna.com"],
-  },
 });

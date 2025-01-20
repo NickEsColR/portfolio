@@ -12,77 +12,90 @@ const { name, rol, image, profiles, email } = basics;
     <div class="info">
       <h1>{name}</h1>
       <h2>{rol}</h2>
-      <footer class="print">
+      <footer class="print flex items-center gap-1">
         {email}
-      </footer>
-      <footer class="print:hidden">
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Send email to me`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                class="print:hidden"
-                name="mdi:email"
-                width={20}
-                height={20}
-              />
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, url, icon }) => {
-            return (
-              <a
-                href={url}
-                title={`Visit ${name} profile on ${network}`}
-                target="_blank"
-                class="print:hidden"
-                rel="noopener noreferrer"
-              >
-                <Icon class="print:hidden" name={icon} width={20} height={20} />
-              </a>
-            );
-          })
-        }
-        <div
-          class="hotkey-button group flex h-8 w-9 cursor-pointer items-center justify-center rounded-md text-skin-hue hover:bg-skin-button-accent hover:text-skin-inverted max-sm:hidden print:hidden [&>span]:hover:text-skin-inverted"
+        <button
+          title="Copy email to clipboard"
+          class="cursor-pointer hover:opacity-80"
+          id="copyEmail"
+          data-email={email}
         >
-          <Icon name="ri:command-fill" class="h-5 w-5" />
-        </div>
+          <Icon
+            class="print:hidden"
+            name="mdi:content-copy"
+            width={20}
+            height={20}
+          />
+        </button>
       </footer>
     </div>
-    <figure class="mx-au relative w-fit print:hidden">
-      <Image
-        class="shadow-skin-hues shadow-lg"
-        height={600}
-        width={600}
-        src={image}
-        alt={name}
-      />
-      <div class="pointer-events-none absolute -inset-2">
-        <div
-          class="absolute -inset-y-8 right-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-        >
-        </div>
-        <div
-          class="absolute -inset-y-8 left-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-        >
-        </div>
-        <div
-          class="absolute -inset-x-8 bottom-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-        >
-        </div>
-        <div
-          class="absolute -inset-x-8 top-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-        >
-        </div>
+    <footer class="print:hidden">
+      {
+        email && (
+          <a
+            href={`mailto:${email}`}
+            title={`Send email to me`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon
+              class="print:hidden"
+              name="mdi:email"
+              width={20}
+              height={20}
+            />
+          </a>
+        )
+      }
+      {
+        profiles.map(({ network, url, icon }) => {
+          return (
+            <a
+              href={url}
+              title={`Visit ${name} profile on ${network}`}
+              target="_blank"
+              class="print:hidden"
+              rel="noopener noreferrer"
+            >
+              <Icon class="print:hidden" name={icon} width={20} height={20} />
+            </a>
+          );
+        })
+      }
+      <div
+        class="hotkey-button group flex h-8 w-9 cursor-pointer items-center justify-center rounded-md text-skin-hue hover:bg-skin-button-accent hover:text-skin-inverted max-sm:hidden print:hidden [&>span]:hover:text-skin-inverted"
+      >
+        <Icon name="ri:command-fill" class="h-5 w-5" />
       </div>
-    </figure>
+    </footer>
   </div>
+  <figure class="mx-au relative w-fit print:hidden">
+    <Image
+      class="shadow-skin-hues shadow-lg"
+      height={600}
+      width={600}
+      src={image}
+      alt={name}
+    />
+    <div class="pointer-events-none absolute -inset-2">
+      <div
+        class="absolute -inset-y-8 right-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-y-8 left-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-x-8 bottom-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-x-8 top-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+    </div>
+  </figure>
 </Section>
 
 <style>
@@ -178,5 +191,17 @@ const { name, rol, image, profiles, email } = basics;
     ) {
       document.documentElement.classList.add("dark");
     }
+  });
+
+  document.getElementById("copyEmail")!.addEventListener("click", function () {
+    const email = this.dataset.email!;
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        // alert('Email copied to clipboard: ' + email);
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
   });
 </script>
