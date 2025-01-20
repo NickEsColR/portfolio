@@ -1,15 +1,24 @@
 ---
-import Section from "@/components/Section.astro";
-import { skills } from "@cv";
 import { Icon } from "astro-icon/components";
+import type { Skills } from "@/cv";
+
+const { skills } = Astro.props;
 ---
 
-<Section className={Astro.props.className} title="Skills">
-  <ul
-    class="inline-flex flex-wrap gap-4 print:mt-4 [&>li>svg]:text-skin-hue [&>li]:text-sm"
-  >
-    {
-      skills.map(({ name, icon, level }) => {
+<ul
+  class="inline-flex flex-wrap gap-4 print:mt-4 [&>li>svg]:text-skin-hue [&>li]:text-sm"
+>
+  {
+    skills.map(
+      ({
+        name,
+        icon,
+        level,
+      }: {
+        name: Skills["name"];
+        icon: Skills["icon"];
+        level: Skills["level"];
+      }) => {
         return (
           <li
             class="flex items-center gap-1 rounded-md border border-solid border-skin-hue/20 bg-skin-button-accent/20 px-1 py-0.5 text-xs text-skin-hue print:border-none print:bg-transparent print:p-0 print:text-zinc-800"
@@ -19,7 +28,7 @@ import { Icon } from "astro-icon/components";
             <span>{name}</span>
           </li>
         );
-      })
-    }
-  </ul>
-</Section>
+      },
+    )
+  }
+</ul>

@@ -64,7 +64,7 @@ interface Volunteer {
   highlights: Highlight;
 }
 
-interface Skills {
+export interface Skills {
   icon: string;
   name: string;
   level: string;

@@ -1,4 +1,5 @@
 ---
+import CV, { basics } from "@cv";
 import Layout from "@/layouts/Layout.astro";
 
 import About from "@/components/sections/About.astro";
@@ -6,12 +7,12 @@ import Experience from "@/components/sections/Experience.astro";
 import Hero from "@/components/sections/Hero.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
 import Header from "@/components/Header.astro";
-
-import CV, { basics } from "@cv";
 import Education from "@/components/sections/Education.astro";
+import Section from "@/components/Section.astro";
+
 const { name, rol } = basics;
+const { skills } = CV;
 ---
 
 <Layout title={`${name}'s' Portfolio - ${rol}`}>
@@ -20,17 +21,19 @@ const { name, rol } = basics;
   >
     <Header />
     <aside
-      class="slide-enter space-y-6 p-8 ease-in md:sticky md:top-0 md:h-full md:w-1/3 md:p-24 md:pr-6 xl:p-40 print:col-span-1 print:grid print:grid-cols-2 print:gap-5 print:space-y-0"
+      class="slide-enter space-y-6 p-8 ease-in md:sticky md:top-0 md:h-full md:w-1/3 md:py-24 md:pl-24 xl:py-40 xl:pl-40 print:col-span-1 print:grid print:grid-cols-2 print:gap-5 print:space-y-0"
     >
       <Hero />
       <About />
     </aside>
     <div
-      class="slide-enter-content space-y-12 overflow-y-auto p-8 md:w-2/3 md:flex-1 md:p-16 md:pl-0 xl:p-40 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
+      class="slide-enter-content space-y-12 overflow-y-auto p-8 md:w-2/3 md:flex-1 md:p-16 md:pl-6 xl:p-40 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
     >
-      <Skills className="print:hidden" />
       <Experience className="print:col-span-3" />
       <Projects className="print:hidden" />
+      <Section className="print:hidden" title="Skills">
+        <Skills skills={skills} />
+      </Section>
       {CV?.education && <Education className="order-first" />}
     </div>
   </main>

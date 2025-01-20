@@ -1,16 +1,26 @@
 ---
-import Section from "@/components/Section.astro";
 import { Icon } from "astro-icon/components";
-
 import { projects } from "@cv";
 import { Image } from "astro:assets";
+
+import Section from "@/components/Section.astro";
+import Skills from "@/components/sections/Skills.astro";
 ---
 
 <Section className={Astro.props.className} title="Projects">
   <div class="grid grid-cols-1 gap-3 md:grid-cols-2 print:flex print:flex-col">
     {
       projects.map(
-        ({ url, description, highlights, name, isActive, github, image }) => {
+        ({
+          url,
+          description,
+          highlights,
+          name,
+          isActive,
+          github,
+          image,
+          technologies,
+        }) => {
           const isBackgroundImage = image && image?.position === "background";
           const isContainerImage = image && image?.position === "container";
           return (
@@ -105,6 +115,9 @@ import { Image } from "astro:assets";
                   )}
                 </a>
               )}
+              <div class="mt-4">
+                <Skills skills={technologies} />
+              </div>
               {isBackgroundImage && (
                 <p class="absolute bottom-2 right-2 font-mono text-sm text-skin-muted">
                   Click blank to enlarge

@@ -103,12 +103,6 @@
         "Configure AWS API gateway, lambda and Cognito.",
         "Use OpenAI API to create chat for educational platform."
       ],
-      "achievements": [
-        "Implemented company landing page.",
-        "Implemented initial chat for courses to iterate from",
-        "Create some courses for the platform.",
-        "MVP 80% completed."
-      ],
       "skills": {
         "Next.js": "ri:nextjs-fill",
         "React": "mdi:react",
@@ -139,10 +133,6 @@
         "Integrate code to databricks jobs.",
         "Transform data to optimize model.",
         "Adjust output with different scenarios to be used in PowerBI."
-      ],
-      "achievements": [
-        "Ensured smooth project execution.",
-        "Optimized client portfolio options."
       ],
       "skills": {
         "Python": "simple-icons:python",
@@ -497,11 +487,13 @@
       "technologies": [
         {
           "name": "React",
-          "icon": "mdi:react"
+          "icon": "mdi:react",
+          "level": "Intermediate"
         },
         {
           "name": "CSS",
-          "icon": "ri:css3-fill"
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
         }
       ]
     },
@@ -524,15 +516,18 @@
       "technologies": [
         {
           "name": "React",
-          "icon": "simple-icons:react"
+          "icon": "simple-icons:react",
+          "level": "Intermediate"
         },
         {
           "name": "React Router",
-          "icon": "simple-icons:reactrouter"
+          "icon": "simple-icons:reactrouter",
+          "level": "Intermediate"
         },
         {
           "name": "CSS",
-          "icon": "ri:css3-fill"
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
         }
       ]
     },
@@ -555,27 +550,33 @@
       "technologies": [
         {
           "name": "React",
-          "icon": "mdi:react"
+          "icon": "mdi:react",
+          "level": "Intermediate"
         },
         {
           "name": "Bootstrap",
-          "icon": "simple-icons:bootstrap"
+          "icon": "simple-icons:bootstrap",
+          "level": "Intermediate"
         },
         {
           "name": "Redux",
-          "icon": "simple-icons:redux"
+          "icon": "simple-icons:redux",
+          "level": "Intermediate"
         },
         {
           "name": "Node",
-          "icon": "ri:nodejs-line"
+          "icon": "ri:nodejs-line",
+          "level": "Intermediate"
         },
         {
           "name": "Express",
-          "icon": "simple-icons:express"
+          "icon": "simple-icons:express",
+          "level": "Intermediate"
         },
         {
           "name": "OpenAI",
-          "icon": "ri:openai-fill"
+          "icon": "ri:openai-fill",
+          "level": "Intermediate"
         }
       ]
     }
