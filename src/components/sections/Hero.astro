@@ -28,74 +28,75 @@ const { name, rol, image, profiles, email } = basics;
           />
         </button>
       </footer>
-    </div>
-    <footer class="print:hidden">
-      {
-        email && (
-          <a
-            href={`mailto:${email}`}
-            title={`Send email to me`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              class="print:hidden"
-              name="mdi:email"
-              width={20}
-              height={20}
-            />
-          </a>
-        )
-      }
-      {
-        profiles.map(({ network, url, icon }) => {
-          return (
+
+      <footer class="print:hidden">
+        {
+          email && (
             <a
-              href={url}
-              title={`Visit ${name} profile on ${network}`}
+              href={`mailto:${email}`}
+              title={`Send email to me`}
               target="_blank"
-              class="print:hidden"
               rel="noopener noreferrer"
             >
-              <Icon class="print:hidden" name={icon} width={20} height={20} />
+              <Icon
+                class="print:hidden"
+                name="mdi:email"
+                width={20}
+                height={20}
+              />
             </a>
-          );
-        })
-      }
-      <div
-        class="hotkey-button group flex h-8 w-9 cursor-pointer items-center justify-center rounded-md text-skin-hue hover:bg-skin-button-accent hover:text-skin-inverted max-sm:hidden print:hidden [&>span]:hover:text-skin-inverted"
-      >
-        <Icon name="ri:command-fill" class="h-5 w-5" />
-      </div>
-    </footer>
-  </div>
-  <figure class="mx-au relative w-fit print:hidden">
-    <Image
-      class="shadow-skin-hues shadow-lg"
-      height={600}
-      width={600}
-      src={image}
-      alt={name}
-    />
-    <div class="pointer-events-none absolute -inset-2">
-      <div
-        class="absolute -inset-y-8 right-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-      >
-      </div>
-      <div
-        class="absolute -inset-y-8 left-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-      >
-      </div>
-      <div
-        class="absolute -inset-x-8 bottom-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-      >
-      </div>
-      <div
-        class="absolute -inset-x-8 top-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
-      >
-      </div>
+          )
+        }
+        {
+          profiles.map(({ network, url, icon }) => {
+            return (
+              <a
+                href={url}
+                title={`Visit ${name} profile on ${network}`}
+                target="_blank"
+                class="print:hidden"
+                rel="noopener noreferrer"
+              >
+                <Icon class="print:hidden" name={icon} width={20} height={20} />
+              </a>
+            );
+          })
+        }
+        <div
+          class="hotkey-button group flex h-8 w-9 cursor-pointer items-center justify-center rounded-md text-skin-hue hover:bg-skin-button-accent hover:text-skin-inverted max-sm:hidden print:hidden [&>span]:hover:text-skin-inverted"
+        >
+          <Icon name="ri:command-fill" class="h-5 w-5" />
+        </div>
+      </footer>
     </div>
-  </figure>
+    <figure class="mx-au relative w-fit print:hidden">
+      <Image
+        class="shadow-skin-hues shadow-lg"
+        height={600}
+        width={600}
+        src={image}
+        alt={name}
+      />
+      <div class="pointer-events-none absolute -inset-2">
+        <div
+          class="absolute -inset-y-8 right-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+        >
+        </div>
+        <div
+          class="absolute -inset-y-8 left-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+        >
+        </div>
+        <div
+          class="absolute -inset-x-8 bottom-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+        >
+        </div>
+        <div
+          class="absolute -inset-x-8 top-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+        >
+        </div>
+      </div>
+    </figure>
+  </div>
 </Section>
 
 <style>
