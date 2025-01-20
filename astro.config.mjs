@@ -24,9 +24,6 @@ export default defineConfig({
     }),
   ],
   image: {
-    domains: ["asset.cloudinary.com"],
-    remotePatterns: [
-      { protocol: "https", hostname: "asset.cloudinary.com", pathname: "/**" },
-    ],
+    domains: ["asset.cloudinary.com", "app.razuna.com"],
   },
 });

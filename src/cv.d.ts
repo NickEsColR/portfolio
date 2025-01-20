@@ -49,8 +49,7 @@ interface Work {
   summary: string;
   highlights: Highlight;
   responsabilities: Highlight;
-  achievements: Highlight;
-  skills: { [key: string]: string };
+  technologies: Array<Technologies>;
 }
 
 type DateStr = `${string}-${string}-${string}`;

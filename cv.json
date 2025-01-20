@@ -481,9 +481,9 @@
     {
       "name": "Weather Searcher",
       "image": {
-        "url": "https://asset.cloudinary.com/dmuhagilf/3db38792ee381082428c998f691ef0bd",
-        "position": "container",
-        "dark": "https://asset.cloudinary.com/dmuhagilf/3db38792ee381082428c998f691ef0bd"
+        "url": "/projects/weather-app.png",
+        "position": "background",
+        "dark": "/projects/weather-app.png"
       },
       "isActive": true,
       "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
@@ -508,9 +508,9 @@
     {
       "name": "Rick & Morty Wiki",
       "image": {
-        "url": "https://asset.cloudinary.com/dmuhagilf/11e3c86c34490d1bfe57f814a6475f0c",
-        "position": "container",
-        "dark": "https://asset.cloudinary.com/dmuhagilf/11e3c86c34490d1bfe57f814a6475f0c"
+        "url": "/projects/rick-morty.png",
+        "position": "background",
+        "dark": "/projects/rick-morty.png"
       },
       "isActive": true,
       "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
@@ -539,11 +539,11 @@
     {
       "name": "Article chat",
       "image": {
-        "url": "https://asset.cloudinary.com/dmuhagilf/f6ba1e223e26105310c9c2f25a82e243",
+        "url": "/projects/acs.png",
         "position": "background",
-        "dark": "https://asset.cloudinary.com/dmuhagilf/f6ba1e223e26105310c9c2f25a82e243"
+        "dark": "/projects/acs.png"
       },
-      "isActive": false,
+      "isActive": true,
       "description": "a web application designed for chatting with an AI about articles. This project was part of tecnical test of Citrux Digital.",
       "highlights": [
         "🎯 Chat with an AI about articles",
