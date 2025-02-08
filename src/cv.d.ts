@@ -100,8 +100,6 @@ interface Education {
   studyType: string;
   startDate: DateStr;
   endDate: DateStr;
-  score: string;
-  courses: Array<string>;
 }
 
 interface Languages {

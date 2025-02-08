@@ -17,7 +17,7 @@ const { skills } = CV;
 
 <Layout title={`${name}'s' Portfolio - ${rol}`}>
   <main
-    class="flex h-screen max-sm:py-16 md:min-h-screen print:max-w-none print:grid-cols-1 print:gap-6"
+    class="flex h-screen flex-col max-sm:py-16 md:min-h-screen md:flex-row print:max-w-none print:grid-cols-1 print:gap-6"
   >
     <Header />
     <aside
@@ -27,7 +27,7 @@ const { skills } = CV;
       <About />
     </aside>
     <div
-      class="slide-enter-content space-y-12 overflow-y-auto p-8 md:w-2/3 md:flex-1 md:p-16 md:pl-6 xl:p-40 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
+      class="slide-enter-content space-y-12 p-8 md:w-2/3 md:flex-1 md:overflow-y-auto md:p-16 md:pl-6 xl:p-40 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
     >
       <Experience className="print:col-span-3" />
       <Projects className="print:hidden" />
