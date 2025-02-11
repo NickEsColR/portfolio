@@ -8,12 +8,14 @@ const { name, rol, image, profiles, email } = basics;
 ---
 
 <Section>
-  <div class="flex flex-col-reverse gap-8">
+  <div class="flex flex-col-reverse gap-8 print:gap-1">
     <div class="info">
       <h1>{name}</h1>
       <h2>{rol}</h2>
       <footer class="print flex items-center gap-1">
-        {email}
+        <span class="text-black dark:text-white print:-mt-10 print:text-black"
+          >{email}</span
+        >
         <button
           title="Copy email to clipboard"
           class="cursor-pointer hover:opacity-80"
@@ -69,7 +71,7 @@ const { name, rol, image, profiles, email } = basics;
         </div>
       </footer>
     </div>
-    <figure class="mx-au relative w-fit print:hidden">
+    <figure class="mx-au relative w-fit">
       <Image
         class="shadow-skin-hues shadow-lg"
         height={600}

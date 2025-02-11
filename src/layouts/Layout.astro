@@ -3,6 +3,7 @@ import ArtPlums from "@/components/ArtPlums.astro";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../globals.css";
 import CV from "@cv";
+import Header from "@/components/Header.astro";
 
 interface Props {
   title: string;
@@ -44,6 +45,7 @@ const { image, summary, url } = CV.basics;
       </div>
     </div>
     <ArtPlums />
+    <Header />
     <slot />
     <style>
       body,
