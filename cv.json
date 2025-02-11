@@ -472,7 +472,7 @@
       "name": "Weather Searcher",
       "image": {
         "url": "/projects/weather-app.png",
-        "position": "background",
+        "position": "container",
         "dark": "/projects/weather-app.png"
       },
       "isActive": true,
@@ -501,7 +501,7 @@
       "name": "Rick & Morty Wiki",
       "image": {
         "url": "/projects/rick-morty.png",
-        "position": "background",
+        "position": "container",
         "dark": "/projects/rick-morty.png"
       },
       "isActive": true,
@@ -535,7 +535,7 @@
       "name": "Article chat",
       "image": {
         "url": "/projects/acs.png",
-        "position": "background",
+        "position": "container",
         "dark": "/projects/acs.png"
       },
       "isActive": true,
