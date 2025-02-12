@@ -469,64 +469,43 @@
   ],
   "projects": [
     {
-      "name": "Weather Searcher",
+      "name": "Citrux Digital Landing Page",
       "image": {
-        "url": "/projects/weather-app.png",
+        "url": "/projects/cdlp.png",
         "position": "container",
-        "dark": "/projects/weather-app.png"
+        "dark": "/projects/cdlp.png"
       },
       "isActive": true,
-      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "description": "Landing page for Citrux Digital, a software consultancy company.",
       "highlights": [
-        "🎯 Get weather reports from different cities of the world",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Fast found countries and cities"
+        "🎯 Minimalistic design to explore Citrux Digital services",
+        "✨ Responsive design for mobile and desktop"
       ],
-      "url": "https://weather-searcher-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "url": "https://www.citruxdigital.com/",
       "technologies": [
         {
-          "name": "React",
-          "icon": "mdi:react",
+          "name": "Next.js",
+          "icon": "ri:nextjs-fill",
           "level": "Intermediate"
         },
         {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
-          "level": "Intermediate"
-        }
-      ]
-    },
-    {
-      "name": "Rick & Morty Wiki",
-      "image": {
-        "url": "/projects/rick-morty.png",
-        "position": "container",
-        "dark": "/projects/rick-morty.png"
-      },
-      "isActive": true,
-      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
-      "highlights": [
-        "🎯 Get information about the characters, locations, and episodes of the series",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Filter information and link information"
-      ],
-      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/rick-morty",
-      "technologies": [
-        {
-          "name": "React",
-          "icon": "simple-icons:react",
+          "name": "TypeScript",
+          "icon": "simple-icons:typescript",
           "level": "Intermediate"
         },
         {
-          "name": "React Router",
-          "icon": "simple-icons:reactrouter",
+          "name": "Tailwind",
+          "icon": "mdi:tailwind",
           "level": "Intermediate"
         },
         {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
+          "name": "Node",
+          "icon": "ri:nodejs-line",
+          "level": "Intermediate"
+        },
+        {
+          "name": "AWS",
+          "icon": "mdi:aws",
           "level": "Intermediate"
         }
       ]
@@ -576,6 +555,69 @@
         {
           "name": "OpenAI",
           "icon": "ri:openai-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Rick & Morty Wiki",
+      "image": {
+        "url": "/projects/rick-morty.png",
+        "position": "container",
+        "dark": "/projects/rick-morty.png"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
+      "highlights": [
+        "🎯 Get information about the characters, locations, and episodes of the series",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Filter information and link information"
+      ],
+      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/rick-morty",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "simple-icons:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "React Router",
+          "icon": "simple-icons:reactrouter",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Weather Searcher",
+      "image": {
+        "url": "/projects/weather-app.png",
+        "position": "container",
+        "dark": "/projects/weather-app.png"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "highlights": [
+        "🎯 Get weather reports from different cities of the world",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Fast found countries and cities"
+      ],
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
           "level": "Intermediate"
         }
       ]

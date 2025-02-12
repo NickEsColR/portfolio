@@ -1,14 +1,12 @@
-## Print-friendly portfolio CV
+# Portfolio
 
-![preview](https://github.com/user-attachments/assets/44c47034-06e4-412a-b9dd-014593b32215)
+Welcome to my portfolio repository. To visit the page click [here](https://portfolio-nickescolr.netlify.app/)
 
 ## 📄 About
 
-This project is refactored from the original [**dev-portfolio**](https://github.com/Smilesharks/dev-portfolio) project, thanks for his work.
+This project is based on the [**dev-friendly-portfolio**](https://astro.build/themes/details/dev-friendly-portfolio/) template, thanks for his work.
 
 I use iconify instead of SVG icons for better dev experience.
-
-Thanks for antfu's cool animations.
 
 ## 🛠️ Stack
 
@@ -21,40 +19,7 @@ Thanks for antfu's cool animations.
 
 ## 🚀 Getting Started
 
-### 0. One-click to deploy on Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MiraHikari/portfolio&project-name=portfolio&repository-name=portfolio)
-
 Modify the `cv.json` file to create your own printable Portfolio/CV.
-
-### 1. Use this Repo as an Astro Project Template
-
-- I use [pnpm](https://pnpm.io/installation) as my package manager.
-
-# Initialize the project
-```bash
-pnpm create astro@latest --template MiraHikari/portfolio
-```
-
-### 1-1. Clone the repo
-If you don't want to use the template command, you can clone this repo and install the dependencies.
-
-```bash
-git clone https://github.com/MiraHikari/portfolio.git
-cd portfolio
-pnpm install
-```
-
-### 2. Add Your Content:
-
-Edit the `cv.json` file to create your own printable Portfolio/CV.
-
-### 3. Launch the Development Server:
-
-```bash
-# Enjoy the results
-pnpm dev
-```
-1. Open [**http://localhost:4321**](http://localhost:4321/) in your browser to view the result 🚀
 
 ## 🧞 Commands
 
@@ -64,7 +29,7 @@ pnpm dev
 | ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
 | ⚙️  | `preview`       | Local preview at `localhost:4321`                                       |
 | 📦  | `deploy:vercel`         | Deploy on Vercel.                           |
-| 📦 | `deploy:cloudflare`       | Deploy on Cloudflare, please run `wrangler login` first.                                           |                                |
+| 📦 | `deploy:cloudflare`       | Deploy on Cloudflare, please run `wrangler login` first.                                           |
 
 ## 📝 License
 
