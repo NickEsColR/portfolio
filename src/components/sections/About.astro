@@ -1,0 +1,11 @@
+---
+import Section from "@/components/Section.astro";
+import CV from "@cv";
+const { summary } = CV.basics;
+---
+
+<Section title="About" className="md:gap-1">
+  <p class="overflow-clip font-mono opacity-75 print:font-sans">
+    {summary}
+  </p>
+</Section>

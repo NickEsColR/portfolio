@@ -1,0 +1,584 @@
+{
+  "analyticsCode": "",
+  "basics": {
+    "name": "Nicolas Colmenares",
+    "rol": "Software Engineer",
+    "image": "/avatar.png",
+    "email": "colmenares.ruiz.nicolas@gmail.com",
+    "url": "https://portfolio-nickescolr.netlify.app",
+    "summary": "Software Engineer with a passion for web development and machine learning.",
+    "location": {
+      "address": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "icon": "mdi:linkedin",
+        "username": "nickescolr",
+        "url": "https://linkedin.com/in/nicolascolmenaressoftwareengineer/"
+      },
+      {
+        "network": "GitHub",
+        "icon": "mdi:github",
+        "username": "NickEsColR",
+        "url": "https://github.com/NickEsColR"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution":"ICESI University",
+      "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/maestria-en-inteligencia-artificial-aplicada/",
+      "area": "Applied Artificial Intelligence",
+      "studyType": "Master",
+      "startDate": "2025-01-01",
+      "endDate": null
+    },
+    {
+      "institution": "ICESI University",
+      "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/ingenieria-de-sistemas/",
+      "area": "Software System Engineer",
+      "studyType": "Bachelor",
+      "startDate": "2019-1-01",
+      "endDate": "2023-12-01"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Azure Data Scientist Associate",
+      "date": "2023-01-30",
+      "url": "https://learn.microsoft.com/api/credentials/share/es-es/NickEsColR/EEF8426EA5F67CE4?sharingId=B3EC27C6F55DF3F4",
+      "issuer": "microsoft"
+    },
+    {
+      "name": "Neural Networks with TensorFlow",
+      "date": "2023-11-01",
+      "url": "https://platzi.com/p/NickEsColR/curso/2565-redes-neuronales-tensorflow/diploma/detalle/",
+      "issuer": "Platzi"
+    },
+    {
+      "name": "Web Development Specialization",
+      "date": "2024-01-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1706906452566/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
+      "issuer": "Netzun"
+    },
+    {
+      "name": "React zero to expert",
+      "date": "2024-06-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722088496785/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
+      "issuer": "DevTelles"
+    },
+    {
+      "name": "Next.js Zero to Expert",
+      "date": "2024-06-01",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722434366560/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BX7PFLi6xTeemAAiiUwlZ8w%3D%3D",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "Automatic Learning Certification",
+      "date": "2024-12-13",
+      "url":"https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1734883458483/single-media-viewer?type=DOCUMENT&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BWN4ONSXRSSWQQFenG6xDEA%3D%3D",
+      "issuer": "ICESI University"
+    }
+  ],
+  "work": [
+    {
+      "companyName": "Citrux Digital",
+      "position": "Full-stack Developer",
+      "location_type": "Remote",
+      "location": "COL",
+      "url": "https://www.citruxdigital.com",
+      "startDate": "2024-06-01",
+      "endDate": "2025-01-22",
+      "summary": "Developing high-availability full-stack projects.",
+      "highlights": [
+        ""
+      ],
+      "responsibilities": [
+        "Developed frontend and backend services using Next.js and Node.js.",
+        "Implement backend infraestructure in AWS using Terraform",
+        "Configure AWS API gateway, lambda and Cognito.",
+        "Use OpenAI API to create chat for educational platform."
+      ],
+      "skills": {
+        "Next.js": "ri:nextjs-fill",
+        "React": "mdi:react",
+        "Tailwind": "mdi:tailwind",
+        "Node": "ri:nodejs-line",
+        "TypeORM": "simple-icons:typeorm",
+        "OpenAI": "ri:openai-fill",
+        "AWS": "mdi:aws",
+        "Terraform": "mdi:terraform",
+        "Git": "mdi:git",
+        "GitHub": "mdi:github"
+      }
+    },
+    {
+      "companyName": "Accenture",
+      "position": "Data Scientist new Associate",
+      "location_type": "Remote",
+      "location": "COL",
+      "url": "https://www.linkedin.com/company/accenture-colombia/posts/?feedView=all",
+      "startDate": "2023-6-01",
+      "endDate": "2023-12-30",
+      "summary": "Implemet model to optimize client portfolio.",
+      "highlights": [
+        "Completed 100% of project content."
+      ],
+      "responsibilities": [
+        "Implement genetic algorithm in Python.",
+        "Integrate code to databricks jobs.",
+        "Transform data to optimize model.",
+        "Adjust output with different scenarios to be used in PowerBI."
+      ],
+      "skills": {
+        "Python": "simple-icons:python",
+        "Databricks": "simple-icons:databricks",
+        "Azure DevOps": "mdi:microsoft-azure-devops"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "icon": "simple-icons:html5",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "CSS",
+      "icon": "ri:css3-fill",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "icon": "simple-icons:javascript",
+      "level": "Expert",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "Fullstack"
+      ]
+    },
+    {
+      "name": "Tailwind",
+      "icon": "mdi:tailwind",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "CSS Framework",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "icon": "simple-icons:typescript",
+      "level": "Expert",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "Node",
+      "icon": "ri:nodejs-line",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Backend",
+        "JavaScript",
+        "Server"
+      ]
+    },
+    {
+      "name": "Python",
+      "icon": "simple-icons:python",
+      "level": "Intermediate",
+      "keywords": [
+        "Programming",
+        "Backend",
+        "Data Science",
+        "Machine Learning"
+      ]
+    },
+    {
+      "name": "TensorFlow",
+      "icon": "simple-icons:tensorflow",
+      "level": "Intermediate",
+      "keywords": [
+        "Machine Learning",
+        "Data Science",
+        "Python"
+      ]
+    },
+    {
+      "name": "SQL",
+      "icon": "simple-icons:mysql",
+      "level": "Intermediate",
+      "keywords": [
+        "Databases",
+        "SQL",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "simple-icons:postgresql",
+      "level": "Intermediate",
+      "keywords": [
+        "Databases",
+        "SQL",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "icon": "simple-icons:mongodb",
+      "level": "Intermediate",
+      "keywords": [
+        "Databases",
+        "File",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "icon": "mdi:git",
+      "level": "Intermediate",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "icon": "mdi:github",
+      "level": "Expert",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code",
+        "Git"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "icon": "ri:nextjs-line",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "icon": "mdi:react",
+      "level": "Expert",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "JavaScript Library",
+        "UI"
+      ]
+    },
+    {
+      "name": "Docker",
+      "icon": "mdi:docker",
+      "level": "Intermediate",
+      "keywords": [
+        "Virtual Environments",
+        "Backend"
+      ]
+    },
+    {
+      "name": "NestJS",
+      "icon": "simple-icons:nestjs",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Backend",
+        "IOC"
+      ]
+    },
+    {
+      "name": "Vite",
+      "icon": "simple-icons:vite",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Build Tool"
+      ]
+    },
+    {
+      "name": "Astro",
+      "icon": "simple-icons:astro",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "Shell",
+      "icon": "simple-icons:shell",
+      "level": "Intermediate",
+      "keywords": [
+        "Scripting",
+        "Automation"
+      ]
+    },
+    {
+      "name": "Linux",
+      "icon": "simple-icons:linux",
+      "level": "Intermediate",
+      "keywords": [
+        "OS",
+        "Scripting",
+        "Automation"
+      ]
+    },
+    {
+      "name": "Vercel",
+      "icon": "simple-icons:vercel",
+      "level": "Intermediate",
+      "keywords": [
+        "Serverless",
+        "Static Site Hosting"
+      ]
+    },
+    {
+      "name": "Netlify",
+      "icon": "simple-icons:netlify",
+      "level": "Intermediate",
+      "keywords": [
+        "Serverless",
+        "Static Site Hosting"
+      ]
+    },
+    {
+      "name": "AWS",
+      "icon": "simple-icons:amazonaws",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud Service"
+      ]
+    },
+    {
+      "name": "Azure",
+      "icon": "simple-icons:microsoftazure",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud Service"
+      ]
+    },
+    {
+      "name": "GCP",
+      "icon": "simple-icons:googlecloud",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud Services"      ]
+    },
+    {
+      "name": "Terraform",
+      "icon": "mdi:terraform",
+      "level": "Intermediate",
+      "keywords": [
+        "Infrastructure as Code",
+        "Cloud Services"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "B2"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": [
+        "AI",
+        "DeepLearning",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Piano",
+        "Singing"
+      ]
+    },
+    {
+      "name": "Reading",
+      "keywords": [
+        "Science Fiction",
+        "Fantasy",
+        "Comcics"
+      ]
+    },
+    {
+      "name": "Drawing",
+      "keywords": [
+        "Traditional",
+        "Dry Media"
+      ]
+    },
+    {
+      "name":"sports",
+      "keywords": [
+        "Fencing"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "NickEsColR",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Weather Searcher",
+      "image": {
+        "url": "/projects/weather-app.png",
+        "position": "container",
+        "dark": "/projects/weather-app.png"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "highlights": [
+        "🎯 Get weather reports from different cities of the world",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Fast found countries and cities"
+      ],
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Rick & Morty Wiki",
+      "image": {
+        "url": "/projects/rick-morty.png",
+        "position": "container",
+        "dark": "/projects/rick-morty.png"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
+      "highlights": [
+        "🎯 Get information about the characters, locations, and episodes of the series",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Filter information and link information"
+      ],
+      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/rick-morty",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "simple-icons:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "React Router",
+          "icon": "simple-icons:reactrouter",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Article chat",
+      "image": {
+        "url": "/projects/acs.png",
+        "position": "container",
+        "dark": "/projects/acs.png"
+      },
+      "isActive": true,
+      "description": "a web application designed for chatting with an AI about articles. This project was part of tecnical test of Citrux Digital.",
+      "highlights": [
+        "🎯 Chat with an AI about articles",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Use OpenAI API"
+      ],
+      "url": "https://www.youtube.com/watch?v=AeZqhDCP-g0",
+      "github": "https://github.com/NickEsColR/article-chat-summary-frontend",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "simple-icons:bootstrap",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Redux",
+          "icon": "simple-icons:redux",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Node",
+          "icon": "ri:nodejs-line",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Express",
+          "icon": "simple-icons:express",
+          "level": "Intermediate"
+        },
+        {
+          "name": "OpenAI",
+          "icon": "ri:openai-fill",
+          "level": "Intermediate"
+        }
+      ]
+    }
+  ]
+}
