@@ -1,10 +1,13 @@
 ---
 import Section from "@/components/Section.astro";
-import CV from "@cv";
-const { summary } = CV.basics;
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale } = Astro;
+const { basics, section_titles } = getI18NCV({ currentLocale });
+const { summary } = basics;
 ---
 
-<Section title="About" className="md:gap-1">
+<Section title={section_titles.about} className="md:gap-1">
   <p class="overflow-clip font-mono opacity-75 print:font-sans">
     {summary}
   </p>

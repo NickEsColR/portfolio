@@ -1,10 +1,15 @@
 ---
-import Section from "@/components/Section.astro";
-import { work } from "@cv";
 import { Icon } from "astro-icon/components";
+
+import Section from "@/components/Section.astro";
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale } = Astro;
+const { work, section_titles } = getI18NCV({ currentLocale });
+const isSpanish = currentLocale === "es";
 ---
 
-<Section className={Astro.props.className} title="Experience">
+<Section className={Astro.props.className} title={section_titles.work}>
   <ul class="flex flex-col">
     {
       work.map(
@@ -22,7 +27,7 @@ import { Icon } from "astro-icon/components";
         }) => {
           const startYear = new Date(startDate).getFullYear();
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Present";
+            endDate != null ? new Date(endDate).getFullYear() : "Actual";
 
           return (
             <li class="relative print:py-2">
@@ -81,7 +86,7 @@ import { Icon } from "astro-icon/components";
                   <div class="mt-4 flex flex-col gap-4 text-sm print:gap-0 print:text-xs">
                     {summary && (
                       <div class="flex flex-col gap-1">
-                        <h4>Summary:</h4>
+                        <h4>{isSpanish ? "Resumen" : "Summary"}:</h4>
                         <ul class="flex list-disc flex-col gap-2 text-skin-muted [&>li]:ml-4">
                           {Array.isArray(summary) ? (
                             summary.map((item) => ({ item }))
@@ -97,7 +102,12 @@ import { Icon } from "astro-icon/components";
                         <div class="relative flex h-16 flex-col gap-4 overflow-hidden duration-200 ease-out after:absolute after:bottom-0 after:h-12 after:w-full after:bg-gradient-to-t after:from-skin-hue after:content-[''] group-data-[expanded=true]:h-auto group-data-[expanded=true]:after:hidden dark:after:to-skin-hue/0 print:!h-auto print:gap-2 print:after:hidden">
                           {responsibilities && (
                             <div class="flex flex-col gap-1">
-                              <h4>Responsibilities:</h4>
+                              <h4>
+                                {isSpanish
+                                  ? "Responsabilidades "
+                                  : "Responsibilities"}
+                                :
+                              </h4>
                               <ul class="flex list-disc flex-col gap-2 text-skin-muted [&>li]:ml-4">
                                 {responsibilities.map((responsibility) => (
                                   <li>{responsibility}</li>
@@ -108,7 +118,9 @@ import { Icon } from "astro-icon/components";
                         </div>
 
                         <button class="group/more expand-button flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-skin-muted underline transition-all hover:text-skin-base print:hidden">
-                          <span class="expand-text">Show more</span>
+                          <span class="expand-text" data-lang={currentLocale}>
+                            {isSpanish ? "Ver más" : "Show more"}
+                          </span>
                           <Icon
                             name="ri:arrow-up-s-line"
                             class="h-4 w-4 duration-200 ease-out group-hover/more:translate-y-0.5 group-data-[expanded=true]:rotate-180"
@@ -151,9 +163,17 @@ import { Icon } from "astro-icon/components";
       const container = button.closest<HTMLElement>(".expand-container")!;
       container.dataset.expanded =
         container.dataset.expanded === "true" ? "false" : "true";
-      const expandText = button.querySelector(".expand-text")!;
+      const expandText = button.querySelector(
+        ".expand-text",
+      )! as HTMLSpanElement;
+      const lang = expandText.dataset.lang!;
+      const isSpanish = lang === "es";
+      const expandTextValue = isSpanish ? "Ver menos" : "Show less";
+      const collapseTextValue = isSpanish ? "Ver más" : "Show more";
       expandText.innerHTML =
-        container.dataset.expanded === "true" ? "Show less" : "Show more";
+        container.dataset.expanded === "true"
+          ? expandTextValue
+          : collapseTextValue;
     });
   });
 </script>

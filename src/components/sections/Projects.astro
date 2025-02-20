@@ -1,13 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
-import { projects } from "@cv";
 import { Image } from "astro:assets";
 
 import Section from "@/components/Section.astro";
 import Skills from "@/components/sections/Skills.astro";
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale } = Astro;
+const { projects, section_titles } = getI18NCV({ currentLocale });
 ---
 
-<Section className={Astro.props.className} title="Projects">
+<Section className={Astro.props.className} title={section_titles.projects}>
   <div class="grid grid-cols-1 gap-3 md:grid-cols-2 print:flex print:flex-col">
     {
       projects.map(
