@@ -2,15 +2,23 @@
 import { languages } from "@/i18n/ui";
 import { translatePath } from "@/i18n/utils";
 
-const { pathname } = Astro.url;
-const currentpage = pathname.split("/").slice(2).join("/");
+const { url, currentLocale } = Astro;
+const currentpage = url.pathname.split("/").slice(2).join("/");
 ---
 
 <ul>
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>
-        <a href={translatePath(currentpage, lang)}>{label}</a>
+        <a
+          href={translatePath(currentpage, lang)}
+          class:list={[
+            "hover:opacity-75",
+            lang === currentLocale ? "text-blue-500" : "",
+          ]}
+        >
+          {label}
+        </a>
       </li>
     ))
   }
