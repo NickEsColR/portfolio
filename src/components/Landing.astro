@@ -10,14 +10,20 @@ import Education from "@/components/sections/Education.astro";
 import Section from "@/components/Section.astro";
 import { getI18NCV } from "@/i18n";
 
-const { currentLocale } = Astro;
+const { currentLocale = "en" } = Astro;
 const { basics, skills, education, SEO_TITLE, section_titles } = getI18NCV({
   currentLocale,
 });
 const { image, summary, url } = basics;
 ---
 
-<Layout title={`${SEO_TITLE}`} description={summary} image={image} url={url}>
+<Layout
+  title={`${SEO_TITLE}`}
+  description={summary}
+  image={image}
+  url={url}
+  lang={currentLocale}
+>
   <main
     class="flex h-screen flex-col max-sm:py-16 md:max-h-screen md:flex-row print:max-w-none print:grid-cols-1 print:gap-6"
   >
