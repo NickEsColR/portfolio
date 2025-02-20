@@ -1,0 +1,17 @@
+---
+import { languages } from "@/i18n/ui";
+import { translatePath } from "@/i18n/utils";
+
+const { pathname } = Astro.url;
+const currentpage = pathname.split("/").slice(2).join("/");
+---
+
+<ul>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={translatePath(currentpage, lang)}>{label}</a>
+      </li>
+    ))
+  }
+</ul>
