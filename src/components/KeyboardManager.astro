@@ -2,7 +2,10 @@
 import "hotkeypad/reset.css";
 import "hotkeypad/index.css";
 import { type SocialIcon } from "@/types";
-import { basics } from "@cv";
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale = "en" } = Astro;
+const { basics } = getI18NCV({ currentLocale });
 
 const { profiles } = basics;
 
@@ -29,8 +32,6 @@ const profilesInfo = profiles.map(({ network, url }) => {
     hotkey: `ctrl+${firstLetter}`,
   };
 });
-
-const { currentLocale } = Astro;
 ---
 
 <div>
