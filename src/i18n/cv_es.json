@@ -45,7 +45,7 @@
       "institution":"Universidad ICESI",
       "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/maestria-en-inteligencia-artificial-aplicada/",
       "area": "Inteligencia Artificial Aplicada",
-      "studyType": "Maestria",
+      "studyType": "Maestría",
       "startDate": "2025-01-01",
       "endDate": null
     },
@@ -135,7 +135,7 @@
       "endDate": "2023-12-30",
       "summary": "Implementación de un modelo de optimización de portafolio.",
       "responsibilities": [
-        "Implementación de un algoritmo genetico en Python.",
+        "Implementación de un algoritmo genético en Python.",
         "Integración con trabajos de Azure Databricks para ejecución del código.",
         "Transformación de los datos para el modelo de optimización.",
         "Ajuste de la salida del modelo con diferentes portafolios para su presentación en PowerBI."
@@ -527,7 +527,7 @@
       "description": "Web para chatear con un articulo web. Este proyecto fue parte de la prueba tecnica de Citrux Digital.",
       "highlights": [
         "🎯 Chat con IA sobre un articulo web específico",
-        "✨ Diseño responsivo para dispositivos moviles y de escritorio",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
         "😄 Uso de la API de OpenAI"
       ],
       "url": "https://www.youtube.com/watch?v=AeZqhDCP-g0",
@@ -575,9 +575,9 @@
       "isActive": true,
       "description": "Aplicación web para traer información sobre la serie animada Rick Y Morty. Este proyecto se inspira en el trabajo de Rafa Tarrega.",
       "highlights": [
-        "🎯 Obtener información sobre los personajes, ubicaciones, and episodios de la serie",
-        "✨ Diseño responsivo para dispositivos moviles y de escritorio",
-        "😄 Filtro y busqueda de información con enlaces entre los contenidos"
+        "🎯 Obtener información sobre los personajes, ubicaciones y episodios de la serie",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Filtro y búsqueda de información con enlaces entre los contenidos"
       ],
       "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
       "github": "https://github.com/NickEsColR/rick-morty",
@@ -607,11 +607,11 @@
         "dark": "/projects/weather-app.png"
       },
       "isActive": true,
-      "description": "Web para obtener información del clima usando la API de OpenWeather. Este projecto es inspirado por el trabajo de garu2.",
+      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
       "highlights": [
         "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
-        "✨ Diseño responsivo para dispositivos moviles y de escritorio",
-        "😄 Selector de Paises y Ciudades según el pais"
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Selector de Paises y Ciudades según el pais elegido"
       ],
       "url": "https://weather-searcher-nickescolr.netlify.app/",
       "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
