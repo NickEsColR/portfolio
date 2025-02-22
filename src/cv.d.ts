@@ -47,7 +47,6 @@ interface Work {
   startDate: DateStr;
   endDate: DateStr | null;
   summary: string;
-  highlights: Highlight;
   responsabilities: Highlight;
   technologies: Array<Technologies>;
 }

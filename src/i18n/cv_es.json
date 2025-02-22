@@ -1,12 +1,24 @@
 {
+  "SEO_TITLE": "Portafolio Nicolas Colmenares | Ingeniero de Sistemas",
+  "section_titles": {
+    "about": "Sobre mí",
+    "education": "Educación",
+    "certificates": "Certificados",
+    "work": "Experiencia",
+    "skills": "Habilidades",
+    "languages": "Languajes",
+    "interests": "Intereses",
+    "references": "Referencias",
+    "projects": "Proyectos"
+  },
   "analyticsCode": "",
   "basics": {
     "name": "Nicolas Colmenares",
-    "rol": "Software Engineer",
+    "rol": "Ingeniero de Sistemas",
     "image": "/avatar.png",
     "email": "colmenares.ruiz.nicolas@gmail.com",
     "url": "https://portfolio-nickescolr.netlify.app",
-    "summary": "Software Engineer with a passion for web development and machine learning.",
+    "summary": "Ingeniero apasionado por el desarrollo web y la inteligencia artificial.",
     "location": {
       "address": "",
       "city": "",
@@ -30,18 +42,18 @@
   },
   "education": [
     {
-      "institution":"ICESI University",
+      "institution":"Universidad ICESI",
       "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/maestria-en-inteligencia-artificial-aplicada/",
-      "area": "Applied Artificial Intelligence",
-      "studyType": "Master",
+      "area": "Inteligencia Artificial Aplicada",
+      "studyType": "Maestría",
       "startDate": "2025-01-01",
       "endDate": null
     },
     {
-      "institution": "ICESI University",
+      "institution": "Universidad ICESI",
       "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/ingenieria-de-sistemas/",
-      "area": "Software System Engineer",
-      "studyType": "Bachelor",
+      "area": "ingenieria de sistemas",
+      "studyType": "Profesional",
       "startDate": "2019-1-01",
       "endDate": "2023-12-01"
     }
@@ -54,54 +66,51 @@
       "issuer": "microsoft"
     },
     {
-      "name": "Neural Networks with TensorFlow",
+      "name": "Redes Neuronales con Tensorflow",
       "date": "2023-11-01",
       "url": "https://platzi.com/p/NickEsColR/curso/2565-redes-neuronales-tensorflow/diploma/detalle/",
       "issuer": "Platzi"
     },
     {
-      "name": "Web Development Specialization",
+      "name": "Especialización en Desarrollo Web",
       "date": "2024-01-01",
       "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1706906452566/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
       "issuer": "Netzun"
     },
     {
-      "name": "React zero to expert",
+      "name": "React de cero a experto",
       "date": "2024-06-01",
       "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722088496785/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bc%2F4O56G%2BQ8i3l7WSD2PldA%3D%3D",
       "issuer": "DevTelles"
     },
     {
-      "name": "Next.js Zero to Expert",
+      "name": "Next.js de cero a experto",
       "date": "2024-06-01",
       "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1722434366560/single-media-viewer?type=IMAGE&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BX7PFLi6xTeemAAiiUwlZ8w%3D%3D",
       "issuer": "Udemy"
     },
     {
-      "name": "Automatic Learning Certification",
+      "name": "Certificación en Aprendizaje Automatico",
       "date": "2024-12-13",
       "url":"https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1734883458483/single-media-viewer?type=DOCUMENT&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BWN4ONSXRSSWQQFenG6xDEA%3D%3D",
-      "issuer": "ICESI University"
+      "issuer": "Universidad ICESI"
     }
   ],
   "work": [
     {
       "companyName": "Citrux Digital",
-      "position": "Full-stack Developer",
-      "location_type": "Remote",
+      "position": "Desarrollador Full-stack",
+      "location_type": "Remoto",
       "location": "COL",
       "url": "https://www.citruxdigital.com",
       "startDate": "2024-06-01",
       "endDate": "2025-01-22",
-      "summary": "Developing high-availability full-stack projects.",
-      "highlights": [
-        ""
-      ],
+      "summary": "Implementación de proyectos para Citrux Digital.",
       "responsibilities": [
-        "Developed frontend and backend services using Next.js and Node.js.",
-        "Implement backend infraestructure in AWS using Terraform",
-        "Configure AWS API gateway, lambda and Cognito.",
-        "Use OpenAI API to create chat for educational platform."
+        "Desarrollo del frontend y el backend usando Next.js y Node.js.",
+        "Implementación de infraestructura en AWS usando Terraform",
+        "Configurar AWS API gateway, lambda y Cognito.",
+        "Uso de la API de OpenAI para crear un chat de una plataforma de educación."
       ],
       "skills": {
         "Next.js": "ri:nextjs-fill",
@@ -119,20 +128,17 @@
     {
       "companyName": "Accenture",
       "position": "Data Scientist new Associate",
-      "location_type": "Remote",
+      "location_type": "Remoto",
       "location": "COL",
       "url": "https://www.linkedin.com/company/accenture-colombia/posts/?feedView=all",
       "startDate": "2023-6-01",
       "endDate": "2023-12-30",
-      "summary": "Implemet model to optimize client portfolio.",
-      "highlights": [
-        "Completed 100% of project content."
-      ],
+      "summary": "Implementación de un modelo de optimización de portafolio.",
       "responsibilities": [
-        "Implement genetic algorithm in Python.",
-        "Integrate code to databricks jobs.",
-        "Transform data to optimize model.",
-        "Adjust output with different scenarios to be used in PowerBI."
+        "Implementación de un algoritmo genético en Python.",
+        "Integración con trabajos de Azure Databricks para ejecución del código.",
+        "Transformación de los datos para el modelo de optimización.",
+        "Ajuste de la salida del modelo con diferentes portafolios para su presentación en PowerBI."
       ],
       "skills": {
         "Python": "simple-icons:python",
@@ -425,39 +431,39 @@
   ],
   "interests": [
     {
-      "name": "Technology",
+      "name": "Tecnologia",
       "keywords": [
-        "AI",
-        "DeepLearning",
-        "Web Development"
+        "IA",
+        "Redes Neuronales",
+        "Desarrollo Web"
       ]
     },
     {
-      "name": "Music",
+      "name": "Musica",
       "keywords": [
         "Piano",
-        "Singing"
+        "Cantar"
       ]
     },
     {
-      "name": "Reading",
+      "name": "Lectura",
       "keywords": [
-        "Science Fiction",
-        "Fantasy",
-        "Comcics"
+        "Ciencia Ficción",
+        "Fantasia",
+        "Comics"
       ]
     },
     {
-      "name": "Drawing",
+      "name": "Dibujo",
       "keywords": [
-        "Traditional",
-        "Dry Media"
+        "Tradicional",
+        "Medios Secos"
       ]
     },
     {
-      "name":"sports",
+      "name":"Deportes",
       "keywords": [
-        "Fencing"
+        "Esgrima"
       ]
     }
   ],
@@ -469,17 +475,17 @@
   ],
   "projects": [
     {
-      "name": "Citrux Digital Landing Page",
+      "name": "Página de Citrux Digital",
       "image": {
         "url": "/projects/cdlp.png",
         "position": "container",
         "dark": "/projects/cdlp.png"
       },
       "isActive": true,
-      "description": "Landing page for Citrux Digital, a software consultancy company.",
+      "description": "Página de Citrux Digital, una empresa de consultoria de software",
       "highlights": [
-        "🎯 Minimalistic design to explore Citrux Digital services",
-        "✨ Responsive design for mobile and desktop"
+        "🎯 Diseño minimalista para explorar los servicios Citrux Digital",
+        "✨ Diseño responsivo para dispositivos moviles y de escritorio"
       ],
       "url": "https://www.citruxdigital.com/",
       "technologies": [
@@ -511,18 +517,18 @@
       ]
     },
     {
-      "name": "Article chat",
+      "name": "Chat con artículos web",
       "image": {
         "url": "/projects/acs.png",
         "position": "container",
         "dark": "/projects/acs.png"
       },
       "isActive": true,
-      "description": "a web application designed for chatting with an AI about articles. This project was part of tecnical test of Citrux Digital.",
+      "description": "Web para chatear con un articulo web. Este proyecto fue parte de la prueba tecnica de Citrux Digital.",
       "highlights": [
-        "🎯 Chat with an AI about articles",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Use OpenAI API"
+        "🎯 Chat con IA sobre un articulo web específico",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Uso de la API de OpenAI"
       ],
       "url": "https://www.youtube.com/watch?v=AeZqhDCP-g0",
       "github": "https://github.com/NickEsColR/article-chat-summary-frontend",
@@ -560,18 +566,18 @@
       ]
     },
     {
-      "name": "Rick & Morty Wiki",
+      "name": "WIKI de Rick y Morty",
       "image": {
         "url": "/projects/rick-morty.png",
         "position": "container",
         "dark": "/projects/rick-morty.png"
       },
       "isActive": true,
-      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
+      "description": "Aplicación web para traer información sobre la serie animada Rick Y Morty. Este proyecto se inspira en el trabajo de Rafa Tarrega.",
       "highlights": [
-        "🎯 Get information about the characters, locations, and episodes of the series",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Filter information and link information"
+        "🎯 Obtener información sobre los personajes, ubicaciones y episodios de la serie",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Filtro y búsqueda de información con enlaces entre los contenidos"
       ],
       "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
       "github": "https://github.com/NickEsColR/rick-morty",
@@ -594,18 +600,18 @@
       ]
     },
     {
-      "name": "Weather Searcher",
+      "name": "App del clima",
       "image": {
         "url": "/projects/weather-app.png",
         "position": "container",
         "dark": "/projects/weather-app.png"
       },
       "isActive": true,
-      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
       "highlights": [
-        "🎯 Get weather reports from different cities of the world",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Fast found countries and cities"
+        "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Selector de Paises y Ciudades según el pais elegido"
       ],
       "url": "https://weather-searcher-nickescolr.netlify.app/",
       "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",

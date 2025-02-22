@@ -1,0 +1,50 @@
+---
+import { languages } from "@/i18n/ui";
+import { translatePath } from "@/i18n/utils";
+import { Icon } from "astro-icon/components";
+
+const { url, currentLocale } = Astro;
+const currentpage = url.pathname.split("/").slice(2).join("/");
+---
+
+<label class="group relative flex items-center gap-1 hover:opacity-80">
+  <Icon
+    name={"mdi:translate"}
+    width={16}
+    height={16}
+    class={"absolute top-1/2 -translate-y-1/2 pointer-events-none"}
+  />
+  <select class="cursor-pointer bg-transparent px-6" id="language-picker">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <option
+          value={translatePath(currentpage, lang)}
+          selected={lang === currentLocale}
+          class="bg-blue-100 target:opacity-80 dark:bg-neutral-800"
+        >
+          {label}
+        </option>
+      ))
+    }
+  </select>
+  <Icon
+    name={"mdi:keyboard-arrow-right"}
+    width={24}
+    height={24}
+    class={"absolute top-0 right-0 pointer-events-none transform group-hover:rotate-90 icon"}
+  />
+</label>
+<style>
+  select:focus + .icon {
+    transform: rotate(90deg);
+  }
+</style>
+<script>
+  const languagePicker = document.querySelector(
+    "#language-picker",
+  ) as HTMLSelectElement;
+  languagePicker.addEventListener("change", (e) => {
+    const languagePath = (e.target! as any).value;
+    window.location.href = languagePath;
+  });
+</script>

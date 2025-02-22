@@ -2,7 +2,10 @@
 import "hotkeypad/reset.css";
 import "hotkeypad/index.css";
 import { type SocialIcon } from "@/types";
-import { basics } from "@cv";
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale = "en" } = Astro;
+const { basics } = getI18NCV({ currentLocale });
 
 const { profiles } = basics;
 
@@ -35,7 +38,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
   <button
     class="hotkey-button flex h-8 w-fit cursor-pointer items-center justify-between gap-12 rounded-lg bg-blue-100 p-2 hover:opacity-80 dark:bg-neutral-800 print:hidden"
   >
-    Search... <kbd>⌘ K</kbd>
+    {currentLocale === "es" ? "Buscar" : "Search"}... <kbd>⌘ K</kbd>
   </button>
   <div
     id="hotkeypad"

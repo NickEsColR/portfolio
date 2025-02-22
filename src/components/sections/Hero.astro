@@ -1,8 +1,11 @@
 ---
-import { basics } from "@cv";
 import Section from "@/components/Section.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { getI18NCV } from "@/i18n";
+
+const { currentLocale } = Astro;
+const { basics } = getI18NCV({ currentLocale });
 
 const { name, rol, image, profiles, email } = basics;
 ---
