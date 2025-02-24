@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { currentLocale } = Astro;
 ---
 
 <button
@@ -8,7 +10,7 @@ import { Icon } from "astro-icon/components";
   class="flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 hover:opacity-80 print:hidden"
 >
   <Icon name="ri:chat-1-line" width={20} height={20} />
-  Chat with Me
+  {currentLocale === "es" ? "Chatea conmigo" : "Chat with Me"}
 </button>
 
 <script>

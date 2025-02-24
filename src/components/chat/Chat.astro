@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { currentLocale } = Astro;
 ---
 
 <!-- Chat Container -->
@@ -8,7 +10,9 @@ import { Icon } from "astro-icon/components";
   <div class="mb-4 flex items-center">
     <div class="ml-3">
       <p class="text-xl font-medium">NickEsColR BOT</p>
-      <span class="text-gray-500">Online</span>
+      <span class="text-gray-500"
+        >{currentLocale == "es" ? "En linea" : "Online"}</span
+      >
     </div>
   </div>
 
@@ -29,7 +33,9 @@ import { Icon } from "astro-icon/components";
   <div class="mt-6 flex items-center">
     <input
       type="text"
-      placeholder="Type your message..."
+      placeholder={currentLocale === "es"
+        ? "Escribe un mensaje..."
+        : "Type a message..."}
       class="flex-1 rounded-full bg-blue-100 px-3 py-2 focus:outline-none dark:bg-neutral-800"
     />
     <button
