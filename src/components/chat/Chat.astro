@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <!-- Chat Container -->
-<div class="chat-container">
+<div class="chat-container" id="chat">
   <!-- Chat Header -->
   <div class="mb-4 flex items-center">
     <div class="ml-3">
@@ -55,3 +55,16 @@ import { Icon } from "astro-icon/components";
     @apply w-fit self-end rounded-2xl rounded-br-none bg-skin-muted p-3;
   }
 </style>
+
+<script>
+  import { isOpen } from "@/store/chat.store";
+
+  isOpen.subscribe((open) => {
+    const chat = document.querySelector("#chat") as HTMLDivElement;
+    if (open) {
+      chat.style.display = "flex";
+    } else {
+      chat.style.display = "none";
+    }
+  });
+</script>
