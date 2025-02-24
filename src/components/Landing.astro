@@ -9,6 +9,7 @@ import Skills from "@/components/sections/Skills.astro";
 import Education from "@/components/sections/Education.astro";
 import Section from "@/components/Section.astro";
 import { getI18NCV } from "@/i18n";
+import Chat from "@/components/chat/Chat.astro";
 
 const { currentLocale = "en" } = Astro;
 const { basics, skills, education, SEO_TITLE, section_titles } = getI18NCV({
@@ -36,6 +37,7 @@ const { image, summary, url } = basics;
     <div
       class="slide-enter-content space-y-12 p-8 md:w-2/3 md:flex-1 md:overflow-y-auto md:p-16 md:pl-6 xl:p-40 print:z-10 print:col-span-1 print:mx-0 print:-mt-36 print:grid print:grid-cols-3 print:gap-2 print:space-y-0"
     >
+      <Chat />
       <Experience className="print" />
       <Projects className="print:hidden" />
       <Section className="print" title={section_titles.skills}>
