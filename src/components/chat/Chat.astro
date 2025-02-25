@@ -111,7 +111,12 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
   });
 </script>
 
-<script is:inline type="module" define:vars={{ currentLocale, cv }}>
+<script
+  is:inline
+  type="module"
+  define:vars={{ currentLocale, cv }}
+  src="../../workers/chat.worker.js"
+>
   import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.78/+esm";
 
   const button = document.querySelector("#chat-button");
