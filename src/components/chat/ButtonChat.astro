@@ -5,7 +5,7 @@ const { currentLocale } = Astro;
 ---
 
 <button
-  id="chat-button"
+  id="toggle-chat-button"
   type="button"
   class="flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 hover:opacity-80 print:hidden"
 >
@@ -17,7 +17,7 @@ const { currentLocale } = Astro;
   import { isOpen } from "@/store/chat.store";
 
   const chatButton = document.querySelector(
-    "#chat-button",
+    "#toggle-chat-button",
   ) as HTMLButtonElement;
 
   chatButton.addEventListener("click", () => {
