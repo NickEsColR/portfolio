@@ -1,9 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import { getI18ChatQuestions } from "@/i18n";
+import { getI18ChatQuestions, getI18NCV } from "@/i18n";
 
 const { currentLocale = "en" } = Astro;
 const questions = getI18ChatQuestions({ currentLocale });
+const cv = JSON.stringify(getI18NCV({ currentLocale }));
 ---
 
 <!-- Chat Container -->
@@ -110,9 +111,8 @@ const questions = getI18ChatQuestions({ currentLocale });
   });
 </script>
 
-<script is:inline type="module" define:vars={{ currentLocale }}>
+<script is:inline type="module" define:vars={{ currentLocale, cv }}>
   import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.78/+esm";
-  import { getI18NCV } from "./src/i18n";
 
   const button = document.querySelector("#chat-button");
   const loading = document.querySelector("#status");
@@ -120,8 +120,6 @@ const questions = getI18ChatQuestions({ currentLocale });
   const input = document.querySelector("#chat-input");
   const template = document.querySelector("#message-template");
   const messagesContainer = document.querySelector("#message-container");
-
-  const cv = JSON.stringify(getI18NCV(currentLocale));
 
   const prompt =
     "Answer only based on the following information:" +
