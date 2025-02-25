@@ -111,12 +111,7 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
   });
 </script>
 
-<script
-  is:inline
-  type="module"
-  define:vars={{ currentLocale, cv }}
-  src="/chat.worker.js"
->
+<script is:inline type="module" define:vars={{ currentLocale, cv }}>
   import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.78/+esm";
 
   const button = document.querySelector("#chat-button");
@@ -140,9 +135,8 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
   let end = false;
 
   const SELECTED_MODEL = "Llama-3.2-3B-Instruct-q4f16_1-MLC";
-
   const engine = await CreateWebWorkerMLCEngine(
-    new Worker("./chat.worker.js", { type: "module" }),
+    new Worker("/chat.worker.js", { type: "module" }),
     SELECTED_MODEL,
     {
       initProgressCallback: (info) => {
