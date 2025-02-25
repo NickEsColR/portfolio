@@ -11,23 +11,13 @@ const { currentLocale } = Astro;
     <div class="ml-3">
       <p class="text-xl font-medium">NickEsColR BOT</p>
       <span class="text-gray-500" id="status"
-        >{currentLocale == "es" ? "Cargando" : "Loading"}</span
+        >{currentLocale == "es" ? "Cargando" : "Loading"} 0%</span
       >
     </div>
   </div>
 
   <!-- Chat Messages -->
-  <ul class="message-container" id="message-container">
-    <!-- Received Message -->
-    <li class="message-bot">
-      <p class="text-sm text-skin-base">Hello! How can I help you today?</p>
-    </li>
-
-    <!-- Sent Message -->
-    <li class="message-user">
-      <p class="text-sm text-skin-muted">Sure, I have a question.</p>
-    </li>
-  </ul>
+  <ul class="message-container" id="message-container"></ul>
 
   <!-- Chat Input -->
   <form class="mt-6 flex items-center" id="chat-form">
@@ -92,7 +82,7 @@ const { currentLocale } = Astro;
   });
 </script>
 
-<script is:inline type="module">
+<script is:inline type="module" define:vars={{ currentLocale }}>
   import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.78/+esm";
 
   const button = document.querySelector("#chat-button");
@@ -102,10 +92,16 @@ const { currentLocale } = Astro;
   const template = document.querySelector("#message-template");
   const messagesContainer = document.querySelector("#message-container");
 
-  let messages = [];
+  let messages = [
+    {
+      role: "system",
+      content:
+        "Answer only based on the following information: box is black, shirt is green and pants are blue. If any question cannot be answered based on the information given, please respond with 'I don't have enough information to answer the question.'",
+    },
+  ];
   let end = false;
 
-  const SELECTED_MODEL = "Llama-3.2-1B-Instruct-q4f32_1-MLC";
+  const SELECTED_MODEL = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC";
 
   const engine = await CreateWebWorkerMLCEngine(
     new Worker("src/workers/chat.worker.js", { type: "module" }),
@@ -114,12 +110,18 @@ const { currentLocale } = Astro;
       initProgressCallback: (info) => {
         if (info.progress === 1 && !end) {
           end = true;
-          loading.textContent = "Online";
+          loading.style.display = "none";
           button.removeAttribute("disabled");
           addMessage(
-            "¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?",
+            currentLocale === "es"
+              ? "Hola, ¿Qué te gustaría saber de mí?"
+              : "Hello there! What do you want to know about me?",
             "bot",
           );
+        } else {
+          loading.textContent = `${currentLocale === "es" ? "Cargando" : "Loading"} ${Math.round(
+            info.progress * 100,
+          )}%`;
         }
       },
     },
