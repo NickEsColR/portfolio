@@ -84,6 +84,7 @@ const { currentLocale } = Astro;
 
 <script is:inline type="module" define:vars={{ currentLocale }}>
   import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.78/+esm";
+  import { getI18NCV } from "./src/i18n";
 
   const button = document.querySelector("#chat-button");
   const loading = document.querySelector("#status");
@@ -92,16 +93,22 @@ const { currentLocale } = Astro;
   const template = document.querySelector("#message-template");
   const messagesContainer = document.querySelector("#message-container");
 
+  const cv = JSON.stringify(getI18NCV(currentLocale));
+
+  const prompt =
+    "Answer only based on the following information:" +
+    cv +
+    ". If any question cannot be answered based on the information given, please respond with 'I don't have enough information to answer the question.'. Answer in first person, with a friendly and professional tone. Answer in plane text format";
+
   let messages = [
     {
       role: "system",
-      content:
-        "Answer only based on the following information: box is black, shirt is green and pants are blue. If any question cannot be answered based on the information given, please respond with 'I don't have enough information to answer the question.'",
+      content: prompt,
     },
   ];
   let end = false;
 
-  const SELECTED_MODEL = "Qwen2.5-1.5B-Instruct-q4f16_1-MLC";
+  const SELECTED_MODEL = "Llama-3.2-3B-Instruct-q4f16_1-MLC";
 
   const engine = await CreateWebWorkerMLCEngine(
     new Worker("src/workers/chat.worker.js", { type: "module" }),
