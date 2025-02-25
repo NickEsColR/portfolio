@@ -1,7 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+import { getI18ChatQuestions } from "@/i18n";
 
-const { currentLocale } = Astro;
+const { currentLocale = "en" } = Astro;
+const questions = getI18ChatQuestions({ currentLocale });
 ---
 
 <!-- Chat Container -->
@@ -19,8 +21,19 @@ const { currentLocale } = Astro;
   <!-- Chat Messages -->
   <ul class="message-container" id="message-container"></ul>
 
+  <ul class="mt-6 flex gap-1" id="questions">
+    {
+      questions.map((question) => (
+        <li data-question={question.complete}>
+          <button class="focus-visible:ring-ring border-input inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border bg-skin-button-accent px-3 text-sm font-medium text-skin-muted transition-colors hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+            {question.min}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
   <!-- Chat Input -->
-  <form class="mt-6 flex items-center" id="chat-form">
+  <form class="mt-1.5 flex items-center" id="chat-form">
     <input
       id="chat-input"
       type="text"
@@ -68,6 +81,21 @@ const { currentLocale } = Astro;
     @apply cursor-not-allowed bg-neutral-600;
   }
 </style>
+
+<script>
+  const questions = document.querySelectorAll(
+    "#questions li",
+  ) as NodeListOf<HTMLLIElement>;
+  const input = document.querySelector("#chat-input") as HTMLInputElement;
+
+  questions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const value = question.dataset.question ?? "";
+      input.value = value;
+      input.focus();
+    });
+  });
+</script>
 
 <script>
   import { isOpen } from "@/store/chat.store";
