@@ -19,11 +19,11 @@ export const getI18ChatQuestions = ({
     return [
       {
         min: "¿Quién eres?",
-        complete: "¿Quien eres?",
+        complete: "¿Quién eres?",
       },
       {
         min: "Experiencia",
-        complete: "Háblame de tu experiencia",
+        complete: "Háblame de tu experiencia laboral",
       },
       {
         min: "Proyectos",
@@ -39,7 +39,7 @@ export const getI18ChatQuestions = ({
       },
       {
         min: "Idiomas",
-        complete: "Háblame que idiomas hablas",
+        complete: "¿Qué idiomas hablas?",
       },
     ];
   return [
@@ -49,19 +49,19 @@ export const getI18ChatQuestions = ({
     },
     {
       min: "Experience",
-      complete: "Tell me about your experience",
+      complete: "where did you work?",
     },
     {
       min: "Projects",
-      complete: "Tell me about your projects",
+      complete: "What are your projects?",
     },
     {
       min: "Education",
-      complete: "Tell me about your education",
+      complete: "what is your education?",
     },
     {
       min: "Skills",
-      complete: "Tell me about your skills",
+      complete: "What skills do you have?",
     },
     {
       min: "Languages",

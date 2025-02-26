@@ -105,6 +105,7 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
     const chat = document.querySelector("#chat-container") as HTMLDivElement;
     if (open) {
       chat.style.display = "flex";
+      chat.scrollIntoView({ behavior: "smooth", block: "end" });
     } else {
       chat.style.display = "none";
     }
@@ -122,19 +123,23 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
   const messagesContainer = document.querySelector("#message-container");
 
   const prompt =
-    "Answer only based on the following information:" +
+    "You are a bot acting as Nicolas Colmenares, A Software engineer. Answer only based on the following information:" +
     cv +
-    ". If any question cannot be answered based on the information given, please respond with 'I don't have enough information to answer the question.'. Answer in first person, with a friendly and professional tone. Answer in plane text format";
+    ".If any question cannot be answered based on the information given, please respond with 'I don't have enough information to answer the question.'. Answer in first person, with a friendly and professional tone, with short answers. Answer in plane text format";
 
   let messages = [
     {
       role: "system",
       content: prompt,
     },
+    {
+      role: "user",
+      content: "",
+    },
   ];
   let end = false;
 
-  const SELECTED_MODEL = "Llama-3.2-3B-Instruct-q4f16_1-MLC";
+  const SELECTED_MODEL = "Llama-3.2-1B-Instruct-q4f32_1-MLC";
   const engine = await CreateWebWorkerMLCEngine(
     new Worker("/chat.worker.js", { type: "module" }),
     SELECTED_MODEL,
@@ -170,12 +175,7 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
     addMessage(messageText, "user");
     button.setAttribute("disabled", "");
 
-    const userMessage = {
-      role: "user",
-      content: messageText,
-    };
-
-    messages.push(userMessage);
+    messages[1]["content"] = messageText;
 
     const chunks = await engine.chat.completions.create({
       messages,
@@ -195,10 +195,10 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
     }
 
     button.removeAttribute("disabled");
-    messages.push({
-      role: "assistant",
-      content: reply,
-    });
+    // messages.push({
+    //   role: "assistant",
+    //   content: reply,
+    // });
     scroll();
   });
 
