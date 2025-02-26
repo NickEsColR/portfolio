@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { currentLocale } = Astro;
+---
+
+<button
+  id="toggle-chat-button"
+  type="button"
+  class="flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 hover:opacity-80 print:hidden"
+>
+  <Icon name="ri:chat-1-line" width={20} height={20} />
+  {currentLocale === "es" ? "Chatea conmigo" : "Chat with Me"}
+</button>
+
+<script>
+  import { isOpen } from "@/store/chat.store";
+
+  const chatButton = document.querySelector(
+    "#toggle-chat-button",
+  ) as HTMLButtonElement;
+
+  chatButton.addEventListener("click", () => {
+    const isOpenValue = isOpen.get();
+    isOpen.set(!isOpenValue);
+  });
+</script>
