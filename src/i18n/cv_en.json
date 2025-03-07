@@ -523,6 +523,35 @@
       ]
     },
     {
+      "name": "Book Tracker",
+      "image": {
+        "url": "/projects/book-tracker.png",
+        "position": "container",
+        "dark": "/projects/book-tracker.png"
+      },
+      "isActive": true,
+      "description": "Web to manage lecture list and save reading progress.",
+      "highlights": [
+        "🎯 search books and create a lecture list",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Filter books from available and lecture lists"
+      ],
+      "url": "https://booktracker-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/book-tracker",
+      "technologies": [
+        {
+          "name": "Astro",
+          "icon": "simple-icons:astro",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "simple-icons:tailwindcss",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
       "name": "Article chat",
       "image": {
         "url": "/projects/acs.png",
@@ -572,40 +601,6 @@
       ]
     },
     {
-      "name": "Rick & Morty Wiki",
-      "image": {
-        "url": "/projects/rick-morty.png",
-        "position": "container",
-        "dark": "/projects/rick-morty.png"
-      },
-      "isActive": true,
-      "description": "a web application designed for retrieving information about the animated series Rick and Morty. This project is inspired by the work of Rafa Tarrega.",
-      "highlights": [
-        "🎯 Get information about the characters, locations, and episodes of the series",
-        "✨ Responsive design for mobile and desktop",
-        "😄 Filter information and link information"
-      ],
-      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/rick-morty",
-      "technologies": [
-        {
-          "name": "React",
-          "icon": "simple-icons:react",
-          "level": "Intermediate"
-        },
-        {
-          "name": "React Router",
-          "icon": "simple-icons:reactrouter",
-          "level": "Intermediate"
-        },
-        {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
-          "level": "Intermediate"
-        }
-      ]
-    },
-    {
       "name": "Weather Searcher",
       "image": {
         "url": "/projects/weather-app.png",
@@ -625,6 +620,42 @@
         {
           "name": "React",
           "icon": "mdi:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    }
+  ],
+  "more_projects": [
+    {
+      "name": "WIKI de Rick y Morty",
+      "image": {
+        "url": "/projects/rick-morty.png",
+        "position": "container",
+        "dark": "/projects/rick-morty.png"
+      },
+      "isActive": true,
+      "description": "Aplicación web para traer información sobre la serie animada Rick Y Morty. Este proyecto se inspira en el trabajo de Rafa Tarrega.",
+      "highlights": [
+        "🎯 Obtener información sobre los personajes, ubicaciones y episodios de la serie",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Filtro y búsqueda de información con enlaces entre los contenidos"
+      ],
+      "url": "https://rick-morty-wiki-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/rick-morty",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "simple-icons:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "React Router",
+          "icon": "simple-icons:reactrouter",
           "level": "Intermediate"
         },
         {
