@@ -42,7 +42,7 @@
   },
   "education": [
     {
-      "institution":"Universidad ICESI",
+      "institution": "Universidad ICESI",
       "url": "https://www.icesi.edu.co/programas/ingenieria-diseno-y-ciencias-aplicadas/maestria-en-inteligencia-artificial-aplicada/",
       "area": "Inteligencia Artificial Aplicada",
       "studyType": "Maestría",
@@ -92,7 +92,7 @@
     {
       "name": "Certificación en Aprendizaje Automatico",
       "date": "2024-12-13",
-      "url":"https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1734883458483/single-media-viewer?type=DOCUMENT&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BWN4ONSXRSSWQQFenG6xDEA%3D%3D",
+      "url": "https://www.linkedin.com/in/nicolascolmenaressoftwareengineer/details/certifications/1734883458483/single-media-viewer?type=DOCUMENT&profileId=ACoAAC_7MIEBtj33xeEj4O1ZkLbUrEfK3O6gEQY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BWN4ONSXRSSWQQFenG6xDEA%3D%3D",
       "issuer": "Universidad ICESI"
     }
   ],
@@ -407,7 +407,8 @@
       "icon": "simple-icons:googlecloud",
       "level": "Intermediate",
       "keywords": [
-        "Cloud Services"      ]
+        "Cloud Services"
+      ]
     },
     {
       "name": "Terraform",
@@ -461,7 +462,7 @@
       ]
     },
     {
-      "name":"Deportes",
+      "name": "Deportes",
       "keywords": [
         "Esgrima"
       ]
@@ -517,6 +518,35 @@
       ]
     },
     {
+      "name": "Book Tracker",
+      "image": {
+        "url": "/projects/book-tracker.png",
+        "position": "container",
+        "dark": "/projects/book-tracker.png"
+      },
+      "isActive": true,
+      "description": "Web para gestionar una lista de lectura y registrar las páginas leídas.",
+      "highlights": [
+        "🎯 Buscar libros y agregarlo a tu lista de lectura",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Filtros de los libros disponibles y de tu lista de lectura"
+      ],
+      "url": "https://booktracker-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/book-tracker",
+      "technologies": [
+        {
+          "name": "Astro",
+          "icon": "simple-icons:astro",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "simple-icons:tailwindcss",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
       "name": "Chat con artículos web",
       "image": {
         "url": "/projects/acs.png",
@@ -566,6 +596,37 @@
       ]
     },
     {
+      "name": "App del clima",
+      "image": {
+        "url": "/projects/weather-app.png",
+        "position": "container",
+        "dark": "/projects/weather-app.png"
+      },
+      "isActive": true,
+      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
+      "highlights": [
+        "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Selector de Paises y Ciudades según el pais elegido"
+      ],
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    }
+  ],
+  "more_projects": [
+    {
       "name": "WIKI de Rick y Morty",
       "image": {
         "url": "/projects/rick-morty.png",
@@ -590,35 +651,6 @@
         {
           "name": "React Router",
           "icon": "simple-icons:reactrouter",
-          "level": "Intermediate"
-        },
-        {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
-          "level": "Intermediate"
-        }
-      ]
-    },
-    {
-      "name": "App del clima",
-      "image": {
-        "url": "/projects/weather-app.png",
-        "position": "container",
-        "dark": "/projects/weather-app.png"
-      },
-      "isActive": true,
-      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
-      "highlights": [
-        "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
-        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
-        "😄 Selector de Paises y Ciudades según el pais elegido"
-      ],
-      "url": "https://weather-searcher-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
-      "technologies": [
-        {
-          "name": "React",
-          "icon": "mdi:react",
           "level": "Intermediate"
         },
         {
