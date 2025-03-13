@@ -20,7 +20,7 @@ const { certificates, education, section_titles } = getI18NCV({
           const years = `${startYear} - ${endYear}`;
 
           return (
-            <div class="flex items-baseline">
+            <li class="flex items-baseline">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -52,7 +52,7 @@ const { certificates, education, section_titles } = getI18NCV({
                   {years}
                 </time>
               </div>
-            </div>
+            </li>
           );
         },
       )
@@ -67,7 +67,7 @@ const { certificates, education, section_titles } = getI18NCV({
           {certificates.map(({ name, date, issuer, url }) => {
             const certificateYear = new Date(date).getFullYear();
             return (
-              <div class="flex items-baseline">
+              <li class="flex items-baseline">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -100,7 +100,7 @@ const { certificates, education, section_titles } = getI18NCV({
                     {certificateYear}
                   </time>
                 </div>
-              </div>
+              </li>
             );
           })}
         </ul>
