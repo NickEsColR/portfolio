@@ -15,7 +15,7 @@
   "basics": {
     "name": "Nicolas Colmenares",
     "rol": "Software Engineer",
-    "image": "/avatar.png",
+    "image": "/avatar.webp",
     "email": "colmenares.ruiz.nicolas@gmail.com",
     "url": "https://portfolio-nickescolr.netlify.app",
     "summary": "Software Engineer with a passion for web development and machine learning.",
@@ -483,9 +483,9 @@
     {
       "name": "Citrux Digital Landing Page",
       "image": {
-        "url": "/projects/cdlp.png",
+        "url": "/projects/cdlp.webp",
         "position": "container",
-        "dark": "/projects/cdlp.png"
+        "dark": "/projects/cdlp.webp"
       },
       "isActive": true,
       "description": "Landing page for Citrux Digital, a software consultancy company.",
@@ -525,9 +525,9 @@
     {
       "name": "Book Tracker",
       "image": {
-        "url": "/projects/book-tracker.png",
+        "url": "/projects/book-tracker.webp",
         "position": "container",
-        "dark": "/projects/book-tracker.png"
+        "dark": "/projects/book-tracker.webp"
       },
       "isActive": true,
       "description": "Web to manage lecture list and save reading progress.",
@@ -554,9 +554,9 @@
     {
       "name": "Article chat",
       "image": {
-        "url": "/projects/acs.png",
+        "url": "/projects/acs.webp",
         "position": "container",
-        "dark": "/projects/acs.png"
+        "dark": "/projects/acs.webp"
       },
       "isActive": true,
       "description": "a web application designed for chatting with an AI about articles. This project was part of tecnical test of Citrux Digital.",
@@ -603,9 +603,9 @@
     {
       "name": "Weather Searcher",
       "image": {
-        "url": "/projects/weather-app.png",
+        "url": "/projects/weather-app.webp",
         "position": "container",
-        "dark": "/projects/weather-app.png"
+        "dark": "/projects/weather-app.webp"
       },
       "isActive": true,
       "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
