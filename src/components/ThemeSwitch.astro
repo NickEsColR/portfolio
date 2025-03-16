@@ -33,6 +33,22 @@ import { Icon } from "astro-icon/components";
 </style>
 
 <script>
+  const themeSwitchButton = document.getElementById(
+    "themeSwitch",
+  ) as HTMLButtonElement;
+
+  const theme = localStorage.getItem("theme");
+
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+
+  if (theme !== null) {
+    themeSwitchButton.value = theme;
+  } else {
+    themeSwitchButton.value = systemTheme;
+  }
+
   let isDark = document.documentElement.classList.contains("dark");
 
   function toggleDark(event: MouseEvent) {
@@ -84,7 +100,6 @@ import { Icon } from "astro-icon/components";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }
 
-  const themeSwitchButton = document.getElementById("themeSwitch");
   if (themeSwitchButton) {
     themeSwitchButton.addEventListener("click", toggleDark);
   }
@@ -108,6 +123,21 @@ import { Icon } from "astro-icon/components";
         updateTheme();
       }
     });
+
+  // Deshabilitar modo oscuro al imprimir
+  window.addEventListener("beforeprint", () => {
+    document.documentElement.classList.remove("dark");
+  });
+
+  // Restaurar el modo oscuro después de imprimir
+  window.addEventListener("afterprint", () => {
+    if (
+      themeSwitchButton.value === "dark" ||
+      (themeSwitchButton.value === "system" && systemTheme === "dark")
+    ) {
+      document.documentElement.classList.add("dark");
+    }
+  });
 </script>
 
 <style is:global>
