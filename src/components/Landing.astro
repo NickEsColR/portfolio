@@ -39,13 +39,13 @@ const { image, summary, url } = basics;
     <div
       class="slide-enter-content space-y-12 p-8 md:w-2/3 md:flex-1 md:overflow-y-auto md:p-16 md:pl-6 xl:p-40 print:z-10 print:col-span-1 print:mx-0 print:-mt-36 print:grid print:grid-cols-3 print:gap-2 print:space-y-0"
     >
-      <Chat />
-      <Experience className="print" />
-      <Projects className="print:hidden" />
+      <Chat client:visible />
+      <Experience className="print" client:load />
+      <Projects className="print:hidden" client:idle />
       <Section className="print" title={section_titles.skills}>
-        <Skills skills={skills} />
+        <Skills skills={skills} client:idle />
       </Section>
-      {education && <Education className="order-first" />}
+      {education && <Education className="order-first" client:idle />}
     </div>
   </main>
 </Layout>
@@ -80,14 +80,15 @@ const { image, summary, url } = basics;
     .slide-enter,
     .slide-enter-content > *:not(:has(.table-of-contents)) {
       --enter-stage: 0;
-      --enter-step: 400ms;
-      --enter-initial: 0ms;
-      animation: slide-enter 1s both 1;
+      --enter-step: 150ms; /* Reducido de 400ms */
+      --enter-initial: 50ms; /* Reducido para comenzar más rápido */
+      animation: slide-enter 1s both 1; /* Reducida la duración de 300ms a 250ms */
       animation-delay: calc(
         var(--enter-initial) + var(--enter-stage) * var(--enter-step)
       );
     }
 
+    /* El resto de selectores se mantienen igual */
     .slide-enter-content > *:nth-child(1) {
       --enter-stage: 1 !important;
     }
