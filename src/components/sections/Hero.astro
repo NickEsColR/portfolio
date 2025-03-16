@@ -15,10 +15,10 @@ const { name, rol, image, profiles, email } = basics;
     <div class="info">
       <h1>{name}</h1>
       <h2>{rol}</h2>
-      <footer class="print flex items-center gap-1">
-        <span class="text-black dark:text-white print:-mt-10 print:text-black"
-          >{email}</span
-        >
+      <footer
+        class="print flex w-fit items-center gap-1 rounded-lg bg-skin-button-accent px-4"
+      >
+        <span> {email}</span>
         <button
           title="Copy email to clipboard"
           class="cursor-pointer hover:opacity-80"
@@ -122,7 +122,7 @@ const { name, rol, image, profiles, email } = basics;
   }
 
   span {
-    @apply flex items-center gap-1 text-xs text-skin-hue;
+    @apply text-sm font-bold print:-mt-10 print:text-black;
   }
 
   footer {
