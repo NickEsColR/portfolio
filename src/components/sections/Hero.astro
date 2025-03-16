@@ -11,7 +11,7 @@ const { name, rol, image, profiles, email } = basics;
 ---
 
 <Section>
-  <div class="flex flex-col-reverse gap-8 print:gap-1">
+  <div class="flex flex-col-reverse gap-4 print:gap-1">
     <div class="info">
       <h1>{name}</h1>
       <h2>{rol}</h2>
@@ -74,7 +74,7 @@ const { name, rol, image, profiles, email } = basics;
         </div>
       </footer>
     </div>
-    <figure class="mx-au relative w-fit">
+    <figure class="relative m-2 w-fit">
       <Image
         class="shadow-skin-hues shadow-lg"
         height={64}
@@ -122,7 +122,7 @@ const { name, rol, image, profiles, email } = basics;
   }
 
   span {
-    @apply text-sm font-bold print:-mt-10 print:text-black;
+    @apply text-sm print:-mt-10 print:text-black;
   }
 
   footer {
