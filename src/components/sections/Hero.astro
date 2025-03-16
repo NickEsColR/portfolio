@@ -11,14 +11,14 @@ const { name, rol, image, profiles, email } = basics;
 ---
 
 <Section>
-  <div class="flex flex-col-reverse gap-8 print:gap-1">
+  <div class="flex flex-col-reverse gap-4 print:gap-1">
     <div class="info">
       <h1>{name}</h1>
       <h2>{rol}</h2>
-      <footer class="print flex items-center gap-1">
-        <span class="text-black dark:text-white print:-mt-10 print:text-black"
-          >{email}</span
-        >
+      <footer
+        class="print flex w-fit items-center gap-1 rounded-lg bg-skin-button-accent px-4"
+      >
+        <span> {email}</span>
         <button
           title="Copy email to clipboard"
           class="cursor-pointer hover:opacity-80"
@@ -74,11 +74,11 @@ const { name, rol, image, profiles, email } = basics;
         </div>
       </footer>
     </div>
-    <figure class="mx-au relative w-fit">
+    <figure class="relative m-2 w-fit">
       <Image
         class="shadow-skin-hues shadow-lg"
-        height={128}
-        width={128}
+        height={64}
+        width={64}
         src={image}
         alt={name}
       />
@@ -118,11 +118,11 @@ const { name, rol, image, profiles, email } = basics;
   }
 
   img {
-    @apply aspect-square w-32 rounded-2xl bg-cover;
+    @apply aspect-square w-16 rounded-2xl bg-cover;
   }
 
   span {
-    @apply flex items-center gap-1 text-xs text-skin-hue;
+    @apply text-sm print:-mt-10 print:text-black;
   }
 
   footer {
@@ -158,47 +158,6 @@ const { name, rol, image, profiles, email } = basics;
 </style>
 
 <script>
-  const select = document.getElementById("themeSwitch") as HTMLSelectElement;
-  const theme = localStorage.getItem("theme");
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-
-  if (theme !== null) {
-    select.value = theme;
-  } else {
-    select.value = systemTheme;
-  }
-
-  function updateTheme(value: string) {
-    const theme = value === "system" ? systemTheme : value;
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
-    localStorage.setItem("theme", value);
-  }
-
-  updateTheme(select.value);
-
-  select.addEventListener("change", (event: Event) => {
-    const select = event.target as HTMLSelectElement;
-    updateTheme(select.value);
-  });
-
-  // Deshabilitar modo oscuro al imprimir
-  window.addEventListener("beforeprint", () => {
-    document.documentElement.classList.remove("dark");
-  });
-
-  // Restaurar el modo oscuro después de imprimir
-  window.addEventListener("afterprint", () => {
-    if (
-      select.value === "dark" ||
-      (select.value === "system" && systemTheme === "dark")
-    ) {
-      document.documentElement.classList.add("dark");
-    }
-  });
-
   document.getElementById("copyEmail")!.addEventListener("click", function () {
     const email = this.dataset.email!;
     navigator.clipboard
