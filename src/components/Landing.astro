@@ -27,17 +27,17 @@ const { image, summary, url } = basics;
   lang={currentLocale}
 >
   <main
-    class="mt-14 flex flex-col px-3 md:max-h-screen md:flex-row print:max-w-none print:grid-cols-1 print:gap-6"
+    class="flex flex-col gap-x-8 px-4 pt-14 md:px-6 lg:max-h-screen lg:flex-row lg:px-0 print:max-w-none print:grid-cols-1 print:gap-6"
   >
     <aside
-      class="slide-enter ease-in md:h-full md:w-1/3 print:col-span-1 print:grid print:grid-cols-2 print:gap-2"
+      class="slide-enter ease-in lg:h-full lg:w-1/3 lg:pl-8 xl:pl-20 print:col-span-1 print:grid print:grid-cols-2 print:gap-2"
     >
       <Hero />
       <About />
       <ButtonChat />
     </aside>
     <div
-      class="slide-enter-content md:flex-1 md:overflow-y-auto print:z-10 print:col-span-1 print:mx-0 print:-mt-36 print:grid print:grid-cols-3 print:gap-2"
+      class="slide-enter-content lg:flex-1 lg:overflow-y-auto lg:pr-8 xl:pr-20 print:z-10 print:col-span-1 print:mx-0 print:-mt-36 print:grid print:grid-cols-3 print:gap-2"
     >
       <Chat />
       <Experience className="print" />
@@ -51,17 +51,13 @@ const { image, summary, url } = basics;
 </Layout>
 
 <style is:global>
-  * {
+  .slide-enter-content {
     scrollbar-color: var(--color-button-muted) var(--color-fill);
   }
 
   @page {
     size: auto;
     margin: 0mm;
-  }
-  main {
-    margin: auto;
-    width: 100%;
   }
 
   @keyframes slide-enter {
