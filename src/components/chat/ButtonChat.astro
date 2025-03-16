@@ -8,6 +8,7 @@ const { currentLocale } = Astro;
   id="toggle-chat-button"
   type="button"
   class="flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 hover:opacity-80 print:hidden"
+  style="display: none;"
 >
   <Icon name="ri:chat-1-line" width={20} height={20} />
   {currentLocale === "es" ? "Chatea conmigo" : "Chat with Me"}
@@ -24,4 +25,10 @@ const { currentLocale } = Astro;
     const isOpenValue = isOpen.get();
     isOpen.set(!isOpenValue);
   });
+</script>
+
+<script is:inline>
+  if (navigator.gpu) {
+    document.querySelector("#toggle-chat-button").style.display = "flex";
+  }
 </script>
