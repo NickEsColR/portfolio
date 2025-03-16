@@ -28,9 +28,12 @@ const { currentLocale } = Astro;
 </script>
 
 <script is:inline>
-  if (!navigator.gpu) return;
-  const adapter = await navigator.gpu.requestAdapter();
-  if (!adapter) return;
   // Show the button only if the user has a GPU
-  document.querySelector("#toggle-chat-button").style.display = "flex";
+  if (navigator.gpu) {
+    navigator.gpu.requestAdapter().then((adapter) => {
+      if (adapter) {
+        document.querySelector("#toggle-chat-button").style.display = "flex";
+      }
+    });
+  }
 </script>
