@@ -3,6 +3,7 @@ import ArtPlums from "@/components/ArtPlums.astro";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../globals.css";
 import Header from "@/components/Header.astro";
+import KeyboardManager from "@/components/hotkey/KeyboardManager.astro";
 
 interface Props {
   title: string;
@@ -75,6 +76,7 @@ const {
     </div>
     <ArtPlums />
     <Header />
+    <KeyboardManager />
     <slot />
     <style>
       body,
@@ -119,9 +121,6 @@ const {
 
       .dev * {
         @apply border border-red-500/50 bg-red-500/5;
-      }
-      #hotkeypad [data-backdrop] {
-        @apply !bg-zinc-800 !opacity-80;
       }
 
       ::-webkit-scrollbar {
