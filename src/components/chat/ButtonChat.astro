@@ -11,7 +11,7 @@ const ariaLabel = isSpanish ? "Chatea conmigo" : "Chat with Me";
   id="toggle-chat-button"
   type="button"
   class="mb-4 flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 transition-all hover:scale-110 hover:opacity-60 focus:scale-110 focus:opacity-60 print:hidden"
-  style="display: none;"
+  style="opacity: 0;"
   aria-label={ariaLabel}
 >
   <Icon name="ri:chat-1-line" width={20} height={20} />
@@ -36,7 +36,7 @@ const ariaLabel = isSpanish ? "Chatea conmigo" : "Chat with Me";
   if (navigator.gpu) {
     navigator.gpu.requestAdapter().then((adapter) => {
       if (adapter) {
-        document.querySelector("#toggle-chat-button").style.display = "flex";
+        document.querySelector("#toggle-chat-button").style.opacity = "1";
       }
     });
   }
