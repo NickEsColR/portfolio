@@ -1,0 +1,37 @@
+---
+const { currentLocale = "en" } = Astro;
+---
+
+<button
+  class="hotkey-button hidden h-8 w-fit cursor-pointer items-center justify-between gap-12 rounded-lg bg-blue-100 p-2 hover:opacity-50 focus:opacity-50 dark:bg-neutral-800 md:flex print:hidden"
+>
+  {currentLocale === "es" ? "Buscar" : "Search"}... <kbd>⌘ K</kbd>
+</button>
+
+<script>
+  const footerButtons = document.querySelectorAll(".hotkey-button");
+  footerButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let event = new KeyboardEvent("keydown", {
+        key: "K",
+        code: "KeyK",
+        keyCode: 75,
+        which: 75,
+        ctrlKey: true,
+        altKey: false,
+        shiftKey: false,
+        metaKey: false,
+      });
+      document.dispatchEvent(event);
+    });
+  });
+</script>
+
+<style>
+  kbd {
+    @apply bg-skin-muted;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 12px;
+  }
+</style>

@@ -1,7 +1,7 @@
 ---
-import KeyboardManager from "@/components/KeyboardManager.astro";
-import LanguagePicker from "@/components/LanguagePicker.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
+import SearchBar from "@/components/hotkey/SearchBar.astro";
+import LanguagePicker from "@/components/ui/LanguagePicker.astro";
+import ThemeSwitch from "@/components/ui/ThemeSwitch.astro";
 ---
 
 <header
@@ -10,7 +10,7 @@ import ThemeSwitch from "@/components/ThemeSwitch.astro";
   <span>NickEsColR</span>
 
   <div class="flex items-center gap-4 xl:gap-8">
-    <KeyboardManager />
+    <SearchBar />
     <ThemeSwitch />
     <LanguagePicker />
   </div>

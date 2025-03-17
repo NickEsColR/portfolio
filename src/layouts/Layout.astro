@@ -1,26 +1,21 @@
 ---
-import ArtPlums from "@/components/ArtPlums.astro";
+import ArtPlums from "@/components/ui/ArtPlums.astro";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import "../globals.css";
 import Header from "@/components/Header.astro";
+import KeyboardManager from "@/components/hotkey/KeyboardManager.astro";
 
 interface Props {
   title: string;
   description?: string;
-  image?: string;
   isNotFound?: boolean;
   lang: string;
   url?: string;
 }
 
-const {
-  title,
-  description,
-  image,
-  url,
-  lang,
-  isNotFound = false,
-} = Astro.props;
+const { title, description, url, lang, isNotFound = false } = Astro.props;
+
+const image = `/seo_image_${lang}.webp`;
 ---
 
 <!doctype html>
@@ -29,7 +24,14 @@ const {
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/avatar.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/icon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" />
+    <link rel="shortcut icon" href="/icon/favicon.ico" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta name="referrer" content="no-referrer" />
@@ -75,6 +77,7 @@ const {
     </div>
     <ArtPlums />
     <Header />
+    <KeyboardManager />
     <slot />
     <style>
       body,
@@ -119,9 +122,6 @@ const {
 
       .dev * {
         @apply border border-red-500/50 bg-red-500/5;
-      }
-      #hotkeypad [data-backdrop] {
-        @apply !bg-zinc-800 !opacity-80;
       }
 
       ::-webkit-scrollbar {

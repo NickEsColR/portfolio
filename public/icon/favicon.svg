@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="24" height="24"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m20.2,6.7c0.58,0 1.05,0.2 1.42,0.59c0.38,0.41 0.58,0.86 0.58,1.41l0,11c0,0.55 -0.2,1 -0.58,1.41c-0.37,0.39 -0.84,0.59 -1.42,0.59l-16,0c-0.58,0 -1.05,-0.2 -1.42,-0.59c-0.38,-0.41 -0.58,-0.86 -0.58,-1.41l0,-11c0,-0.55 0.2,-1 0.58,-1.41c0.37,-0.39 0.84,-0.59 1.42,-0.59l4,0l0,-2c0,-0.58 0.2,-1.05 0.58,-1.42c0.37,-0.38 0.84,-0.58 1.42,-0.58l4,0c0.58,0 1.05,0.2 1.42,0.58c0.38,0.37 0.58,0.84 0.58,1.42l0,2l4,0zm-16,2l0,11l16,0l0,-11l-16,0zm10,-2l0,-2l-4,0l0,2l4,0z" fill="currentColor" id="SvgjsPath1015" transform="matrix(1 0 0 1 0 0)"></path>
+  <use id="SvgjsUse1014" transform="matrix(0.556674 0 0 0.535706 -30.8593 -22.6579)" x="65.35" xlink:href="#svg_2" y="56.52"></use>
+ </g>
+ <defs>
+  <symbol height="24" id="SvgjsSymbol1013" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="m4,6l16,0l0,10l-16,0m16,2a2,2 0 0 0 2,-2l0,-10a2,2 0 0 0 -2,-2l-16,0c-1.11,0 -2,0.89 -2,2l0,10a2,2 0 0 0 2,2l-4,0l0,2l24,0l0,-2l-4,0z" fill="currentColor"></path>
+  </symbol>
+ </defs>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: contrast(0.3846153846153846) brightness(4.5); } }
+</style></svg>

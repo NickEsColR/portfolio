@@ -1,5 +1,5 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from "@/components/ui/Section.astro";
 import { getI18NCV } from "@/i18n";
 
 const { currentLocale } = Astro;
@@ -7,7 +7,7 @@ const { basics, section_titles } = getI18NCV({ currentLocale });
 const { summary } = basics;
 ---
 
-<Section title={section_titles.about} className="md:gap-1">
+<Section title={section_titles.about} className="md:gap-1 print:col-span-2">
   <p class="text-pretty font-mono print:font-sans">
     {summary}
   </p>

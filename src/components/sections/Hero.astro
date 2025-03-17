@@ -1,5 +1,5 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from "@/components/ui/Section.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getI18NCV } from "@/i18n";
@@ -16,12 +16,11 @@ const { name, rol, image, profiles, email } = basics;
       <h1>{name}</h1>
       <h2>{rol}</h2>
       <footer
-        class="print flex w-fit items-center gap-1 rounded-lg bg-skin-button-accent px-4"
+        class="flex w-fit items-center gap-1 rounded-lg bg-skin-button-accent px-4 print:px-0"
       >
         <span> {email}</span>
         <button
           title="Copy email to clipboard"
-          class="cursor-pointer hover:opacity-80"
           id="copyEmail"
           data-email={email}
         >
@@ -106,7 +105,7 @@ const { name, rol, image, profiles, email } = basics;
 
 <style>
   .info {
-    @apply flex flex-col gap-1 pr-8 print:gap-0 print:pr-0;
+    @apply flex flex-col gap-1;
   }
 
   h1 {
@@ -122,7 +121,7 @@ const { name, rol, image, profiles, email } = basics;
   }
 
   span {
-    @apply text-sm print:-mt-10 print:text-black;
+    @apply text-sm print:-mt-5 print:text-black;
   }
 
   footer {
@@ -131,7 +130,7 @@ const { name, rol, image, profiles, email } = basics;
 
   footer a,
   footer button {
-    @apply inline-flex size-8 items-center justify-center rounded-md p-1 text-skin-hue transition-all duration-500 ease-linear hover:bg-skin-button-accent hover:text-skin-inverted;
+    @apply inline-flex size-8 cursor-pointer items-center justify-center rounded-md p-1 text-skin-hue transition-all duration-500 ease-linear hover:scale-125 hover:bg-skin-button-accent hover:opacity-50 focus:scale-125 focus:opacity-50;
   }
 
   @media (width <= 700px) {
