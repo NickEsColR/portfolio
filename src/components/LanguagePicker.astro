@@ -10,7 +10,7 @@ const currentpage = url.pathname.split("/").slice(2).join("/");
 <form>
   <label
     for="language-picker"
-    class="group relative flex items-center gap-1 hover:opacity-80"
+    class="relative flex items-center gap-1 hover:opacity-80 focus:opacity-80"
     aria-label={currentLocale === "es" ? "Cambiar idioma" : "Change language"}
   >
     <Icon
@@ -36,13 +36,17 @@ const currentpage = url.pathname.split("/").slice(2).join("/");
       name={"mdi:keyboard-arrow-right"}
       width={24}
       height={24}
-      class={"absolute top-0 right-0 pointer-events-none transform group-hover:rotate-90 icon"}
+      class={"absolute top-0 right-0 pointer-events-none transform icon"}
     />
   </label>
 </form>
 <style>
   select:focus + .icon {
     transform: rotate(90deg);
+  }
+  select:focus-within,
+  label:has(select:focus) {
+    opacity: 0.8;
   }
 </style>
 <script>
