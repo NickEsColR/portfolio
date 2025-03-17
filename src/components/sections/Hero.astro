@@ -21,7 +21,6 @@ const { name, rol, image, profiles, email } = basics;
         <span> {email}</span>
         <button
           title="Copy email to clipboard"
-          class="cursor-pointer hover:opacity-80"
           id="copyEmail"
           data-email={email}
         >
@@ -131,7 +130,7 @@ const { name, rol, image, profiles, email } = basics;
 
   footer a,
   footer button {
-    @apply inline-flex size-8 items-center justify-center rounded-md p-1 text-skin-hue transition-all duration-500 ease-linear hover:bg-skin-button-accent hover:text-skin-inverted;
+    @apply inline-flex size-8 cursor-pointer items-center justify-center rounded-md p-1 text-skin-hue transition-all duration-500 ease-linear hover:scale-125 hover:bg-skin-button-accent hover:opacity-50 focus:scale-125 focus:opacity-50;
   }
 
   @media (width <= 700px) {
