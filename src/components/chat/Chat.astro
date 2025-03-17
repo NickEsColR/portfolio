@@ -22,11 +22,11 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
   <!-- Chat Messages -->
   <ul class="message-container" id="message-container"></ul>
 
-  <ul class="mt-6 flex gap-1" id="questions">
+  <ul id="questions">
     {
       questions.map((question) => (
         <li data-question={question.complete}>
-          <button class="focus-visible:ring-ring border-input inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border bg-skin-button-accent px-3 text-sm font-medium text-skin-muted transition-colors hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+          <button class="inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md bg-skin-button-accent px-3 text-sm font-medium text-skin-muted transition-transform hover:scale-110 hover:opacity-60 focus:scale-110 focus:opacity-60">
             {question.min}
           </button>
         </li>
@@ -80,6 +80,21 @@ const cv = JSON.stringify(getI18NCV({ currentLocale }));
 
   button[disabled] {
     @apply cursor-not-allowed bg-neutral-600;
+  }
+
+  #questions {
+    @apply mt-6 flex gap-2 overflow-visible overflow-x-auto px-1 py-2;
+    scrollbar-width: none;
+  }
+
+  #questions li {
+    @apply relative;
+    /* This ensures the button has room to grow when scaled */
+    transform-origin: center;
+  }
+
+  #questions li button {
+    @apply transition-transform;
   }
 </style>
 
