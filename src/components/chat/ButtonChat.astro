@@ -2,16 +2,20 @@
 import { Icon } from "astro-icon/components";
 
 const { currentLocale } = Astro;
+const isSpanish = currentLocale === "es";
+const buttonText = isSpanish ? "Chatea conmigo" : "Chat with Me";
+const ariaLabel = isSpanish ? "Chatea conmigo" : "Chat with Me";
 ---
 
 <button
   id="toggle-chat-button"
   type="button"
-  class="mb-4 flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 hover:opacity-80 print:hidden"
+  class="mb-4 flex w-fit cursor-pointer items-center gap-1 rounded-full bg-skin-button-accent px-4 py-2 transition-all hover:scale-110 hover:opacity-60 focus:scale-110 focus:opacity-60 print:hidden"
   style="display: none;"
+  aria-label={ariaLabel}
 >
   <Icon name="ri:chat-1-line" width={20} height={20} />
-  {currentLocale === "es" ? "Chatea conmigo" : "Chat with Me"}
+  {buttonText}
 </button>
 
 <script>
