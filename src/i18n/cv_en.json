@@ -601,30 +601,30 @@
       ]
     },
     {
-      "name": "Weather Searcher",
+      "name": "HTML Gems Uncovered",
       "image": {
-        "url": "/projects/weather-app.webp",
+        "url": "/projects/html-gems-uncovered.webp",
         "position": "container",
-        "dark": "/projects/weather-app.webp"
+        "dark": "/projects/html-gems-uncovered.webp"
       },
       "isActive": true,
-      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "description": "a web application to catalog relevant HTML elements frequently omitted but powerful.",
       "highlights": [
-        "🎯 Get weather reports from different cities of the world",
+        "🎯 Discover hidden HTML gems",
         "✨ Responsive design for mobile and desktop",
-        "😄 Fast found countries and cities"
+        "😄 Use cases information, preview and code snippet options"
       ],
-      "url": "https://weather-searcher-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "url": "https://html-gems-uncovered.netlify.app/",
+      "github": "https://github.com/NickEsColR/html-gems-uncovered",
       "technologies": [
         {
-          "name": "React",
-          "icon": "mdi:react",
+          "name": "Astro",
+          "icon": "simple-icons:astro",
           "level": "Intermediate"
         },
         {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
+          "name": "Tailwind",
+          "icon": "simple-icons:tailwindcss",
           "level": "Intermediate"
         }
       ]
@@ -656,6 +656,35 @@
         {
           "name": "React Router",
           "icon": "simple-icons:reactrouter",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Weather Searcher",
+      "image": {
+        "url": "/projects/weather-app.webp",
+        "position": "container",
+        "dark": "/projects/weather-app.webp"
+      },
+      "isActive": true,
+      "description": "a web application designed for retrieving weather information using the OpenWeather API. This project is inspired by the work of garu2.",
+      "highlights": [
+        "🎯 Get weather reports from different cities of the world",
+        "✨ Responsive design for mobile and desktop",
+        "😄 Fast found countries and cities"
+      ],
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
           "level": "Intermediate"
         },
         {

@@ -596,30 +596,30 @@
       ]
     },
     {
-      "name": "App del clima",
+      "name": "HTML Gems Uncovered",
       "image": {
-        "url": "/projects/weather-app.webp",
+        "url": "/projects/html-gems-uncovered.webp",
         "position": "container",
-        "dark": "/projects/weather-app.webp"
+        "dark": "/projects/html-gems-uncovered.webp"
       },
       "isActive": true,
-      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
+      "description": "Web para listar elementos de HTML relevantes, pero frecuentemente ignorados.",
       "highlights": [
-        "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
+        "🎯 Descubrir elementos de HTML poco conocidos pero útiles",
         "✨ Diseño responsivo para dispositivos móviles y de escritorio",
-        "😄 Selector de Paises y Ciudades según el pais elegido"
+        "😄 Casos de uso, vista previa y fragmentos de código para cada elemento"
       ],
-      "url": "https://weather-searcher-nickescolr.netlify.app/",
-      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "url": "https://html-gems-uncovered.netlify.app/",
+      "github": "https://github.com/NickEsColR/html-gems-uncovered",
       "technologies": [
         {
-          "name": "React",
-          "icon": "mdi:react",
+          "name": "Atro",
+          "icon": "simple-icons:astro",
           "level": "Intermediate"
         },
         {
-          "name": "CSS",
-          "icon": "ri:css3-fill",
+          "name": "Tailwind",
+          "icon": "simple-icons:tailwindcss",
           "level": "Intermediate"
         }
       ]
@@ -651,6 +651,35 @@
         {
           "name": "React Router",
           "icon": "simple-icons:reactrouter",
+          "level": "Intermediate"
+        },
+        {
+          "name": "CSS",
+          "icon": "ri:css3-fill",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "App del clima",
+      "image": {
+        "url": "/projects/weather-app.webp",
+        "position": "container",
+        "dark": "/projects/weather-app.webp"
+      },
+      "isActive": true,
+      "description": "Web para obtener información del clima usando la API de OpenWeather. Este proyecto es inspirado por el trabajo de garu2.",
+      "highlights": [
+        "🎯 Obtener reporte del clima de diferentes ciudades del mundo",
+        "✨ Diseño responsivo para dispositivos móviles y de escritorio",
+        "😄 Selector de Paises y Ciudades según el pais elegido"
+      ],
+      "url": "https://weather-searcher-nickescolr.netlify.app/",
+      "github": "https://github.com/NickEsColR/AppClima-API-JavaScript",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "mdi:react",
           "level": "Intermediate"
         },
         {
