@@ -1,0 +1,47 @@
+---
+/**
+ * ProjectsSection.astro
+ * Projects grid section.
+ */
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Citrux Digital Landing Page",
+    url: "https://citruxdigital.com",
+    description: "Landing page for Citrux Digital, a software consultancy company.",
+    features: [
+      "🎨 Minimalistic design to explore Citrux Digital services",
+      "✨ Responsive design for mobile and desktop",
+    ],
+  },
+  {
+    title: "Book Tracker",
+    githubUrl: "https://github.com/NickEsColR/book-tracker",
+    description: "Web to manage lecture list and save reading progress.",
+    features: [
+      "🎨 search books and create a lecture list",
+      "✨ Responsive design for mobile and desktop",
+      "😎 Filter books from available and lecture lists",
+    ],
+  },
+];
+---
+
+<section id="projects" class="space-y-8">
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">Projects</h2>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          url={project.url}
+          githubUrl={project.githubUrl}
+          description={project.description}
+          features={project.features}
+        />
+      ))
+    }
+  </div>
+</section>

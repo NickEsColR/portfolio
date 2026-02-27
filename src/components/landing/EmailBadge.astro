@@ -1,0 +1,63 @@
+---
+/**
+ * EmailBadge.astro
+ * Displays the email address with a copy-to-clipboard button.
+ */
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<div
+  class="border-border bg-surface text-foreground inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm"
+>
+  <span id="email-text">{email}</span>
+  <button
+    id="copy-email-btn"
+    type="button"
+    aria-label="Copy email to clipboard"
+    class="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center rounded-md p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+    data-email={email}
+  >
+    <!-- Copy icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      class="size-4"
+      viewBox="0 0 24 24"
+      ><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path
+        d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg
+    >
+  </button>
+</div>
+
+<script>
+  function initCopyEmail() {
+    const btn = document.getElementById("copy-email-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-email");
+      if (!email) return;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        btn.setAttribute("aria-label", "Copied!");
+        setTimeout(() => {
+          btn.setAttribute("aria-label", "Copy email to clipboard");
+        }, 2000);
+      } catch {
+        /* Fallback: do nothing */
+      }
+    });
+  }
+
+  initCopyEmail();
+  document.addEventListener("astro:after-swap", initCopyEmail);
+</script>
