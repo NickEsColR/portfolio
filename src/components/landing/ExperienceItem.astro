@@ -1,0 +1,143 @@
+---
+/**
+ * ExperienceItem.astro
+ * Single experience entry with expandable responsibilities.
+ */
+import TechBadge from "./TechBadge.astro";
+
+interface Props {
+  title: string;
+  company: string;
+  companyUrl?: string;
+  location: string;
+  summary: string;
+  responsibilities: string[];
+  techStack: { name: string; icon?: string }[];
+  isLast?: boolean;
+}
+
+const {
+  title,
+  company,
+  companyUrl,
+  location,
+  summary,
+  responsibilities,
+  techStack,
+  isLast = false,
+} = Astro.props;
+
+const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
+---
+
+<div class="relative pl-8">
+  <!-- Timeline dot -->
+  <div class="border-primary bg-background absolute top-1.5 left-0 size-3 rounded-full border-2">
+  </div>
+
+  <!-- Timeline connecting line -->
+  <div class="bg-border absolute top-4.5 left-1.25 h-[calc(100%+2.5rem)] w-px"></div>
+
+  <div class="space-y-3">
+    <div>
+      <h3 class="text-foreground text-lg font-semibold">
+        {title} @{" "}
+        {
+          companyUrl ? (
+            <a
+              href={companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary underline-offset-4 hover:underline"
+            >
+              {company} <span class="inline-block text-xs">↗</span>
+            </a>
+          ) : (
+            <span class="text-primary">{company}</span>
+          )
+        }
+      </h3>
+      <p class="text-muted-foreground text-sm">{location}</p>
+    </div>
+
+    <div>
+      <p class="text-foreground text-sm font-semibold">Summary:</p>
+      <ul class="text-muted-foreground ml-4 list-disc text-sm">
+        <li>{summary}</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-foreground text-sm font-semibold">Responsibilities:</p>
+      <ul class="text-muted-foreground ml-4 list-disc text-sm">
+        <li>{responsibilities[0]}</li>
+      </ul>
+      {
+        responsibilities.length > 1 && (
+          <div>
+            <ul
+              id={`${itemId}-details`}
+              class="text-muted-foreground ml-4 hidden list-disc text-sm"
+            >
+              {responsibilities.slice(1).map((r) => (
+                <li>{r}</li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              class="exp-toggle text-muted-foreground hover:text-foreground mt-1 flex items-center gap-1 text-sm"
+              data-target={`${itemId}-details`}
+            >
+              <span class="toggle-text">Show more</span>
+              <svg
+                class="toggle-icon size-4 transition-transform"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {techStack.map((tech) => <TechBadge name={tech.name} icon={tech.icon} />)}
+    </div>
+  </div>
+</div>
+
+<script>
+  function initExpToggles() {
+    document.querySelectorAll(".exp-toggle").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        if (!targetId) return;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const isHidden = target.classList.contains("hidden");
+        target.classList.toggle("hidden");
+
+        const textEl = btn.querySelector(".toggle-text");
+        const iconEl = btn.querySelector(".toggle-icon") as HTMLElement | null;
+
+        if (textEl) {
+          textEl.textContent = isHidden ? "Show less" : "Show more";
+        }
+        if (iconEl) {
+          iconEl.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+        }
+      });
+    });
+  }
+
+  initExpToggles();
+  document.addEventListener("astro:after-swap", initExpToggles);
+</script>

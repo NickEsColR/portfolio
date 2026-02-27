@@ -1,0 +1,32 @@
+---
+/**
+ * EducationSection.astro
+ * Education section with degree entries.
+ */
+import EducationItem from "./EducationItem.astro";
+
+const education = [
+  {
+    degree: "Master - Applied Artificial Intelligence",
+    institution: "ICESI University",
+    period: "2025 - Actual",
+  },
+  {
+    degree: "Bachelor - Software System Engineer",
+    institution: "ICESI University",
+    period: "2019 - 2023",
+  },
+];
+---
+
+<section id="education" class="space-y-6">
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">Education</h2>
+
+  <ol class="space-y-5">
+    {
+      education.map((edu) => (
+        <EducationItem degree={edu.degree} institution={edu.institution} period={edu.period} />
+      ))
+    }
+  </ol>
+</section>
