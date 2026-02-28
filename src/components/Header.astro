@@ -1,7 +1,7 @@
 ---
 /**
  * Header.astro
- * Site header with logo, search bar placeholder, theme toggle, and language selector.
+ * Site header with logo, command palette, theme toggle, and language selector.
  */
 import ThemeToggle from "./ThemeToggle.astro";
 ---
@@ -15,19 +15,29 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     <!-- Right side controls -->
     <div class="flex items-center gap-2">
-      <!-- Search bar placeholder -->
-      <button
-        type="button"
-        class="border-border bg-secondary/50 text-muted-foreground hover:bg-accent hidden items-center gap-2 rounded-lg border px-3 text-sm transition-colors sm:inline-flex"
-        aria-label="Search"
+      <!-- Download Resume PDF -->
+      <a
+        href="https://drive.google.com/uc?export=download&id=1-qoz0H0kxR5bJ_g53DQRid2Cknt-TAbm"
+        download
+        class="text-muted-foreground inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-1.5 text-sm transition-opacity hover:opacity-50 print:hidden"
+        aria-label="Download Resume"
+        title="Download Resume"
       >
-        <span>Search...</span>
-        <kbd
-          class="border-border bg-background text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1.5 font-mono text-9xl text-[10px] font-medium select-none"
+        <svg
+          class="size-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
         >
-          ⌘ K
-        </kbd>
-      </button>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+          ></path>
+        </svg>
+      </a>
 
       <!-- Theme toggle -->
       <ThemeToggle />

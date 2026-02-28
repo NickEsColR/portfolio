@@ -32,9 +32,6 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
-      hotkeypad:
-        specifier: ^1.0.2
-        version: 1.0.2
       tailwindcss:
         specifier: ^4.2.1
         version: 4.2.1
@@ -4071,9 +4068,6 @@ packages:
   hosted-git-info@9.0.2:
     resolution: {integrity: sha512-M422h7o/BR3rmCQ8UHi7cyyMqKltdP9Uo+J2fXK+RSAY+wTcKOIRyhTuKv4qn+DJf3g+PL890AzId5KZpX+CBg==}
     engines: {node: ^20.17.0 || >=22.9.0}
-
-  hotkeypad@1.0.2:
-    resolution: {integrity: sha512-vvhHZfhNx5LtRoO8+db2Y8Q4QKoaqVbeu2iGMZjV9NAYmHfWTFQNJMWkmqVyhYwoTPLoKDd7GgjaG3rOtTF5pA==}
 
   hotscript@1.0.13:
     resolution: {integrity: sha512-C++tTF1GqkGYecL+2S1wJTfoH6APGAsbb7PAWQ3iVIwgG/EFseAfEVOKFgAFq4yK3+6j1EjUD4UQ9dRJHX/sSQ==}
@@ -11586,8 +11580,6 @@ snapshots:
   hosted-git-info@9.0.2:
     dependencies:
       lru-cache: 11.2.6
-
-  hotkeypad@1.0.2: {}
 
   hotscript@1.0.13: {}
 
