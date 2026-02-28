@@ -13,9 +13,11 @@ import CertificatesSection from "@/components/landing/CertificatesSection.astro"
 ---
 
 <Layout title="Nicolas Colmenares — Software Engineer">
-  <div class="flex flex-1 flex-col overflow-auto lg:flex-row lg:overflow-hidden">
+  <div
+    class="flex flex-1 flex-col overflow-auto bg-transparent px-10 lg:flex-row lg:overflow-hidden"
+  >
     <!-- Left column: fixed profile sidebar -->
-    <aside class="bg-background w-full shrink-0 space-y-6 p-6 lg:w-[30%] lg:p-8">
+    <aside class="w-full shrink-0 space-y-6 p-6 lg:w-[30%] lg:p-8">
       <ProfileCard />
       <SkillsSection />
     </aside>
