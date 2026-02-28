@@ -2,30 +2,18 @@
 /**
  * ProjectsSection.astro
  * Projects grid section.
+ * Fetches project documents from Sanity CMS.
  */
+import { sanityClient } from "sanity:client";
 import ProjectCard from "./ProjectCard.astro";
+import { getSanityImageUrl } from "@/lib/sanity/image";
+import type { Project } from "@/interfaces/project.interface";
 
-const projects = [
-  {
-    title: "Citrux Digital Landing Page",
-    url: "https://citruxdigital.com",
-    description: "Landing page for Citrux Digital, a software consultancy company.",
-    features: [
-      "🎨 Minimalistic design to explore Citrux Digital services",
-      "✨ Responsive design for mobile and desktop",
-    ],
-  },
-  {
-    title: "Book Tracker",
-    githubUrl: "https://github.com/NickEsColR/book-tracker",
-    description: "Web to manage lecture list and save reading progress.",
-    features: [
-      "🎨 search books and create a lecture list",
-      "✨ Responsive design for mobile and desktop",
-      "😎 Filter books from available and lecture lists",
-    ],
-  },
-];
+const PROJECTS_QUERY = `*[_type == "project"] {
+  name, description, demoURL, repoURL, bulletpoints,
+  technologies[]->{ technology, icon }, projectImage
+}`;
+const projects = await sanityClient.fetch<Project[]>(PROJECTS_QUERY);
 ---
 
 <section id="projects" class="space-y-8">
@@ -35,11 +23,15 @@ const projects = [
     {
       projects.map((project) => (
         <ProjectCard
-          title={project.title}
-          url={project.url}
-          githubUrl={project.githubUrl}
+          name={project.name}
+          demoURL={project.demoURL}
+          repoURL={project.repoURL}
           description={project.description}
-          features={project.features}
+          bulletpoints={project.bulletpoints}
+          technologies={project.technologies}
+          projectImage={
+            project.projectImage ? getSanityImageUrl(project.projectImage, 1280, 920) : undefined
+          }
         />
       ))
     }

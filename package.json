@@ -24,6 +24,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@iconify-json/lucide": "^1.2.94",
+    "@sanity/astro": "^3.2.11",
+    "@sanity/client": "^7.16.0",
+    "@sanity/image-url": "^2.0.3",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.18.0",
     "astro-icon": "^1.1.5",
@@ -41,6 +44,7 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "vite": "^7.3.1"
   }
 }

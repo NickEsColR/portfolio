@@ -2,55 +2,18 @@
 /**
  * ExperienceSection.astro
  * Experience timeline section with all job entries.
+ * Fetches experience documents from Sanity CMS.
  */
+import { sanityClient } from "sanity:client";
 import ExperienceItem from "./ExperienceItem.astro";
+import { formatPeriod } from "@/lib/sanity/utils";
+import type { Experience } from "@/interfaces/experience.interface";
 
-const experiences = [
-  {
-    title: "Full-stack Developer",
-    company: "Citrux Digital",
-    companyUrl: "https://citruxdigital.com",
-    location: "COL - Remote",
-    period: "2024 - 2025",
-    summary: "Developing high-availability full-stack projects.",
-    responsibilities: [
-      "Developed frontend and backend services using Next.js and Node.js.",
-      "Integrated third-party APIs and microservices architecture.",
-      "Implemented CI/CD pipelines and automated testing workflows.",
-      "Collaborated with cross-functional teams to deliver scalable solutions.",
-    ],
-    techStack: [
-      { name: "Next.js", icon: "◎" },
-      { name: "React", icon: "⚛" },
-      { name: "Tailwind", icon: "➤" },
-      { name: "Node", icon: "◉" },
-      { name: "TypeORM", icon: "{ }" },
-      { name: "OpenAI", icon: "◎" },
-      { name: "AWS", icon: "☁" },
-      { name: "Terraform", icon: "◇" },
-      { name: "Git", icon: "◈" },
-      { name: "GitHub", icon: "◉" },
-    ],
-  },
-  {
-    title: "Data Scientist new Associate",
-    company: "Accenture",
-    companyUrl: "https://accenture.com",
-    location: "COL - Remote",
-    period: "2023 - 2023",
-    summary: "Implement model to optimize client portfolio.",
-    responsibilities: [
-      "Implement genetic algorithm in Python.",
-      "Generate analysis and visualizations using Databricks.",
-      "Collaborate with data engineering teams on pipeline development.",
-    ],
-    techStack: [
-      { name: "Python", icon: "🐍" },
-      { name: "Databricks", icon: "◈" },
-      { name: "Azure DevOps", icon: "☁" },
-    ],
-  },
-];
+const EXPERIENCE_QUERY = `*[_type == "experience"] | order(startDate desc) {
+  role, company, companyURL, startDate, endDate, summary,
+  responsibilities, technologies[]->{ technology, icon }
+}`;
+const experiences = await sanityClient.fetch<Experience[]>(EXPERIENCE_QUERY);
 ---
 
 <section id="experience" class="space-y-8">
@@ -60,16 +23,17 @@ const experiences = [
     {
       experiences.map((exp, i) => (
         <div class="flex flex-col gap-1 sm:flex-row sm:gap-8">
-          <span class="text-muted-foreground shrink-0 text-sm sm:w-28">{exp.period}</span>
+          <span class="text-muted-foreground shrink-0 text-sm sm:w-28">
+            {formatPeriod(exp.startDate, exp.endDate)}
+          </span>
           <div class="flex-1">
             <ExperienceItem
-              title={exp.title}
+              role={exp.role}
               company={exp.company}
-              companyUrl={exp.companyUrl}
-              location={exp.location}
+              companyURL={exp.companyURL}
               summary={exp.summary}
               responsibilities={exp.responsibilities}
-              techStack={exp.techStack}
+              technologies={exp.technologies}
               isLast={i === experiences.length - 1}
             />
           </div>
