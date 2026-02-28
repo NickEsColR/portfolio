@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 /**
  * SocialLinks.astro
  * Row of social media icon links.
@@ -14,7 +16,7 @@ export interface SocialLink {
   /** Accessible label for screen readers */
   label: string;
   /** Raw SVG markup (e.g. from a CMS icon field) */
-  iconSvg: string;
+  icon: string;
 }
 
 interface Props {
@@ -34,7 +36,7 @@ const { links } = Astro.props;
         aria-label={link.label}
         class="text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex items-center justify-center rounded-md p-2 transition-colors focus-visible:ring-2 focus-visible:outline-none"
       >
-        <Fragment set:html={link.iconSvg} />
+        <Icon name={link.icon} />
       </a>
     ))
   }

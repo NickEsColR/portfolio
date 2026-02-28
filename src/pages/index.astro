@@ -15,15 +15,15 @@ import CertificatesSection from "@/components/landing/CertificatesSection.astro"
 <Layout title="Nicolas Colmenares — Software Engineer">
   <div class="flex flex-1 flex-col overflow-auto lg:flex-row lg:overflow-hidden">
     <!-- Left column: fixed profile sidebar -->
-    <aside class="bg-background w-full shrink-0 lg:w-[35%] lg:overflow-y-auto">
+    <aside class="bg-background w-full shrink-0 space-y-6 p-6 lg:w-[30%] lg:p-8">
       <ProfileCard />
+      <SkillsSection />
     </aside>
 
     <!-- Right column: scrollable content -->
     <main class="scrollbar-thin flex flex-1 flex-col gap-16 overflow-y-auto p-6">
       <ExperienceSection />
       <ProjectsSection />
-      <SkillsSection />
       <EducationSection />
       <CertificatesSection />
     </main>

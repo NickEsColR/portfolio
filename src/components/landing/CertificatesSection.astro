@@ -2,58 +2,32 @@
 /**
  * CertificatesSection.astro
  * Certificates/certifications section.
+ * Fetches certification documents from Sanity CMS.
  */
+import { sanityClient } from "sanity:client";
+import { formatYear } from "@/lib/sanity/utils";
+import type { Certification } from "@/interfaces/certification.interface";
+import { Icon } from "astro-icon/components";
 
-const certificates = [
-  {
-    name: "Azure Data Scientist Associate",
-    institution: "microsoft",
-    year: "2023",
-  },
-  {
-    name: "Neural Networks with TensorFlow",
-    institution: "Platzi",
-    year: "2023",
-  },
-  {
-    name: "Web Development Specialization",
-    institution: "Netzun",
-    year: "2024",
-  },
-  {
-    name: "React zero to expert",
-    institution: "DevTelles",
-    year: "2024",
-  },
-  {
-    name: "Next.js Zero to Expert",
-    institution: "Udemy",
-    year: "2024",
-  },
-  {
-    name: "Automatic Learning Certification",
-    institution: "ICESI University",
-    year: "2024",
-  },
-];
+const CERTIFICATIONS_QUERY = `*[_type == "certification"] | order(date desc) { certification, issuer, date }`;
+const certificates = await sanityClient.fetch<Certification[]>(CERTIFICATIONS_QUERY);
 ---
 
 <section id="certificates" class="space-y-6">
-  <h2 class="text-xl font-bold tracking-tight text-foreground">Certificates</h2>
+  <h2 class="text-foreground text-xl font-bold tracking-tight">Certificates</h2>
 
   <ol class="space-y-4">
     {
       certificates.map((cert) => (
         <li class="flex items-start justify-between gap-4">
-          <div class="flex items-start gap-3">
-            <!-- Certificate icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mt-0.5 size-5 shrink-0 text-muted-foreground" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+          <div class="flex items-center gap-3">
+            <Icon name="general/Certificate" />
             <div>
-              <h4 class="font-semibold text-foreground">{cert.name}</h4>
-              <p class="text-sm text-muted-foreground italic">{cert.institution}</p>
+              <h4 class="text-foreground font-semibold">{cert.certification}</h4>
+              <p class="text-muted-foreground text-sm italic">{cert.issuer}</p>
             </div>
           </div>
-          <span class="shrink-0 text-sm text-muted-foreground">{cert.year}</span>
+          <span class="text-muted-foreground shrink-0 text-sm">{formatYear(cert.date)}</span>
         </li>
       ))
     }

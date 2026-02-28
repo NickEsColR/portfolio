@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["@sanity/astro/module"]
   },
   "include": ["src/**/*.ts", "src/**/*.astro", "src/env.d.ts"]
 }
