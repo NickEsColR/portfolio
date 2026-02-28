@@ -40,7 +40,7 @@
 
 /* ─── Dark mode overrides ─── */
 .dark {
-  --color-background: oklch(7% 0.005 265);
+  --color-background: oklch(14.906% 0.01656 119.851);
   --color-foreground: oklch(98% 0.003 265);
   --color-surface: oklch(14% 0.02 255);
 
@@ -74,10 +74,29 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground flex h-screen flex-col overflow-hidden antialiased lg:overflow-hidden;
     font-family:
       ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("/background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+    opacity: 0.08;
+  }
+
+  .dark body::before {
+    mix-blend-mode: screen;
+    opacity: 0.15;
   }
 
   /* Prevent flash of wrong theme */
