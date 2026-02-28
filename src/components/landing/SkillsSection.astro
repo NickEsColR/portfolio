@@ -2,45 +2,20 @@
 /**
  * SkillsSection.astro
  * Skills/technologies section with badge grid.
+ * Fetches skill documents from Sanity CMS.
  */
+import { sanityClient } from "sanity:client";
 import TechBadge from "./TechBadge.astro";
+import type { Skill } from "@/interfaces/skill.interface";
 
-const skills = [
-  { name: "HTML", icon: "🌐" },
-  { name: "CSS", icon: "🎨" },
-  { name: "JavaScript", icon: "js" },
-  { name: "Tailwind", icon: "➤" },
-  { name: "TypeScript", icon: "TS" },
-  { name: "Node", icon: "◉" },
-  { name: "Python", icon: "🐍" },
-  { name: "TensorFlow", icon: "🧠" },
-  { name: "SQL", icon: "sql" },
-  { name: "PostgreSQL", icon: "🐘" },
-  { name: "MongoDB", icon: "🍃" },
-  { name: "Git", icon: "◈" },
-  { name: "GitHub", icon: "◉" },
-  { name: "Next.js", icon: "◎" },
-  { name: "React", icon: "⚛" },
-  { name: "Docker", icon: "🐳" },
-  { name: "NestJS", icon: "🐱" },
-  { name: "Vite", icon: "⚡" },
-  { name: "Astro", icon: "🚀" },
-  { name: "Shell", icon: "◎" },
-  { name: "Linux", icon: "🐧" },
-  { name: "Vercel", icon: "▲" },
-  { name: "Netlify", icon: "➤" },
-  { name: "AWS", icon: "☁" },
-  { name: "Azure", icon: "☁" },
-  { name: "GCP", icon: "☁" },
-  { name: "Terraform", icon: "◇" },
-  { name: "OpenAI", icon: "◎" },
-];
+const SKILLS_QUERY = `*[_type == "skill"]{ technology, icon }`;
+const skills = await sanityClient.fetch<Skill[]>(SKILLS_QUERY);
 ---
 
 <section id="skills" class="space-y-6">
   <h2 class="text-foreground text-2xl font-bold tracking-tight">Skills</h2>
 
   <div class="flex flex-wrap gap-2">
-    {skills.map((skill) => <TechBadge name={skill.name} icon={skill.icon} />)}
+    {skills.map((skill) => <TechBadge technology={skill.technology} icon={skill.icon} />)}
   </div>
 </section>

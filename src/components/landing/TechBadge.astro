@@ -3,17 +3,26 @@
  * TechBadge.astro
  * Small pill badge for a technology/skill.
  */
+import { Icon } from "astro-icon/components";
+
 interface Props {
-  name: string;
+  technology: string;
   icon?: string;
 }
 
-const { name, icon } = Astro.props;
+const { technology, icon } = Astro.props;
+
+// Build a set of available local icon files to avoid rendering missing icons
+const iconModules = import.meta.glob("/src/icons/logos/*.svg");
+const availableIcons = new Set(
+  Object.keys(iconModules).map((p) => p.replace("/src/icons/logos/", "").replace(".svg", "")),
+);
+const showIcon = icon && availableIcons.has(icon);
 ---
 
 <span
   class="border-border bg-secondary text-secondary-foreground inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium"
 >
-  {icon && <span class="text-sm">{icon}</span>}
-  {name}
+  {showIcon && <Icon name={`logos/${icon}`} class="text-sm" />}
+  {technology}
 </span>

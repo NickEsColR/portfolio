@@ -2,21 +2,15 @@
 /**
  * EducationSection.astro
  * Education section with degree entries.
+ * Fetches education documents from Sanity CMS.
  */
+import { sanityClient } from "sanity:client";
 import EducationItem from "./EducationItem.astro";
+import { formatPeriod } from "@/lib/sanity/utils";
+import type { Education } from "@/interfaces/education.interface";
 
-const education = [
-  {
-    degree: "Master - Applied Artificial Intelligence",
-    institution: "ICESI University",
-    period: "2025 - Actual",
-  },
-  {
-    degree: "Bachelor - Software System Engineer",
-    institution: "ICESI University",
-    period: "2019 - 2023",
-  },
-];
+const EDUCATION_QUERY = `*[_type == "education"] | order(startDate desc) { level, degree, institution, startDate, endDate }`;
+const education = await sanityClient.fetch<Education[]>(EDUCATION_QUERY);
 ---
 
 <section id="education" class="space-y-6">
@@ -25,7 +19,12 @@ const education = [
   <ol class="space-y-5">
     {
       education.map((edu) => (
-        <EducationItem degree={edu.degree} institution={edu.institution} period={edu.period} />
+        <EducationItem
+          level={edu.level}
+          degree={edu.degree}
+          institution={edu.institution}
+          period={formatPeriod(edu.startDate, edu.endDate)}
+        />
       ))
     }
   </ol>
