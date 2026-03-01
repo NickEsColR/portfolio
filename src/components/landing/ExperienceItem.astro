@@ -18,18 +18,9 @@ interface Props {
   summary: string;
   responsibilities: string[];
   technologies: Skill[];
-  isLast?: boolean;
 }
 
-const {
-  role,
-  company,
-  companyURL,
-  summary,
-  responsibilities,
-  technologies,
-  isLast = false,
-} = Astro.props;
+const { role, company, companyURL, summary, responsibilities, technologies } = Astro.props;
 
 const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
 ---
