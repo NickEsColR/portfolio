@@ -15,6 +15,11 @@ const translatePath = useTranslatedPath(lang);
 const targetLang = lang === "en" ? "es" : "en";
 const targetLabel = languages[targetLang];
 const switchHref = translatePath("/", targetLang);
+
+const resumeUrl =
+  lang === "en"
+    ? "https://drive.google.com/uc?export=download&id=1-qoz0H0kxR5bJ_g53DQRid2Cknt-TAbm"
+    : "https://drive.google.com/uc?export=download&id=1z9aO-b5565KFVAY3lvfFhMB7Nb0rb7G1";
 ---
 
 <header class="sticky top-0 z-50 w-full bg-transparent px-10 backdrop-blur-md">
@@ -31,7 +36,7 @@ const switchHref = translatePath("/", targetLang);
     <div class="flex items-center gap-2">
       <!-- Download Resume PDF -->
       <a
-        href="https://drive.google.com/uc?export=download&id=1-qoz0H0kxR5bJ_g53DQRid2Cknt-TAbm"
+        href={resumeUrl}
         download
         class="text-muted-foreground inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-1.5 text-sm transition-opacity hover:opacity-50 print:hidden"
         aria-label={t("action.downloadResume")}
