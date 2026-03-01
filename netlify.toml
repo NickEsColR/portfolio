@@ -1,7 +1,9 @@
 [build.environment]
   NETLIFY_USE_PNPM = "true"
-  NODE_VERSION = "18"
+  NODE_VERSION = "24"
+  SECRETS_SCAN_OMIT_PATHS = ".agents/**,README.md,.gitignore, .env.example"
 
 [build]
   command = "OUTPUT=netlify astro build"
   publish = "dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':!.agents' ':!.github' ':!.husky' ':!.vscode' ':!.env.example'"

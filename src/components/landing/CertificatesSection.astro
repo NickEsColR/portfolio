@@ -1,0 +1,41 @@
+---
+/**
+ * CertificatesSection.astro
+ * Certificates/certifications section.
+ * Fetches certification documents from Sanity CMS.
+ */
+import { sanityClient } from "sanity:client";
+import { formatYear } from "@/lib/sanity/utils";
+import type { Certification } from "@/interfaces/certification.interface";
+import { Icon } from "astro-icon/components";
+import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+const CERTIFICATIONS_QUERY = `*[_type == "certification"] | order(date desc) { certification, issuer, date }`;
+const certificates = await sanityClient.fetch<Certification[]>(CERTIFICATIONS_QUERY);
+---
+
+<section id="certificates" class="space-y-6">
+  <h2 class="text-foreground text-xl font-bold tracking-tight">{t("section.certificates")}</h2>
+
+  <ol class="space-y-4">
+    {
+      certificates.map((cert) => (
+        <li class="flex items-start justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <Icon name="general/Certificate" />
+            <div>
+              <h4 class="text-foreground font-semibold">
+                {resolveI18n(cert.certification, locale)}
+              </h4>
+              <p class="text-muted-foreground text-sm italic">{cert.issuer}</p>
+            </div>
+          </div>
+          <span class="text-muted-foreground shrink-0 text-sm">{formatYear(cert.date)}</span>
+        </li>
+      ))
+    }
+  </ol>
+</section>

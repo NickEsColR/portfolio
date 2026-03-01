@@ -1,147 +1,44 @@
 ---
-import ArtPlums from "@/components/ui/ArtPlums.astro";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import "../globals.css";
-import Header from "@/components/Header.astro";
-import KeyboardManager from "@/components/hotkey/KeyboardManager.astro";
+/**
+ * Layout.astro
+ * Base layout with dark/light mode support, global styles, and SEO meta tags.
+ * Supports a two-column layout where the left column is fixed and the right scrolls.
+ */
+import "@/styles/global.css";
+import Header from "@/components/ui/Header.astro";
 
 interface Props {
   title: string;
   description?: string;
-  isNotFound?: boolean;
-  lang: string;
-  url?: string;
 }
 
-const { title, description, url, lang, isNotFound = false } = Astro.props;
-
-const image = `/seo_image_${lang}.webp`;
+const { title, description = "Nicolas Colmenares — Software Engineer Portfolio" } = Astro.props;
+const lang = Astro.currentLocale ?? "en";
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="/icon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" />
-    <link rel="shortcut icon" href="/icon/favicon.ico" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta name="referrer" content="no-referrer" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    {isNotFound && <meta name="robots" content="noindex" />}
-    {
-      description && (
-        <>
-          <meta name="description" content={description} />
-          <meta property="og:description" content={description} />
-          <meta name="twitter:description" content={description} />
-        </>
-      )
-    }
-    {
-      image && (
-        <>
-          <link rel="preload" as="image" href={image} />
-          <meta property="og:image" content={image} />
-          <meta property="og:image" content={image} />
-          <meta name="twitter:image" content={image} />
-        </>
-      )
-    }
-    {
-      url && (
-        <>
-          <link rel="canonical" href={url} />
-          <meta property="og:url" content={url} />
-          <meta property="twitter:domain" content={url.split("/")[2] ?? ""} />
-          <meta property="twitter:url" content={url} />
-        </>
-      )
-    }
+    <!-- Inline script to prevent flash of wrong theme (FOUC) -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
-  <body class="relative bg-skin-fill font-sans">
-    <div class="absolute top-0 -z-10 h-full w-full print:hidden">
-      <div
-        class="absolute bottom-auto left-[20%] right-auto top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full bg-skin-hue/10 blur-[80px] invert-0 dark:bg-white/5"
-      >
-      </div>
-    </div>
-    <ArtPlums />
+  <body>
     <Header />
-    <KeyboardManager />
     <slot />
-    <style>
-      body,
-      figure {
-        margin: 0;
-        padding: 0;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        @apply font-sans text-skin-base;
-        margin: 0;
-      }
-
-      p {
-        @apply text-sm text-skin-muted;
-        line-height: 1.5;
-        text-wrap: pretty;
-      }
-
-      .print {
-        display: none !important;
-      }
-
-      .dev * {
-        @apply border border-red-500/50 bg-red-500/5;
-      }
-
-      ::-webkit-scrollbar {
-        width: 2px;
-      }
-
-      @media print {
-        .print {
-          display: block !important;
-        }
-
-        astro-dev-toolbar {
-          display: none !important;
-        }
-
-        article {
-          break-inside: avoid;
-        }
-      }
-    </style>
   </body>
 </html>

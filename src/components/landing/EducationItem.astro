@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+/**
+ * EducationItem.astro
+ * Single education entry with level, degree, institution, and period.
+ */
+interface Props {
+  level: string;
+  degree: string;
+  institution: string;
+  period: string;
+}
+
+const { level, degree, institution, period } = Astro.props;
+---
+
+<li class="flex items-start justify-between gap-4">
+  <div class="flex items-start gap-3">
+    <Icon name="general/GraduationCap" class="text-2xl" />
+    <div>
+      <h4 class="text-foreground font-semibold">{level} - {degree}</h4>
+      <p class="text-muted-foreground text-sm italic">{institution}</p>
+    </div>
+  </div>
+  <span class="text-muted-foreground shrink-0 text-sm">{period}</span>
+</li>
