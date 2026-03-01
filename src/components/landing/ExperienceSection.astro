@@ -5,7 +5,7 @@
  * Fetches experience documents from Sanity CMS.
  */
 import { sanityClient } from "sanity:client";
-import ExperienceItem from "./ExperienceItem.astro";
+import ExperienceItem from "@/components/landing/ExperienceItem.astro";
 import { formatPeriod } from "@/lib/sanity/utils";
 import type { Experience } from "@/interfaces/experience.interface";
 import { resolveI18n, resolveI18nArray, useTranslations, getLocale } from "@/i18n/utils";

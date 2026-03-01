@@ -6,9 +6,9 @@
 import { sanityClient } from "sanity:client";
 import { getSanityImageUrl } from "@/lib/sanity/image";
 
-import EmailBadge from "./EmailBadge.astro";
-import SocialLinks from "./SocialLinks.astro";
-import type { SocialLink } from "./SocialLinks.astro";
+import EmailBadge from "@/components/landing/EmailBadge.astro";
+import SocialLinks from "@/components/landing/SocialLinks.astro";
+import type { SocialLink } from "@/components/landing/SocialLinks.astro";
 import type { ProfileData } from "@/interfaces/profileData.interface";
 import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
 
