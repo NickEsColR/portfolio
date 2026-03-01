@@ -2,7 +2,7 @@
  * i18n helper utilities.
  * Provides locale detection, translation lookup, path building, and I18nString resolution.
  */
-import { ui, defaultLang, type Locale } from "./ui";
+import { ui, defaultLang, type Locale } from "@/i18n/ui";
 import type { I18nString } from "@/interfaces/i18n.interface";
 
 export type { Locale };

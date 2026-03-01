@@ -5,7 +5,7 @@
  * Fetches education documents from Sanity CMS.
  */
 import { sanityClient } from "sanity:client";
-import EducationItem from "./EducationItem.astro";
+import EducationItem from "@/components/landing/EducationItem.astro";
 import { formatPeriod } from "@/lib/sanity/utils";
 import type { Education } from "@/interfaces/education.interface";
 import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
