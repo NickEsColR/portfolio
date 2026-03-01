@@ -1,0 +1,99 @@
+---
+/**
+ * ProjectCard.astro
+ * Card for a single project with name, description, bulletpoints, technologies, and image.
+ */
+import { Icon } from "astro-icon/components";
+import TechBadge from "@/components/landing/TechBadge.astro";
+import type { Skill } from "@/interfaces/skill.interface";
+
+interface Props {
+  name: string;
+  demoURL?: string;
+  repoURL?: string;
+  description: string;
+  bulletpoints: string[];
+  technologies: Skill[];
+  projectImage?: string;
+}
+
+const { name, demoURL, repoURL, description, bulletpoints, technologies, projectImage } =
+  Astro.props;
+---
+
+<article
+  class="border-border bg-card flex flex-col justify-between rounded-xl border p-6 shadow-sm transition-shadow hover:shadow-md"
+>
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="text-card-foreground text-lg font-semibold">
+      {
+        demoURL ? (
+          <a
+            href={demoURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary group inline-flex items-center gap-1 hover:underline"
+          >
+            <Icon name="general/Folder" class="text-muted-foreground" />
+            {name}
+            <Icon
+              name="ui/arrowUpRight"
+              class="inline text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </a>
+        ) : (
+          <span class="inline-flex items-center gap-1">
+            <Icon name="general/Folder" class="text-muted-foreground" />
+            {name}
+          </span>
+        )
+      }
+    </h3>
+    {
+      repoURL && (
+        <a
+          href={repoURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} on GitHub`}
+          class="text-muted-foreground hover:text-foreground shrink-0 transition-all hover:scale-125"
+        >
+          <Icon name="logos/Github" class="text-lg" />
+        </a>
+      )
+    }
+  </div>
+
+  <p class="text-muted-foreground mt-2 text-sm">{description}</p>
+
+  {
+    bulletpoints.length > 0 && (
+      <ul class="text-muted-foreground mt-3 space-y-1 text-sm">
+        {bulletpoints.map((point) => (
+          <li class="flex items-start gap-2">
+            <span class="shrink-0">•</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    technologies.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-2">
+        {technologies.map((tech) => (
+          <TechBadge technology={tech.technology} icon={tech.icon} />
+        ))}
+      </div>
+    )
+  }
+
+  {
+    projectImage && (
+      <div class="border-border mt-4 overflow-hidden rounded-lg border">
+        <img src={projectImage} alt={name} class="h-auto w-full object-cover" loading="lazy" />
+      </div>
+    )
+  }
+</article>

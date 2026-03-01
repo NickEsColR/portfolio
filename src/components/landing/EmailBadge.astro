@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+/**
+ * EmailBadge.astro
+ * Displays the email address with a copy-to-clipboard button.
+ */
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+---
+
+<div
+  class="border-border bg-surface text-foreground inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm"
+>
+  <span id="email-text">{email}</span>
+  <button
+    id="copy-email-btn"
+    type="button"
+    aria-label={t("action.copyEmail")}
+    class="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center rounded-md p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+    data-email={email}
+    data-label-copy={t("action.copyEmail")}
+    data-label-copied={t("action.copied")}
+  >
+    <Icon name="ui/copy" class="size-4" />
+  </button>
+</div>
+
+<script>
+  function initCopyEmail() {
+    const btn = document.getElementById("copy-email-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-email");
+      if (!email) return;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        btn.setAttribute("aria-label", btn.getAttribute("data-label-copied") || "Copied!");
+        setTimeout(() => {
+          btn.setAttribute(
+            "aria-label",
+            btn.getAttribute("data-label-copy") || "Copy email to clipboard",
+          );
+        }, 2000);
+      } catch {
+        /* Fallback: do nothing */
+      }
+    });
+  }
+
+  initCopyEmail();
+  document.addEventListener("astro:after-swap", initCopyEmail);
+</script>

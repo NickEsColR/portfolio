@@ -1,0 +1,82 @@
+---
+/**
+ * ProfileCard.astro
+ * Left column: profile photo, name, title, email, social links, and about me.
+ */
+import { sanityClient } from "sanity:client";
+import { getSanityImageUrl } from "@/lib/sanity/image";
+
+import EmailBadge from "@/components/landing/EmailBadge.astro";
+import SocialLinks from "@/components/landing/SocialLinks.astro";
+import type { SocialLink } from "@/components/landing/SocialLinks.astro";
+import type { ProfileData } from "@/interfaces/profileData.interface";
+import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+//Fetch profile data from Sanity CMS
+const BIO_QUERY = `*[_type == "bio"][0]{elevatorPitch,email,github,linkedIn,name,profilePicture,role}`;
+const { elevatorPitch, email, github, linkedIn, name, profilePicture, role } =
+  await sanityClient.fetch<ProfileData>(BIO_QUERY);
+const image = getSanityImageUrl(profilePicture, 80, 80);
+
+/**
+ * Social links data — in a real setup this would come from a CMS
+ * (e.g. Sanity, Strapi, Contentful) and each entry would carry its
+ * own raw SVG icon stored as a text/code field in the CMS.
+ */
+const socialLinks: SocialLink[] = [
+  {
+    href: `mailto:${email}`,
+    label: "Email",
+    icon: "general/Email",
+  },
+  {
+    href: linkedIn,
+    label: "LinkedIn",
+    icon: "logos/LinkedIn",
+  },
+  {
+    href: github,
+    label: "GitHub",
+    icon: "logos/Github",
+  },
+];
+---
+
+<div class="space-y-6">
+  <!-- Profile photo -->
+  <div class="border-border size-20 overflow-hidden rounded-full border-2">
+    <img
+      src={image}
+      alt={`Profile picture of ${name}`}
+      class="size-full object-cover"
+      width="80"
+      height="80"
+    />
+  </div>
+
+  <!-- Name & Title -->
+  <div>
+    <h1 class="text-foreground text-2xl font-bold">{name}</h1>
+    <h3 class="text-muted-foreground text-sm">{role}</h3>
+  </div>
+
+  <!-- Email badge -->
+  <EmailBadge email={email} />
+
+  <!-- Social links -->
+  <SocialLinks links={socialLinks} />
+
+  <!-- About me -->
+  <div class="space-y-3">
+    <h2 class="text-foreground text-xl font-bold">{t("section.aboutMe")}</h2>
+    <p
+      class="text-muted-foreground text-sm leading-relaxed text-pretty"
+      style="font-family: monospace;"
+    >
+      {resolveI18n(elevatorPitch, locale)}
+    </p>
+  </div>
+</div>

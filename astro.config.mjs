@@ -1,33 +1,34 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import astroIcon from "astro-icon";
-import playformCompress from "@playform/compress";
+import { defineConfig, envField } from "astro/config";
+import { loadEnv } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
+import sanity from "@sanity/astro";
+
+const { SANITY_PROJECT_ID, SANITY_DATASET } = loadEnv(
+  process.env.NODE_ENV || "development",
+  process.cwd(),
+  "",
+);
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    astroIcon({
-      include: {
-        mdi: ["*"],
-        ri: ["*"],
-        "simple-icons": ["*"],
-      },
-    }),
-    playformCompress({
-      CSS: false,
-      Image: false,
-      Action: {
-        Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
-      },
-    }),
-  ],
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],
     routing: {
       prefixDefaultLocale: false,
-    }
-  }
+    },
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [
+    icon(),
+    sanity({
+      projectId: SANITY_PROJECT_ID,
+      dataset: SANITY_DATASET,
+      useCdn: false,
+    }),
+  ],
 });

@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@cv": ["./cv.json"],
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["@sanity/astro/module"]
   },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"]
+  "include": ["src/**/*.ts", "src/**/*.astro", "src/env.d.ts"]
 }

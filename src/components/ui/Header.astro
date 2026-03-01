@@ -1,0 +1,103 @@
+---
+/**
+ * Header.astro
+ * Site header with logo, command palette, theme toggle, and language selector.
+ */
+import ThemeToggle from "@/components/ui/ThemeToggle.astro";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "@/i18n/utils";
+import { languages } from "@/i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+/** Target locale is the opposite of the current one */
+const targetLang = lang === "en" ? "es" : "en";
+const targetLabel = languages[targetLang];
+const switchHref = translatePath("/", targetLang);
+
+const resumeUrl =
+  lang === "en"
+    ? "https://drive.google.com/uc?export=download&id=1-qoz0H0kxR5bJ_g53DQRid2Cknt-TAbm"
+    : "https://drive.google.com/uc?export=download&id=1z9aO-b5565KFVAY3lvfFhMB7Nb0rb7G1";
+---
+
+<header class="sticky top-0 z-50 w-full bg-transparent px-10 backdrop-blur-md">
+  <div class="mx-auto flex h-14 items-center justify-between px-4 sm:px-6">
+    <!-- Logo -->
+    <a
+      href={translatePath("/")}
+      class="text-foreground hover:text-primary text-sm font-bold transition-colors"
+    >
+      NickEsColR
+    </a>
+
+    <!-- Right side controls -->
+    <div class="flex items-center gap-2">
+      <!-- Download Resume PDF -->
+      <a
+        href={resumeUrl}
+        download
+        class="text-muted-foreground inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-1.5 text-sm transition-opacity hover:opacity-50 print:hidden"
+        aria-label={t("action.downloadResume")}
+        title={t("action.downloadResume")}
+      >
+        <svg
+          class="size-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+          ></path>
+        </svg>
+      </a>
+
+      <!-- Theme toggle -->
+      <ThemeToggle />
+
+      <!-- Language selector -->
+      <a
+        href={switchHref}
+        class="text-muted-foreground inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-1.5 text-sm transition-opacity hover:opacity-50"
+        aria-label={t("action.changeLanguage")}
+      >
+        <svg
+          class="size-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m5 8 6 6"></path>
+          <path d="m4 14 6-6 2-3"></path>
+          <path d="M2 5h12"></path>
+          <path d="M7 2h1"></path>
+          <path d="m22 22-5-10-5 10"></path>
+          <path d="M14 18h6"></path>
+        </svg>
+        <span class="hidden sm:inline">{targetLabel}</span>
+        <svg
+          class="size-3"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>

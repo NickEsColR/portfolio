@@ -1,0 +1,134 @@
+---
+/**
+ * ExperienceItem.astro
+ * Single experience entry with expandable responsibilities.
+ */
+import { Icon } from "astro-icon/components";
+import TechBadge from "@/components/landing/TechBadge.astro";
+import type { Skill } from "@/interfaces/skill.interface";
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+interface Props {
+  role: string;
+  company: string;
+  companyURL?: string;
+  summary: string;
+  responsibilities: string[];
+  technologies: Skill[];
+}
+
+const { role, company, companyURL, summary, responsibilities, technologies } = Astro.props;
+
+const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
+---
+
+<div class="relative pl-8">
+  <!-- Timeline dot -->
+  <div class="border-primary bg-background absolute top-1.5 left-0 size-3 rounded-full border-2">
+  </div>
+
+  <!-- Timeline connecting line -->
+  <div class="bg-border absolute top-4.5 left-1.25 h-[calc(100%+2.5rem)] w-px"></div>
+
+  <div class="space-y-3">
+    <div>
+      <h3 class="text-foreground text-lg font-semibold">
+        {role} @{" "}
+        {
+          companyURL ? (
+            <a
+              href={companyURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary group underline-offset-4 hover:underline"
+            >
+              {company}{" "}
+              <Icon
+                name="ui/arrowUpRight"
+                class="inline text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </a>
+          ) : (
+            <span class="text-primary">{company}</span>
+          )
+        }
+      </h3>
+    </div>
+
+    <div>
+      <p class="text-foreground text-sm font-semibold">{t("label.summary")}</p>
+      <ul class="text-muted-foreground ml-4 list-disc text-sm">
+        <li>{summary}</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-foreground text-sm font-semibold">{t("label.responsibilities")}</p>
+      <ul class="text-muted-foreground ml-4 list-disc text-sm">
+        <li>{responsibilities[0]}</li>
+      </ul>
+      {
+        responsibilities.length > 1 && (
+          <div>
+            <ul
+              id={`${itemId}-details`}
+              class="text-muted-foreground ml-4 hidden list-disc text-sm text-pretty"
+            >
+              {responsibilities.slice(1).map((r) => (
+                <li>{r}</li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              class="exp-toggle text-muted-foreground hover:text-foreground mt-1 flex items-center gap-1 text-sm"
+              data-target={`${itemId}-details`}
+              data-show-more={t("action.showMore")}
+              data-show-less={t("action.showLess")}
+            >
+              <span class="toggle-text">{t("action.showMore")}</span>
+              <Icon name="ui/chevronDown" class="toggle-icon text-xs transition-transform" />
+            </button>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {technologies.map((tech) => <TechBadge technology={tech.technology} icon={tech.icon} />)}
+    </div>
+  </div>
+</div>
+
+<script>
+  function initExpToggles() {
+    document.querySelectorAll(".exp-toggle").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        if (!targetId) return;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const isHidden = target.classList.contains("hidden");
+        target.classList.toggle("hidden");
+
+        const textEl = btn.querySelector(".toggle-text");
+        const iconEl = btn.querySelector(".toggle-icon") as HTMLElement | null;
+
+        if (textEl) {
+          textEl.textContent = isHidden
+            ? btn.getAttribute("data-show-less") || "Show less"
+            : btn.getAttribute("data-show-more") || "Show more";
+        }
+        if (iconEl) {
+          iconEl.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+        }
+      });
+    });
+  }
+
+  initExpToggles();
+  document.addEventListener("astro:after-swap", initExpToggles);
+</script>
