@@ -10,6 +10,10 @@ import EmailBadge from "./EmailBadge.astro";
 import SocialLinks from "./SocialLinks.astro";
 import type { SocialLink } from "./SocialLinks.astro";
 import type { ProfileData } from "@/interfaces/profileData.interface";
+import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 //Fetch profile data from Sanity CMS
 const BIO_QUERY = `*[_type == "bio"][0]{elevatorPitch,email,github,linkedIn,name,profilePicture,role}`;
@@ -67,12 +71,12 @@ const socialLinks: SocialLink[] = [
 
   <!-- About me -->
   <div class="space-y-3">
-    <h2 class="text-foreground text-xl font-bold">About me</h2>
+    <h2 class="text-foreground text-xl font-bold">{t("section.aboutMe")}</h2>
     <p
       class="text-muted-foreground text-sm leading-relaxed text-pretty"
       style="font-family: monospace;"
     >
-      {elevatorPitch}
+      {resolveI18n(elevatorPitch, locale)}
     </p>
   </div>
 </div>

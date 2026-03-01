@@ -7,13 +7,17 @@
 import { sanityClient } from "sanity:client";
 import TechBadge from "./TechBadge.astro";
 import type { Skill } from "@/interfaces/skill.interface";
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const SKILLS_QUERY = `*[_type == "skill"]{ technology, icon }`;
 const skills = await sanityClient.fetch<Skill[]>(SKILLS_QUERY);
 ---
 
 <section id="skills" class="space-y-6">
-  <h2 class="text-foreground text-2xl font-bold tracking-tight">Skills</h2>
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">{t("section.skills")}</h2>
 
   <div class="flex flex-wrap gap-2">
     {skills.map((skill) => <TechBadge technology={skill.technology} icon={skill.icon} />)}

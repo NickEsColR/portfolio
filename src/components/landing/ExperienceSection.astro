@@ -8,6 +8,10 @@ import { sanityClient } from "sanity:client";
 import ExperienceItem from "./ExperienceItem.astro";
 import { formatPeriod } from "@/lib/sanity/utils";
 import type { Experience } from "@/interfaces/experience.interface";
+import { resolveI18n, resolveI18nArray, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const EXPERIENCE_QUERY = `*[_type == "experience"] | order(startDate desc) {
   role, company, companyURL, startDate, endDate, summary,
@@ -17,22 +21,22 @@ const experiences = await sanityClient.fetch<Experience[]>(EXPERIENCE_QUERY);
 ---
 
 <section id="experience" class="space-y-8">
-  <h2 class="text-foreground text-2xl font-bold tracking-tight">Experience</h2>
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">{t("section.experience")}</h2>
 
   <div class="relative space-y-10">
     {
       experiences.map((exp, i) => (
         <div class="flex flex-col gap-1 sm:flex-row sm:gap-8">
           <span class="text-muted-foreground shrink-0 text-sm sm:w-28">
-            {formatPeriod(exp.startDate, exp.endDate)}
+            {formatPeriod(exp.startDate, exp.endDate, locale)}
           </span>
           <div class="flex-1">
             <ExperienceItem
               role={exp.role}
               company={exp.company}
               companyURL={exp.companyURL}
-              summary={exp.summary}
-              responsibilities={exp.responsibilities}
+              summary={resolveI18n(exp.summary, locale)}
+              responsibilities={resolveI18nArray(exp.responsibilities, locale)}
               technologies={exp.technologies}
               isLast={i === experiences.length - 1}
             />

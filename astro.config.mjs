@@ -13,6 +13,13 @@ const { SANITY_PROJECT_ID, SANITY_DATASET } = loadEnv(
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
