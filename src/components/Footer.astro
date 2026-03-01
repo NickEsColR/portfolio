@@ -3,10 +3,14 @@
  * Footer.astro
  * Site footer.
  */
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
-<footer class="border-t border-border py-8">
-  <div class="mx-auto max-w-4xl px-4 text-center text-sm text-muted-foreground sm:px-6">
-    <p>&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+<footer class="border-border border-t py-8">
+  <div class="text-muted-foreground mx-auto max-w-4xl px-4 text-center text-sm sm:px-6">
+    <p>&copy; {new Date().getFullYear()} {t("footer.rights")}</p>
   </div>
 </footer>
