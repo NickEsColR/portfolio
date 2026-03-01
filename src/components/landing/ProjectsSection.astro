@@ -8,6 +8,10 @@ import { sanityClient } from "sanity:client";
 import ProjectCard from "./ProjectCard.astro";
 import { getSanityImageUrl } from "@/lib/sanity/image";
 import type { Project } from "@/interfaces/project.interface";
+import { resolveI18n, resolveI18nArray, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const PROJECTS_QUERY = `*[_type == "project"] {
   name, description, demoURL, repoURL, bulletpoints,
@@ -17,7 +21,7 @@ const projects = await sanityClient.fetch<Project[]>(PROJECTS_QUERY);
 ---
 
 <section id="projects" class="space-y-8">
-  <h2 class="text-foreground text-2xl font-bold tracking-tight">Projects</h2>
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">{t("section.projects")}</h2>
 
   <div class="grid gap-6 md:grid-cols-2">
     {
@@ -26,8 +30,8 @@ const projects = await sanityClient.fetch<Project[]>(PROJECTS_QUERY);
           name={project.name}
           demoURL={project.demoURL}
           repoURL={project.repoURL}
-          description={project.description}
-          bulletpoints={project.bulletpoints}
+          description={resolveI18n(project.description, locale)}
+          bulletpoints={resolveI18nArray(project.bulletpoints, locale)}
           technologies={project.technologies}
           projectImage={
             project.projectImage ? getSanityImageUrl(project.projectImage, 1280, 920) : undefined

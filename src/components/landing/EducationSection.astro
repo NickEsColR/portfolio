@@ -8,22 +8,26 @@ import { sanityClient } from "sanity:client";
 import EducationItem from "./EducationItem.astro";
 import { formatPeriod } from "@/lib/sanity/utils";
 import type { Education } from "@/interfaces/education.interface";
+import { resolveI18n, useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const EDUCATION_QUERY = `*[_type == "education"] | order(startDate desc) { level, degree, institution, startDate, endDate }`;
 const education = await sanityClient.fetch<Education[]>(EDUCATION_QUERY);
 ---
 
 <section id="education" class="space-y-6">
-  <h2 class="text-foreground text-2xl font-bold tracking-tight">Education</h2>
+  <h2 class="text-foreground text-2xl font-bold tracking-tight">{t("section.education")}</h2>
 
   <ol class="space-y-5">
     {
       education.map((edu) => (
         <EducationItem
-          level={edu.level}
-          degree={edu.degree}
+          level={resolveI18n(edu.level, locale)}
+          degree={resolveI18n(edu.degree, locale)}
           institution={edu.institution}
-          period={formatPeriod(edu.startDate, edu.endDate)}
+          period={formatPeriod(edu.startDate, edu.endDate, locale)}
         />
       ))
     }

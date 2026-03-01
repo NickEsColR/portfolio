@@ -6,6 +6,10 @@
 import { Icon } from "astro-icon/components";
 import TechBadge from "./TechBadge.astro";
 import type { Skill } from "@/interfaces/skill.interface";
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 interface Props {
   role: string;
@@ -64,14 +68,14 @@ const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
     </div>
 
     <div>
-      <p class="text-foreground text-sm font-semibold">Summary:</p>
+      <p class="text-foreground text-sm font-semibold">{t("label.summary")}</p>
       <ul class="text-muted-foreground ml-4 list-disc text-sm">
         <li>{summary}</li>
       </ul>
     </div>
 
     <div>
-      <p class="text-foreground text-sm font-semibold">Responsibilities:</p>
+      <p class="text-foreground text-sm font-semibold">{t("label.responsibilities")}</p>
       <ul class="text-muted-foreground ml-4 list-disc text-sm">
         <li>{responsibilities[0]}</li>
       </ul>
@@ -90,8 +94,10 @@ const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
               type="button"
               class="exp-toggle text-muted-foreground hover:text-foreground mt-1 flex items-center gap-1 text-sm"
               data-target={`${itemId}-details`}
+              data-show-more={t("action.showMore")}
+              data-show-less={t("action.showLess")}
             >
-              <span class="toggle-text">Show more</span>
+              <span class="toggle-text">{t("action.showMore")}</span>
               <Icon name="ui/chevronDown" class="toggle-icon text-xs transition-transform" />
             </button>
           </div>
@@ -121,7 +127,9 @@ const itemId = `exp-${company.toLowerCase().replace(/\s+/g, "-")}`;
         const iconEl = btn.querySelector(".toggle-icon") as HTMLElement | null;
 
         if (textEl) {
-          textEl.textContent = isHidden ? "Show less" : "Show more";
+          textEl.textContent = isHidden
+            ? btn.getAttribute("data-show-less") || "Show less"
+            : btn.getAttribute("data-show-more") || "Show more";
         }
         if (iconEl) {
           iconEl.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";

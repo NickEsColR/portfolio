@@ -4,12 +4,16 @@
  * Toggles between light and dark mode.
  * Persists preference in localStorage.
  */
+import { useTranslations, getLocale } from "@/i18n/utils";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
 <button
   id="theme-toggle"
   type="button"
-  aria-label="Toggle dark mode"
+  aria-label={t("action.toggleDarkMode")}
   class="text-muted-foreground focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center rounded-md p-2 transition-transform hover:rotate-45 hover:opacity-50 focus:rotate-45 focus:opacity-50 focus-visible:ring-2 focus-visible:outline-none"
 >
   <!-- Sun icon (shown in dark mode) -->
