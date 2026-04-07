@@ -1521,8 +1521,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/expand@5.0.11':
-    resolution: {integrity: sha512-yxSO89MQ7t4LTCwtsXQ/ppcfw2otLsum6nF+TM9pKesy3k2AhVDUIkaiJIwG6lzm/csc5n38MaFKLY0TrSHzEA==}
+  '@inquirer/expand@5.0.12':
+    resolution: {integrity: sha512-vOfrB33b7YIZfDauXS8vNNz2Z86FozTZLIt7e+7/dCaPJ1RXZsHCuI9TlcERzEUq57vkM+UdnBgxP0rFd23JYQ==}
     engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
     peerDependencies:
       '@types/node': '>=18'
@@ -1570,8 +1570,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/prompts@8.4.0':
-    resolution: {integrity: sha512-Z3pFkae4WSzK95tvbaxR3rD9JlScFIh6/Ufw60H8Ck7GugdzYCe/3FwZCfvXwHZXjyk671w8FnVuwvxx1eP7ug==}
+  '@inquirer/prompts@8.4.1':
+    resolution: {integrity: sha512-AH5xPQ997K7e0F0vulPlteIHke2awMkFi8F0dBemrDfmvtPmHJo82mdHbONC4F/t8d1NHwrbI5cGVI+RbLWdoQ==}
     engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
     peerDependencies:
       '@types/node': '>=18'
@@ -2217,8 +2217,8 @@ packages:
     peerDependencies:
       '@sanity/client': ^7.18.0
 
-  '@sanity/runtime-cli@14.9.0':
-    resolution: {integrity: sha512-u43u83th5qEOv1TTCxtf/d++3nDptJ94dvPgp50bJkeHLOn9doprhMcc8hXA6Cv7mlitxDrWqCynp9ei+uNcDA==}
+  '@sanity/runtime-cli@14.10.0':
+    resolution: {integrity: sha512-VLRzsPqx6ZtSI/eKKPC0Nq1l+/q7Ay+ZziKMeVArzDe42RW3g0L3mEAX6eVjkhnN25ivetw6Im0LdunF2gjJgQ==}
     engines: {node: '>=20.19'}
     hasBin: true
 
@@ -4534,9 +4534,6 @@ packages:
 
   lodash.upperfirst@4.3.1:
     resolution: {integrity: sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==}
-
-  lodash@4.17.23:
-    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
   lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
@@ -8153,7 +8150,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.7.4
 
-  '@inquirer/expand@5.0.11(@types/node@22.7.4)':
+  '@inquirer/expand@5.0.12(@types/node@22.7.4)':
     dependencies:
       '@inquirer/core': 11.1.8(@types/node@22.7.4)
       '@inquirer/type': 4.0.5(@types/node@22.7.4)
@@ -8191,12 +8188,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.7.4
 
-  '@inquirer/prompts@8.4.0(@types/node@22.7.4)':
+  '@inquirer/prompts@8.4.1(@types/node@22.7.4)':
     dependencies:
       '@inquirer/checkbox': 5.1.3(@types/node@22.7.4)
       '@inquirer/confirm': 6.0.11(@types/node@22.7.4)
       '@inquirer/editor': 5.1.0(@types/node@22.7.4)
-      '@inquirer/expand': 5.0.11(@types/node@22.7.4)
+      '@inquirer/expand': 5.0.12(@types/node@22.7.4)
       '@inquirer/input': 5.0.11(@types/node@22.7.4)
       '@inquirer/number': 4.0.11(@types/node@22.7.4)
       '@inquirer/password': 5.0.11(@types/node@22.7.4)
@@ -8693,7 +8690,7 @@ snapshots:
 
   '@sanity/cli-core@0.1.0-alpha.19(@noble/hashes@2.0.1)(@sanity/telemetry@0.8.1(react@19.2.4))(@types/node@22.7.4)(@types/react@19.2.14)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.31.3)(yaml@2.8.3)':
     dependencies:
-      '@inquirer/prompts': 8.4.0(@types/node@22.7.4)
+      '@inquirer/prompts': 8.4.1(@types/node@22.7.4)
       '@oclif/core': 4.10.5
       '@rexxars/jiti': 2.6.2
       '@sanity/client': 7.20.0
@@ -8740,7 +8737,7 @@ snapshots:
       '@babel/traverse': 7.29.0
       '@sanity/client': 7.20.0
       '@sanity/codegen': 5.10.1(@noble/hashes@2.0.1)(@sanity/telemetry@0.8.1(react@19.2.4))(@types/node@22.7.4)(@types/react@19.2.14)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.31.3)(yaml@2.8.3)
-      '@sanity/runtime-cli': 14.9.0(@types/node@22.7.4)(lightningcss@1.31.1)(terser@5.31.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)
+      '@sanity/runtime-cli': 14.10.0(@types/node@22.7.4)(lightningcss@1.31.1)(terser@5.31.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)
       '@sanity/telemetry': 0.8.1(react@19.2.4)
       '@sanity/template-validator': 3.1.0
       '@sanity/worker-channels': 1.1.0
@@ -9049,7 +9046,7 @@ snapshots:
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/uuid': 3.0.2
       hotscript: 1.0.13
-      lodash: 4.17.23
+      lodash: 4.18.1
       mendoza: 3.0.8
       nanoid: 5.1.7
       rxjs: 7.8.2
@@ -9064,7 +9061,7 @@ snapshots:
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/uuid': 3.0.2
       hotscript: 1.0.13
-      lodash: 4.17.23
+      lodash: 4.18.1
       mendoza: 3.0.8
       nanoid: 5.1.7
       rxjs: 7.8.2
@@ -9110,11 +9107,11 @@ snapshots:
       '@sanity/client': 7.20.0
       '@sanity/uuid': 3.0.2
 
-  '@sanity/runtime-cli@14.9.0(@types/node@22.7.4)(lightningcss@1.31.1)(terser@5.31.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)':
+  '@sanity/runtime-cli@14.10.0(@types/node@22.7.4)(lightningcss@1.31.1)(terser@5.31.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)':
     dependencies:
       '@architect/hydrate': 5.0.2
       '@architect/inventory': 5.0.0
-      '@inquirer/prompts': 8.4.0(@types/node@22.7.4)
+      '@inquirer/prompts': 8.4.1(@types/node@22.7.4)
       '@oclif/core': 4.10.5
       '@oclif/plugin-help': 6.2.43
       '@sanity/blueprints': 0.15.0
@@ -11741,8 +11738,6 @@ snapshots:
   lodash.startcase@4.4.0: {}
 
   lodash.upperfirst@4.3.1: {}
-
-  lodash@4.17.23: {}
 
   lodash@4.18.1: {}
 
