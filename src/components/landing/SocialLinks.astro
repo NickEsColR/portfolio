@@ -1,0 +1,41 @@
+---
+/**
+ * SocialLinks.astro
+ * Row of social media icon links.
+ *
+ * Designed to be driven by CMS data — each link receives its icon
+ * as a raw SVG string so the icon catalog lives in the data layer,
+ * not inside this component.
+ */
+
+export interface SocialLink {
+  /** URL the link points to */
+  href: string;
+  /** Accessible label for screen readers */
+  label: string;
+  /** Raw SVG markup (e.g. from a CMS icon field) */
+  iconSvg: string;
+}
+
+interface Props {
+  links: SocialLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="flex items-center gap-3">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        target={"_blank"}
+        rel={"noopener noreferrer"}
+        aria-label={link.label}
+        class="text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex items-center justify-center rounded-md p-2 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+      >
+        <Fragment set:html={link.iconSvg} />
+      </a>
+    ))
+  }
+</div>

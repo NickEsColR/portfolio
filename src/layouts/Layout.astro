@@ -1,0 +1,43 @@
+---
+/**
+ * Layout.astro
+ * Base layout with dark/light mode support, global styles, and SEO meta tags.
+ * Supports a two-column layout where the left column is fixed and the right scrolls.
+ */
+import "@/styles/global.css";
+import Header from "@/components/Header.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Nicolas Colmenares — Software Engineer Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <!-- Inline script to prevent flash of wrong theme (FOUC) -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body class="flex h-screen flex-col overflow-hidden px-4 lg:overflow-hidden">
+    <Header />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.{astro,ts,tsx,json,md,css}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.astro": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@iconify-json/lucide": "^1.2.94",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.18.0",
+    "astro-icon": "^1.1.5",
+    "hotkeypad": "^1.0.2",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "eslint-plugin-astro": "^1.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
+  }
+}
