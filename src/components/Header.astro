@@ -1,0 +1,17 @@
+---
+import SearchBar from "@/components/hotkey/SearchBar.astro";
+import LanguagePicker from "@/components/ui/LanguagePicker.astro";
+import ThemeSwitch from "@/components/ui/ThemeSwitch.astro";
+---
+
+<header
+  class="fixed left-0 top-0 z-50 flex w-screen items-center justify-between p-4 backdrop-blur-sm md:px-16 xl:px-40 print:hidden"
+>
+  <span>NickEsColR</span>
+
+  <div class="flex items-center gap-4 xl:gap-8">
+    <SearchBar />
+    <ThemeSwitch />
+    <LanguagePicker />
+  </div>
+</header>
