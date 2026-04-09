@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Nicolas Colmenares — AI Engineer**, built with Astro and powered by Sanity CMS.
 
-**Live site:** [portfolio-nickescolr.netlify.app](https://portfolio-nickescolr.netlify.app/)
+**Live site:** [colrudev-portfolio.netlify.app](https://colrudev-portfolio.netlify.app/)
 
 ## About
 
