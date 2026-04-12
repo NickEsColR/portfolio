@@ -1,10 +1,12 @@
 services:
   app:
     build: .
+    ports:
+      - "4321:4321"
     volumes:
       - .:/app
       - node_modules:/app/node_modules
-    command: pnpm dev
+    command: pnpm astro dev --host 0.0.0.0
 
 volumes:
   node_modules:
