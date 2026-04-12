@@ -66,11 +66,32 @@ SANITY_DATASET=<your-sanity-dataset>
 pnpm install
 ```
 
-### Development
+### Dockerized Development
+
+All development dependencies are isolated in Docker. No need to install Node, pnpm, or any global packages locally.
+
+**Prerequisite:** Docker must be running and accessible without sudo.
+
+Validate with:
 
 ```bash
-pnpm dev          # Start dev server at localhost:4321
+docker ps
 ```
+
+If you get a permission error, configure Docker to run without sudo:
+
+```bash
+sudo usermod -aG docker $USER
+# Then log out and log back in
+```
+
+**Start the development environment:**
+
+```bash
+make up
+```
+
+This builds the Docker image and starts the dev server. All other commands are available in the [`Makefile`](./Makefile).
 
 ## Commands
 
