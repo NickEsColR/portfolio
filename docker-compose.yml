@@ -6,7 +6,11 @@ services:
     volumes:
       - .:/app
       - node_modules:/app/node_modules
+      - pnpm_store:/root/.local/share/pnpm/store
+    environment:
+      - PNPM_HOME=/root/.local/share/pnpm
     command: pnpm astro dev --host 0.0.0.0
 
 volumes:
   node_modules:
+  pnpm_store:
