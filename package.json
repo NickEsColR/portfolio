@@ -43,5 +43,13 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "vite": "^7.3.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "tar": "7.5.11",
+      "picomatch": "4.0.4",
+      "follow-redirects": "1.16.0",
+      "brace-expansion": "5.0.5"
+    }
   }
 }

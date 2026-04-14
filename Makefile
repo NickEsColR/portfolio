@@ -1,4 +1,4 @@
-.PHONY: up down add sync run sh logs clean
+.PHONY: up down stop add sync run sh logs clean update
 
 APP  := app
 PM   := pnpm
@@ -14,19 +14,23 @@ stop:
 	docker compose stop
 
 add:
-	@docker compose exec $(APP) $(PM) add $(filter-out $@,$(MAKECMDGOALS))
+	@docker compose exec $(APP) $(PM) i $(filter-out $@,$(MAKECMDGOALS))
+
+add-dev:
+	@docker compose exec $(APP) $(PM) i -D $(filter-out $@,$(MAKECMDGOALS))
 
 sync:
-	docker compose exec $(APP) $(PM) sync
+	docker compose exec $(APP) $(PM) i
 
 run:
 	docker compose exec $(APP) $(PM) $(RUN)
 
 sh:
-	docker compose run --rm $(APP) sh
+	docker compose exec $(APP) sh
 
 logs:
 	docker compose logs -f
 
-clean:
-	docker compose down -v
+# Regla trampa para ignorar argumentos adicionales de 'add' y 'add-dev'
+%:
+	@:
