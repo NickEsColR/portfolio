@@ -21,7 +21,7 @@ A fast, statically-generated portfolio featuring a two-column layout with a fixe
 
 | Category | Technology |
 | :--- | :--- |
-| Framework | [Astro 5](https://astro.build/) |
+| Framework | [Astro 6](https://astro.build/) |
 | Language | [TypeScript](https://www.typescriptlang.org/) |
 | Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
 | CMS | [Sanity](https://www.sanity.io/) (via `@sanity/astro`) |
