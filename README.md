@@ -25,7 +25,7 @@ A fast, statically-generated portfolio featuring a two-column layout with a fixe
 | Language | [TypeScript](https://www.typescriptlang.org/) |
 | Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
 | CMS | [Sanity](https://www.sanity.io/) (via `@sanity/astro`) |
-| Icons | [Astro Icon](https://github.com/natemoo-re/astro-icon) + [Lucide](https://lucide.dev/) |
+| Icons | [Astro Icon](https://github.com/natemoo-re/astro-icon)|
 | Hosting | [Netlify](https://www.netlify.com/) |
 
 ## Project Structure
